@@ -162,7 +162,7 @@
             <div class="hidden bg-dark-900/95 backdrop-blur-xl border-b border-beatport-neon/20 absolute w-full left-0 top-20 shadow-2xl" id="mobile-menu">
                 <div class="px-4 py-4 space-y-2 text-center">
                     <a href="#featured" class="mobile-link block hover:text-beatport-neon hover:bg-gray-800 px-3 py-4 rounded-xl text-lg font-semibold transition-colors">HIGHLIGHTS</a>
-                    <a href="#news" class="mobile-link block hover:text-beatport-neon hover:bg-gray-800 px-3 py-4 rounded-xl text-lg font-semibold transition-colors">TRANSMSISSIONS</a>
+                    <a href="#news" class="mobile-link block hover:text-beatport-neon hover:bg-gray-800 px-3 py-4 rounded-xl text-lg font-semibold transition-colors">FEED</a>
                     <a href="#visuals" class="mobile-link block hover:text-beatport-neon hover:bg-gray-800 px-3 py-4 rounded-xl text-lg font-semibold transition-colors">VIDEOS</a>
                     <a href="#contact" class="mobile-link block hover:text-beatport-neon hover:bg-gray-800 px-3 py-4 rounded-xl text-lg font-semibold transition-colors">CONTACT</a>
                 </div>
@@ -289,8 +289,14 @@
         <!-- News / Transmissions (Instagram Style) -->
         <section id="news" class="py-10 bg-[#0a0b10] border-y border-gray-800 relative z-10 shrink-0">
             <div class="px-4 mb-6">
-                <h3 class="font-display text-2xl font-black text-white flex items-center gap-2">
-                    <i class="fab fa-instagram text-beatport-neon"></i> Transmissions
+                <h3 class="font-display text-2xl font-black text-white flex items-center gap-3">
+                    <!-- Icono Inventado: Ecualizador animado de señal -->
+                    <div class="flex items-end justify-center gap-1 w-8 h-8 rounded-lg bg-beatport-neon/10 border border-beatport-neon/30 pb-2">
+                        <div class="w-1 bg-beatport-neon rounded-t-sm h-2 animate-pulse"></div>
+                        <div class="w-1 bg-beatport-neon rounded-t-sm h-4 animate-[pulse_1.5s_ease-in-out_infinite]"></div>
+                        <div class="w-1 bg-beatport-neon rounded-t-sm h-3 animate-[pulse_0.8s_ease-in-out_infinite]"></div>
+                    </div>
+                    FEED
                 </h3>
             </div>
             
@@ -359,8 +365,9 @@
                 <h2 class="font-display font-black text-2xl mb-6 text-white">TAL<span class="text-beatport-neon">EON</span></h2>
                 
                 <div class="flex flex-wrap justify-center gap-3 mb-8 w-full max-w-[300px]">
-                    <a href="https://www.beatport.com/artist/taleon/1077287" target="_blank" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-beatport-neon hover:text-black transition-all">
-                        <span class="font-black text-[10px]">BP</span>
+                    <!-- Botón Beatport con el logo actualizado adaptado al diseño -->
+                    <a href="https://www.beatport.com/artist/taleon/1077287" target="_blank" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center transition-all group overflow-hidden border border-transparent hover:border-beatport-neon shadow-none hover:shadow-[0_0_15px_rgba(148,213,0,0.5)] bg-black p-[2px]">
+                        <img src="https://i1.sndcdn.com/avatars-JxaRv18vXtTglVU3-z0ws9A-t1080x1080.jpg" alt="Beatport" class="w-full h-full object-cover rounded-full filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
                     </a>
                     <a href="https://soundcloud.com/taleonmusic" target="_blank" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-beatport-neon hover:text-black transition-all text-sm">
                         <i class="fab fa-soundcloud"></i>
