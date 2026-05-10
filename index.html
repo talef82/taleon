@@ -210,32 +210,135 @@
             <div class="h-1 w-24 bg-fluor-green mx-auto rounded-full"></div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <!-- Achievement 1 -->
-            <div class="group relative rounded-3xl overflow-hidden glass-panel border-2 border-transparent box-glow transition-all duration-500 transform hover:-translate-y-2">
-                <div class="aspect-video w-full overflow-hidden cursor-zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80')">
-                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Tomorrowland" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>
+        <!-- Accordion Container -->
+        <div class="max-w-4xl mx-auto space-y-4" id="accordion-container">
+            
+            <!-- Item 1: About Me -->
+            <div class="glass-panel border border-fluor-green/20 rounded-2xl overflow-hidden transition-all duration-300" id="acc-1">
+                <div class="p-5 md:p-8 flex items-center justify-between cursor-pointer group" onclick="toggleAccordion(1)">
+                    <h4 class="font-display font-black text-xl md:text-2xl text-white group-hover:text-fluor-green transition-colors flex items-center gap-4">
+                        <span class="text-fluor-dark text-lg md:text-xl">01.</span> ABOUT ME
+                    </h4>
+                    <i class="fas fa-plus text-fluor-green text-xl transition-transform duration-500" id="icon-1"></i>
                 </div>
-                <div class="absolute bottom-0 left-0 w-full p-8 pointer-events-none">
-                    <span class="bg-fluor-dark text-fluor-green border border-fluor-green/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Milestone</span>
-                    <h4 class="font-display text-3xl font-black text-white leading-tight mb-2">Tomorrowland 2025<br><span class="text-fluor-green">Mainstage Closing</span></h4>
-                    <p class="text-gray-300 text-sm">An unprecedented 3-hour set that defined the festival's history, gathering over 100,000 souls in perfect synchrony.</p>
+                <!-- Expandable Content -->
+                <div id="content-1" class="grid grid-rows-[0fr] opacity-0 transition-all duration-500">
+                    <div class="overflow-hidden">
+                        <div class="px-5 pb-8 md:px-8 flex flex-col md:flex-row gap-8 items-center md:items-start text-gray-300 leading-relaxed">
+                            <img src="https://images.unsplash.com/photo-1571266028243-cb40f6733261?auto=format&fit=crop&w=200&q=80" alt="Taleon Studio" class="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-fluor-green object-cover flex-shrink-0 shadow-[0_0_20px_rgba(148,213,0,0.3)]">
+                            <div>
+                                <p class="mb-4"><strong class="text-white">Taleon</strong> is a driving force in the modern electronic music landscape. With a signature sound that blends driving basslines, intricate percussion, and an unmistakable energetic rhythm, the project has evolved from underground raves to international mainstages.</p>
+                                <p>Focused primarily on Tech House and deeply hypnotic grooves, the mission has always been clear: to create an electronic resonance that connects people globally on the dancefloor. Engineered for the future.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Achievement 2 -->
-            <div class="group relative rounded-3xl overflow-hidden glass-panel border-2 border-transparent box-glow transition-all duration-500 transform hover:-translate-y-2">
-                <div class="aspect-video w-full overflow-hidden cursor-zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1571266028243-cb40f6733261?auto=format&fit=crop&w=1200&q=80')">
-                    <img src="https://images.unsplash.com/photo-1571266028243-cb40f6733261?auto=format&fit=crop&w=800&q=80" alt="Platinum Record" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>
+            <!-- Item 2: Top 1 Beatport -->
+            <div class="glass-panel border border-fluor-green/20 rounded-2xl overflow-hidden transition-all duration-300" id="acc-2">
+                <div class="p-5 md:p-8 flex items-center justify-between cursor-pointer group" onclick="toggleAccordion(2)">
+                    <h4 class="font-display font-black text-xl md:text-2xl text-white group-hover:text-fluor-green transition-colors flex items-center gap-4">
+                        <span class="text-fluor-dark text-lg md:text-xl">02.</span> TOP 1 BEATPORT
+                    </h4>
+                    <i class="fas fa-plus text-fluor-green text-xl transition-transform duration-500" id="icon-2"></i>
                 </div>
-                <div class="absolute bottom-0 left-0 w-full p-8 pointer-events-none">
-                    <span class="bg-fluor-dark text-fluor-green border border-fluor-green/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Award</span>
-                    <h4 class="font-display text-3xl font-black text-white leading-tight mb-2">Double Platinum<br><span class="text-fluor-green">"Neon Systems"</span></h4>
-                    <p class="text-gray-300 text-sm">The track that took over the global charts. Number 1 on Beatport for 16 consecutive weeks, establishing a new paradigm.</p>
+                <!-- Expandable Content -->
+                <div id="content-2" class="grid grid-rows-[0fr] opacity-0 transition-all duration-500">
+                    <div class="overflow-hidden">
+                        <div class="px-5 pb-8 md:px-8">
+                            <div class="bg-black/50 border border-gray-800 rounded-xl p-6 flex flex-col md:flex-row items-center gap-6">
+                                <div class="w-24 h-24 bg-fluor-green rounded-xl flex items-center justify-center flex-shrink-0 relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-white/20 animate-pulse"></div>
+                                    <span class="font-black text-4xl text-black relative z-10">#1</span>
+                                </div>
+                                <div>
+                                    <h5 class="text-2xl font-bold text-white mb-2">"SOLEMNIA" <span class="text-sm font-normal text-fluor-green ml-2">TECH HOUSE CHART</span></h5>
+                                    <p class="text-gray-400 text-sm mb-4">Reaching the absolute top of the global Beatport charts, "Solemnia" dominated the electronic scene, gaining support from industry heavyweights and becoming an anthem in festivals worldwide.</p>
+                                    <a href="https://www.beatport.com/artist/taleon/1077287" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold bg-dark-900 border border-fluor-green text-white hover:bg-fluor-green hover:text-black px-4 py-2 rounded transition-colors">
+                                        VERIFIED ON BEATPORT <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Item 3: Beatstats Live -->
+            <div class="glass-panel border border-fluor-green/20 rounded-2xl overflow-hidden transition-all duration-300" id="acc-3">
+                <div class="p-5 md:p-8 flex items-center justify-between cursor-pointer group" onclick="toggleAccordion(3)">
+                    <h4 class="font-display font-black text-xl md:text-2xl text-white group-hover:text-fluor-green transition-colors flex items-center gap-4">
+                        <span class="text-fluor-dark text-lg md:text-xl">03.</span> BEATSTATS TRACKER
+                    </h4>
+                    <i class="fas fa-plus text-fluor-green text-xl transition-transform duration-500" id="icon-3"></i>
+                </div>
+                <!-- Expandable Content -->
+                <div id="content-3" class="grid grid-rows-[0fr] opacity-0 transition-all duration-500">
+                    <div class="overflow-hidden">
+                        <div class="px-5 pb-8 md:px-8">
+                            <!-- Dashboard UI -->
+                            <div class="bg-dark-900 border border-fluor-green/30 rounded-xl p-5 font-mono shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]">
+                                <!-- Header -->
+                                <div class="flex flex-wrap justify-between items-center mb-6 border-b border-gray-800 pb-3 gap-2">
+                                    <span class="text-fluor-green font-bold flex items-center gap-2 text-sm md:text-base">
+                                        <div class="w-2.5 h-2.5 rounded-full bg-red-500 animate-[pulse_1.5s_ease-in-out_infinite]"></div> 
+                                        SYSTEM: ONLINE
+                                    </span>
+                                    <span class="text-xs text-gray-500">SOURCE: BEATSTATS API</span>
+                                </div>
+                                
+                                <!-- Main Stats -->
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 text-center">
+                                    <div class="bg-black p-3 rounded border border-gray-800 flex flex-col justify-center">
+                                        <div class="text-[10px] md:text-xs text-gray-400 mb-1">GLOBAL RANK</div>
+                                        <div class="text-xl md:text-2xl font-bold text-white tracking-wider">#Top<span class="text-fluor-green">200</span></div>
+                                    </div>
+                                    <div class="bg-black p-3 rounded border border-gray-800 flex flex-col justify-center">
+                                        <div class="text-[10px] md:text-xs text-gray-400 mb-1">TECH HOUSE</div>
+                                        <div class="text-xl md:text-2xl font-bold text-white tracking-wider">#Top<span class="text-fluor-green">50</span></div>
+                                    </div>
+                                    <div class="bg-black p-3 rounded border border-gray-800 flex flex-col justify-center">
+                                        <div class="text-[10px] md:text-xs text-gray-400 mb-1">CHARTED TRACKS</div>
+                                        <div class="text-xl md:text-2xl font-bold text-white tracking-wider">12</div>
+                                    </div>
+                                    <div class="bg-black p-3 rounded border border-gray-800 flex flex-col justify-center">
+                                        <div class="text-[10px] md:text-xs text-gray-400 mb-1">LABELS</div>
+                                        <div class="text-xl md:text-2xl font-bold text-white tracking-wider">4</div>
+                                    </div>
+                                </div>
+
+                                <!-- Top Tracks List -->
+                                <div class="bg-black rounded border border-gray-800 p-4">
+                                    <h6 class="text-xs text-gray-400 mb-3 border-b border-gray-800 pb-2">TOP PERFORMING TRACKS</h6>
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between items-center text-sm">
+                                            <span class="text-white truncate pr-4">1. Solemnia (Original Mix)</span>
+                                            <span class="text-fluor-green font-bold shrink-0"><i class="fas fa-arrow-up mr-1 text-[10px]"></i> #1</span>
+                                        </div>
+                                        <div class="flex justify-between items-center text-sm">
+                                            <span class="text-white truncate pr-4">2. Neon Systems (Club Mix)</span>
+                                            <span class="text-gray-400 shrink-0">#8</span>
+                                        </div>
+                                        <div class="flex justify-between items-center text-sm">
+                                            <span class="text-white truncate pr-4">3. Future Resonance</span>
+                                            <span class="text-gray-400 shrink-0">#14</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Link to real page -->
+                                <div class="mt-5 text-center">
+                                    <a href="https://www.beatstats.com/artist/taleon/1077287" target="_blank" class="text-xs text-fluor-green hover:text-white transition-colors underline underline-offset-4">
+                                        VIEW FULL ANALYTICS ON BEATSTATS
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -675,6 +778,45 @@
                 playerToggleIcon.classList.add('fa-chevron-up');
             }
             isPlayerHidden = !isPlayerHidden;
+        });
+
+        window.toggleAccordion = function(id) {
+            for (let i = 1; i <= 3; i++) {
+                const content = document.getElementById(`content-${i}`);
+                const icon = document.getElementById(`icon-${i}`);
+                const item = document.getElementById(`acc-${i}`);
+
+                if (i === id) {
+                    // Check if already open
+                    if (content.classList.contains('grid-rows-[1fr]')) {
+                        // Close it
+                        content.classList.remove('grid-rows-[1fr]', 'opacity-100');
+                        content.classList.add('grid-rows-[0fr]', 'opacity-0');
+                        icon.classList.remove('rotate-45');
+                        item.classList.remove('border-fluor-green', 'shadow-[0_0_20px_rgba(148,213,0,0.15)]');
+                        item.classList.add('border-fluor-green/20');
+                    } else {
+                        // Open it
+                        content.classList.remove('grid-rows-[0fr]', 'opacity-0');
+                        content.classList.add('grid-rows-[1fr]', 'opacity-100');
+                        icon.classList.add('rotate-45');
+                        item.classList.remove('border-fluor-green/20');
+                        item.classList.add('border-fluor-green', 'shadow-[0_0_20px_rgba(148,213,0,0.15)]');
+                    }
+                } else {
+                    // Force close others
+                    content.classList.remove('grid-rows-[1fr]', 'opacity-100');
+                    content.classList.add('grid-rows-[0fr]', 'opacity-0');
+                    icon.classList.remove('rotate-45');
+                    item.classList.remove('border-fluor-green', 'shadow-[0_0_20px_rgba(148,213,0,0.15)]');
+                    item.classList.add('border-fluor-green/20');
+                }
+            }
+        };
+
+        // Open the first accordion item automatically when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => toggleAccordion(1), 150);
         });
 
     </script>
