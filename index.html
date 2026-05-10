@@ -482,10 +482,11 @@
                         <a href="${item.link}" target="_blank" class="flex items-center justify-center w-full py-2.5 mb-3 bg-dark-900 hover:bg-fluor-green text-fluor-green hover:text-black border border-fluor-green/50 hover:border-fluor-green rounded text-sm font-bold transition-all duration-300">
                             LISTEN NOW <i class="fas fa-external-link-alt ml-2 text-xs"></i>
                         </a>
-                        <div class="text-[13px] text-white leading-snug">
-                            <span class="font-bold mr-1">taleon_music</span>
-                            <span class="text-gray-300 line-clamp-3 inline" id="caption-${item.id}">${item.caption}</span>
-                            <span class="text-gray-500 font-bold ml-1 cursor-pointer hover:text-fluor-green transition-colors inline-block" onclick="toggleCaption(${item.id}, this)">more</span>
+                        <div class="text-[13px] leading-snug">
+                            <div id="caption-${item.id}" class="line-clamp-3 text-gray-300">
+                                <span class="font-bold text-white mr-1">taleon_music</span>${item.caption}
+                            </div>
+                            <span class="text-gray-500 font-bold cursor-pointer hover:text-fluor-green transition-colors mt-0.5 inline-block" onclick="toggleCaption(${item.id}, this)">more</span>
                         </div>
                     </div>
                 </div>
