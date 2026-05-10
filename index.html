@@ -386,44 +386,53 @@
         </div>
     </footer>
 
-    <div class="fixed bottom-0 left-0 w-full z-50 glass-panel border-t border-fluor-cyan/30 pb-safe shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
-            
-            <!-- Track Info -->
-            <div class="flex items-center gap-4 w-full md:w-1/4">
-                <div class="w-12 h-12 rounded-lg overflow-hidden relative shadow-[0_0_10px_rgba(0,243,255,0.3)] flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1571266028243-cb40f6733261?auto=format&fit=crop&w=150&q=80" alt="Cover" class="w-full h-full object-cover">
-                    <!-- Spinning vinyl effect -->
-                    <div id="player-spin" class="absolute inset-0 bg-black/20 rounded-full border border-fluor-cyan/50 scale-75 opacity-0 transition-opacity"></div>
-                </div>
-                <div class="min-w-0 flex-1">
-                    <h5 class="text-white font-bold text-sm truncate">SOLEMNIA (Preview)</h5>
-                    <p class="text-fluor-cyan text-xs truncate">TALEON</p>
-                </div>
-            </div>
+    <!-- Reproductor con contenedor animado para replegarse -->
+    <div id="music-player" class="fixed bottom-0 left-0 w-full z-50 transition-transform duration-500 ease-in-out translate-y-0">
+        
+        <!-- Pestaña flotante para minimizar/maximizar -->
+        <button id="toggle-player-btn" class="absolute -top-10 right-4 md:right-8 w-14 h-10 bg-dark-900/95 backdrop-blur-xl border-t border-l border-r border-fluor-cyan/30 rounded-t-2xl flex items-center justify-center text-fluor-cyan hover:text-white hover:bg-fluor-cyan/20 transition-all shadow-[0_-5px_15px_rgba(0,243,255,0.15)] group focus:outline-none" aria-label="Minimizar reproductor">
+            <i class="fas fa-chevron-down transition-transform duration-300 group-hover:scale-125" id="toggle-icon"></i>
+        </button>
 
-            <!-- Controls & Progress -->
-            <div class="flex flex-col items-center w-full md:w-2/4 gap-2">
-                <div class="flex items-center gap-6">
-                    <button class="text-gray-400 hover:text-white transition-colors" id="btn-prev"><i class="fas fa-step-backward"></i></button>
-                    <button class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-fluor-cyan transition-colors hover:shadow-[0_0_15px_rgba(0,243,255,0.8)]" id="btn-play">
-                        <i class="fas fa-play ml-1" id="play-icon"></i>
-                    </button>
-                    <button class="text-gray-400 hover:text-white transition-colors" id="btn-next"><i class="fas fa-step-forward"></i></button>
-                </div>
+        <div class="glass-panel border-t border-fluor-cyan/30 pb-safe shadow-[0_-10px_30px_rgba(0,0,0,0.5)] bg-dark-900/80">
+            <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
                 
-                <div class="flex items-center w-full gap-3 text-xs text-gray-400 font-mono">
-                    <span id="time-current">0:00</span>
-                    <input type="range" id="progress-bar" min="0" max="100" value="0" class="flex-1">
-                    <span id="time-total">0:00</span>
+                <!-- Track Info -->
+                <div class="flex items-center gap-4 w-full md:w-1/4">
+                    <div class="w-12 h-12 rounded-lg overflow-hidden relative shadow-[0_0_10px_rgba(0,243,255,0.3)] flex-shrink-0">
+                        <img src="https://images.unsplash.com/photo-1571266028243-cb40f6733261?auto=format&fit=crop&w=150&q=80" alt="Cover" class="w-full h-full object-cover">
+                        <!-- Spinning vinyl effect -->
+                        <div id="player-spin" class="absolute inset-0 bg-black/20 rounded-full border border-fluor-cyan/50 scale-75 opacity-0 transition-opacity"></div>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <h5 class="text-white font-bold text-sm truncate">SOLEMNIA (Preview)</h5>
+                        <p class="text-fluor-cyan text-xs truncate">TALEON</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Soundcloud CTA -->
-            <div class="hidden md:flex justify-end w-full md:w-1/4">
-                <a href="https://soundcloud.com/taleonmusic" target="_blank" class="flex items-center gap-2 text-xs font-bold text-gray-300 hover:text-fluor-cyan transition-colors border border-gray-700 hover:border-fluor-cyan rounded-full px-4 py-2">
-                    <i class="fab fa-soundcloud text-lg"></i> MORE ON SC
-                </a>
+                <!-- Controls & Progress -->
+                <div class="flex flex-col items-center w-full md:w-2/4 gap-2">
+                    <div class="flex items-center gap-6">
+                        <button class="text-gray-400 hover:text-white transition-colors" id="btn-prev"><i class="fas fa-step-backward"></i></button>
+                        <button class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-fluor-cyan transition-colors hover:shadow-[0_0_15px_rgba(0,243,255,0.8)]" id="btn-play">
+                            <i class="fas fa-play ml-1" id="play-icon"></i>
+                        </button>
+                        <button class="text-gray-400 hover:text-white transition-colors" id="btn-next"><i class="fas fa-step-forward"></i></button>
+                    </div>
+                    
+                    <div class="flex items-center w-full gap-3 text-xs text-gray-400 font-mono">
+                        <span id="time-current">0:00</span>
+                        <input type="range" id="progress-bar" min="0" max="100" value="0" class="flex-1">
+                        <span id="time-total">0:00</span>
+                    </div>
+                </div>
+
+                <!-- Soundcloud CTA -->
+                <div class="hidden md:flex justify-end w-full md:w-1/4">
+                    <a href="https://soundcloud.com/taleonmusic" target="_blank" class="flex items-center gap-2 text-xs font-bold text-gray-300 hover:text-fluor-cyan transition-colors border border-gray-700 hover:border-fluor-cyan rounded-full px-4 py-2">
+                        <i class="fab fa-soundcloud text-lg"></i> MORE ON SC
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -589,6 +598,27 @@
         // Dummy events for Prev/Next
         document.getElementById('btn-prev').addEventListener('click', () => { audio.currentTime = 0; });
         document.getElementById('btn-next').addEventListener('click', () => { audio.currentTime = 0; });
+
+        // Lógica para Replegar/Expandir el reproductor
+        const musicPlayer = document.getElementById('music-player');
+        const togglePlayerBtn = document.getElementById('toggle-player-btn');
+        const toggleIcon = document.getElementById('toggle-icon');
+
+        togglePlayerBtn.addEventListener('click', () => {
+            // Alternar la clase que desplaza el reproductor hacia abajo (100% de su altura)
+            musicPlayer.classList.toggle('translate-y-full');
+            
+            // Cambiar el icono y estilo de la pestaña según el estado
+            if (musicPlayer.classList.contains('translate-y-full')) {
+                toggleIcon.classList.remove('fa-chevron-down');
+                toggleIcon.classList.add('fa-chevron-up');
+                togglePlayerBtn.classList.add('bg-fluor-cyan/20');
+            } else {
+                toggleIcon.classList.remove('fa-chevron-up');
+                toggleIcon.classList.add('fa-chevron-down');
+                togglePlayerBtn.classList.remove('bg-fluor-cyan/20');
+            }
+        });
 
         // Copy Email Function
         function copyEmail() {
