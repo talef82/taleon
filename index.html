@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth bg-black">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,10 +44,16 @@
     </script>
     
     <style>
+        html {
+            background-color: #050505;
+        }
         body {
-            background: linear-gradient(135deg, #050505 0%, #0a0b10 50%, #091530 100%);
+            background-color: #050505;
+            background-image: -webkit-linear-gradient(135deg, #050505 0%, #0a0b10 50%, #091530 100%);
+            background-image: linear-gradient(135deg, #050505 0%, #0a0b10 50%, #091530 100%);
             color: #ffffff;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
         
         ::-webkit-scrollbar {
@@ -128,11 +134,11 @@
         }
     </style>
 </head>
-<body class="font-sans antialiased relative selection:bg-fluor-cyan selection:text-black min-h-screen pb-24">
+<body class="font-sans antialiased relative selection:bg-fluor-cyan selection:text-black min-h-screen pb-24 bg-dark-900 text-white">
 
     <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
-        <div class="absolute top-1/4 left-10 w-64 h-64 bg-fluor-blue/20 rounded-full blur-[100px] animate-pulse-slow"></div>
-        <div class="absolute bottom-1/3 right-10 w-96 h-96 bg-fluor-cyan/10 rounded-full blur-[120px] animate-pulse-slow" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/4 left-10 w-64 h-64 bg-fluor-blue/20 rounded-full blur-[100px] animate-pulse-slow" style="-webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0);"></div>
+        <div class="absolute bottom-1/3 right-10 w-96 h-96 bg-fluor-cyan/10 rounded-full blur-[120px] animate-pulse-slow" style="animation-delay: 2s; -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0);"></div>
         
         <!-- Synth Doodle -->
         <svg class="doodle animate-float top-40 right-20 w-32 h-32 text-fluor-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
