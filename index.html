@@ -484,7 +484,7 @@
                         </a>
                         <div class="text-[13px] text-white leading-snug">
                             <span class="font-bold mr-1">taleon_music</span>
-                            <span class="text-gray-300 line-clamp-2 inline" id="caption-${item.id}">${item.caption}</span>
+                            <span class="text-gray-300 line-clamp-3 inline" id="caption-${item.id}">${item.caption}</span>
                             <span class="text-gray-500 font-bold ml-1 cursor-pointer hover:text-fluor-green transition-colors inline-block" onclick="toggleCaption(${item.id}, this)">more</span>
                         </div>
                     </div>
@@ -496,11 +496,11 @@
         // Toggle Instagram Caption Text
         window.toggleCaption = function(id, btn) {
             const caption = document.getElementById(`caption-${id}`);
-            if (caption.classList.contains('line-clamp-2')) {
-                caption.classList.remove('line-clamp-2');
+            if (caption.classList.contains('line-clamp-3')) {
+                caption.classList.remove('line-clamp-3');
                 btn.innerText = 'less';
             } else {
-                caption.classList.add('line-clamp-2');
+                caption.classList.add('line-clamp-3');
                 btn.innerText = 'more';
             }
         };
