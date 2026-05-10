@@ -440,7 +440,7 @@
             const mobileHtml = `
                 <div class="w-full bg-black border-b border-dark-800 mb-2 pb-4">
                     <!-- Feed Header -->
-                    <div class="flex items-center justify-between px-3 py-3">
+                    <div class="flex items-center justify-between px-3 py-3 relative z-20">
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded-full overflow-hidden border border-fluor-green p-[1px]">
                                 <img src="${avatarImg}" alt="Taleon" class="w-full h-full object-cover rounded-full">
@@ -452,9 +452,37 @@
                                 <span class="text-gray-400 text-[11px] mt-1 leading-none">${item.date}</span>
                             </div>
                         </div>
-                        <button class="text-white hover:text-fluor-green px-1 transition-colors">
-                            <i class="fas fa-ellipsis-h text-sm"></i>
-                        </button>
+                        
+                        <!-- Context Menu Container -->
+                        <div>
+                            <button class="text-white hover:text-fluor-green px-2 py-1 transition-colors outline-none" onclick="togglePostMenu(event, ${item.id})">
+                                <i class="fas fa-ellipsis-h text-sm pointer-events-none"></i>
+                            </button>
+                            
+                            <!-- Dropdown Menu -->
+                            <div id="post-menu-${item.id}" class="hidden absolute right-3 top-12 w-48 rounded-xl bg-dark-900/95 backdrop-blur-xl border border-fluor-green/30 shadow-[0_15px_30px_rgba(0,0,0,0.9)] overflow-hidden transition-all duration-200">
+                                <div class="px-4 py-2 border-b border-gray-800">
+                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Listen / Follow</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <a href="https://www.beatport.com/artist/taleon/1077287" target="_blank" class="px-4 py-2.5 text-[13px] text-white hover:bg-fluor-green hover:text-black flex items-center gap-3 font-bold transition-colors">
+                                        <span class="w-5 text-center text-[10px] font-black">BP</span> Beatport
+                                    </a>
+                                    <a href="https://open.spotify.com/intl-es/artist/22jXZlcnm6s2SidCCQ23rh" target="_blank" class="px-4 py-2.5 text-[13px] text-white hover:bg-fluor-green hover:text-black flex items-center gap-3 font-bold transition-colors">
+                                        <i class="fab fa-spotify w-5 text-center text-base"></i> Spotify
+                                    </a>
+                                    <a href="https://music.apple.com/fm/artist/taleon/1648665295" target="_blank" class="px-4 py-2.5 text-[13px] text-white hover:bg-fluor-green hover:text-black flex items-center gap-3 font-bold transition-colors">
+                                        <i class="fab fa-apple w-5 text-center text-base"></i> Apple Music
+                                    </a>
+                                    <a href="https://soundcloud.com/taleonmusic" target="_blank" class="px-4 py-2.5 text-[13px] text-white hover:bg-fluor-green hover:text-black flex items-center gap-3 font-bold transition-colors">
+                                        <i class="fab fa-soundcloud w-5 text-center text-base"></i> SoundCloud
+                                    </a>
+                                    <a href="https://www.youtube.com/@taleon_music" target="_blank" class="px-4 py-2.5 text-[13px] text-white hover:bg-fluor-green hover:text-black flex items-center gap-3 font-bold transition-colors">
+                                        <i class="fab fa-youtube w-5 text-center text-base"></i> YouTube
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- Feed Image Carousel -->
@@ -505,6 +533,29 @@
                 btn.innerText = 'more';
             }
         };
+
+        // Menu Desplegable de los 3 puntos (Context Menu)
+        window.togglePostMenu = function(event, id) {
+            event.stopPropagation(); // Evita que se cierre al instante por el click en el documento
+            
+            // Cerrar cualquier otro menú que esté abierto
+            document.querySelectorAll('[id^="post-menu-"]').forEach(menu => {
+                if (menu.id !== `post-menu-${id}`) {
+                    menu.classList.add('hidden');
+                }
+            });
+            
+            // Abrir/Cerrar el menú correspondiente a este post
+            const menu = document.getElementById(`post-menu-${id}`);
+            menu.classList.toggle('hidden');
+        };
+
+        // Cerrar los menús desplegables si se hace click fuera de ellos
+        document.addEventListener('click', function() {
+            document.querySelectorAll('[id^="post-menu-"]').forEach(menu => {
+                menu.classList.add('hidden');
+            });
+        });
 
         // Update Dots color on image scroll
         window.updateCarouselDots = function(id, totalImages) {
