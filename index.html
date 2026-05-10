@@ -83,6 +83,15 @@
             border-color: #94D500;
         }
 
+        /* Ocultar barra de scroll para el carrusel de Instagram */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
         .doodle {
             position: absolute;
             opacity: 0.1;
@@ -390,6 +399,7 @@
         // 1. Data for Transmissions (News)
         const img1 = "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"; 
         const img2 = "https://images.unsplash.com/photo-1571266028243-cb40f6733261?auto=format&fit=crop&w=800&q=80"; 
+        const img3 = "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=800&q=80"; // 3ra foto de estudio
         const avatarImg = "https://images.unsplash.com/photo-1571266028243-cb40f6733261?auto=format&fit=crop&w=150&q=80";
 
         const newsItems = Array.from({ length: 12 }, (_, i) => ({
@@ -397,7 +407,8 @@
             title: `Transmission Vol. ${12 - i}`,
             subtitle: i % 2 === 0 ? "Live Set Released" : "Studio Update",
             date: `May ${10 - i}, 2026`,
-            img: i % 2 === 0 ? img1 : img2,
+            // Array con varias imágenes imitando un post múltiple
+            images: i % 2 === 0 ? [img1, img3] : [img2, img1, img3],
             link: "https://www.beatport.com/artist/taleon/1077287",
             caption: "Dropping this massive unreleased ID from my last set! 🔥 The energy in the crowd was absolutely unreal. I've been working on this bassline for weeks in the studio and finally hearing it on a massive sound system is a dream come true. You can stream the full set right now. Let me know what you think in the comments! 🚀🎛️ #TechHouse #LiveSet #TaleonMusic #NewMusic"
         }));
@@ -408,9 +419,13 @@
         newsItems.forEach(item => {
             // A. Desktop Card Structure (IG Profile Grid)
             const desktopHtml = `
-                <div class="group relative aspect-square bg-dark-800 overflow-hidden cursor-zoom-in" onclick="openLightbox('${item.img}')">
-                    <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center p-4">
+                <div class="group relative aspect-square bg-dark-800 overflow-hidden cursor-zoom-in" onclick="openLightbox('${item.images[0]}')">
+                    <img src="${item.images[0]}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    
+                    <!-- Icono de "Carrusel" en esquina superior derecha imitando IG web -->
+                    ${item.images.length > 1 ? '<i class="fas fa-clone absolute top-3 right-3 text-white text-sm drop-shadow-md z-10 opacity-90"></i>' : ''}
+                    
+                    <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center p-4 z-20">
                         <i class="fas fa-play text-fluor-green text-3xl mb-3 transform scale-50 group-hover:scale-100 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(148,213,0,0.8)]"></i>
                         <h4 class="font-display font-bold text-sm text-white text-center mb-3 hidden sm:block">${item.title}</h4>
                         <a href="${item.link}" target="_blank" onclick="event.stopPropagation()" class="pointer-events-auto px-4 py-1.5 sm:px-6 sm:py-2 bg-fluor-green hover:bg-white text-black rounded-full text-xs font-bold transition-colors">
@@ -421,7 +436,7 @@
             `;
             desktopGrid.innerHTML += desktopHtml;
 
-            // B. Mobile Instagram Feed Structure
+            // B. Mobile Instagram Feed Structure con Carrusel Deslizante
             const mobileHtml = `
                 <div class="w-full bg-black border-b border-dark-800 mb-2 pb-4">
                     <!-- Feed Header -->
@@ -442,13 +457,28 @@
                         </button>
                     </div>
                     
-                    <!-- Feed Image -->
-                    <div class="w-full aspect-square bg-dark-900 cursor-zoom-in relative" onclick="openLightbox('${item.img}')">
-                        <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover">
+                    <!-- Feed Image Carousel -->
+                    <div class="relative w-full aspect-square bg-dark-900">
+                        <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar w-full h-full" id="carousel-${item.id}" onscroll="updateCarouselDots(${item.id}, ${item.images.length})">
+                            ${item.images.map(img => `
+                                <div class="snap-center shrink-0 w-full h-full cursor-zoom-in relative" onclick="openLightbox('${img}')">
+                                    <img src="${img}" alt="${item.title}" class="w-full h-full object-cover">
+                                </div>
+                            `).join('')}
+                        </div>
                     </div>
+
+                    <!-- Carousel Dots Indicators -->
+                    ${item.images.length > 1 ? `
+                        <div class="w-full flex justify-center gap-1.5 pt-3 pb-1">
+                            ${item.images.map((_, idx) => `
+                                <div id="dot-${item.id}-${idx}" class="w-1.5 h-1.5 rounded-full transition-all duration-300 ${idx === 0 ? 'bg-fluor-green scale-110' : 'bg-gray-600'}"></div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
                     
                     <!-- Feed Action & Caption -->
-                    <div class="px-3 pt-3">
+                    <div class="px-3 pt-2">
                         <a href="${item.link}" target="_blank" class="flex items-center justify-center w-full py-2.5 mb-3 bg-dark-900 hover:bg-fluor-green text-fluor-green hover:text-black border border-fluor-green/50 hover:border-fluor-green rounded text-sm font-bold transition-all duration-300">
                             LISTEN NOW <i class="fas fa-external-link-alt ml-2 text-xs"></i>
                         </a>
@@ -472,6 +502,29 @@
             } else {
                 caption.classList.add('line-clamp-2');
                 btn.innerText = 'more';
+            }
+        };
+
+        // Update Dots color on image scroll
+        window.updateCarouselDots = function(id, totalImages) {
+            const carousel = document.getElementById(`carousel-${id}`);
+            const scrollLeft = carousel.scrollLeft;
+            const width = carousel.offsetWidth;
+            // Calcula en qué foto estamos (0, 1, 2...)
+            const currentIndex = Math.round(scrollLeft / width);
+
+            // Actualiza el color de los puntos en vivo
+            for (let i = 0; i < totalImages; i++) {
+                const dot = document.getElementById(`dot-${id}-${i}`);
+                if (dot) {
+                    if (i === currentIndex) {
+                        dot.classList.remove('bg-gray-600');
+                        dot.classList.add('bg-fluor-green', 'scale-110');
+                    } else {
+                        dot.classList.remove('bg-fluor-green', 'scale-110');
+                        dot.classList.add('bg-gray-600');
+                    }
+                }
             }
         };
 
