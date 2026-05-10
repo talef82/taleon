@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth bg-dark-900">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +18,8 @@
                     },
                     colors: {
                         beatport: {
-                            neon: '#94D500', // Verde Beatport
-                            dark: '#166534', // Verde profundo
+                            neon: '#94D500',
+                            dark: '#166534'
                         },
                         dark: {
                             900: '#050505',
@@ -31,173 +31,200 @@
                         'float': 'float 6s ease-in-out infinite',
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'spin-slow': 'spin 12s linear infinite',
+                        'equalizer': 'equalizer 1s ease-in-out infinite',
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
                             '50%': { transform: 'translateY(-20px) rotate(5deg)' },
+                        },
+                        equalizer: {
+                            '0%, 100%': { height: '4px' },
+                            '50%': { height: '12px' },
                         }
                     }
                 }
             }
         }
     </script>
-    
     <style>
-        /* Corrección Safari/iOS y Fondo Oscuro Base */
-        html {
-            background-color: #050505;
-        }
         body {
-            background-color: #050505;
+            background: #050505;
             color: #ffffff;
             overflow-x: hidden;
-            /* Permite centrar el contenedor del móvil en PC */
-            display: flex;
-            justify-content: center;
         }
         
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #050505; }
-        ::-webkit-scrollbar-thumb { background: #166534; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94D500; }
-
-        .glass-panel {
-            background: rgba(10, 11, 16, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(148, 213, 0, 0.15);
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #166534;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94D500;
         }
 
-        .text-glow { text-shadow: 0 0 15px rgba(148, 213, 0, 0.6); }
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 213, 0, 0.1);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 15px rgba(148, 213, 0, 0.6);
+        }
 
         .box-glow:hover {
-            box-shadow: 0 0 25px rgba(148, 213, 0, 0.4);
+            box-shadow: 0 0 25px rgba(148, 213, 0, 0.3);
             border-color: #94D500;
         }
 
         .doodle {
             position: absolute;
-            opacity: 0.15;
+            opacity: 0.1;
             z-index: -1;
             pointer-events: none;
-            transform: translate3d(0,0,0);
         }
 
-        /* Chat Styles */
         .chat-bubble-left {
             background: rgba(22, 101, 52, 0.4);
             border-bottom-left-radius: 4px !important;
-            border: 1px solid rgba(148, 213, 0, 0.1);
-        }
-        .chat-bubble-right {
-            background: rgba(148, 213, 0, 0.1);
-            border-bottom-right-radius: 4px !important;
-            border: 1px solid rgba(148, 213, 0, 0.3);
+            border: 1px solid rgba(148, 213, 0, 0.2);
         }
 
-        /* Ocultar barra de scroll en carrusel móvil */
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* Acordeón Styles */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
         .accordion-content {
-            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, padding 0.4s ease-in-out;
-            max-height: 0;
-            opacity: 0;
+            transition: max-height 0.4s ease-in-out;
+            max-height: 0px;
             overflow: hidden;
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-        .accordion-item.active .accordion-content {
-            max-height: 800px;
-            opacity: 1;
-            padding-top: 1.5rem;
-            padding-bottom: 1.5rem;
-        }
-        .accordion-item.active .accordion-icon {
-            transform: rotate(180deg);
-            color: #94D500;
-        }
-        .accordion-item.active .accordion-title {
-            color: #94D500;
-            text-shadow: 0 0 15px rgba(148, 213, 0, 0.4);
         }
     </style>
 </head>
-<body class="font-sans antialiased relative selection:bg-beatport-neon selection:text-black min-h-screen pb-0">
+<body class="font-sans antialiased relative selection:bg-beatport-neon selection:text-black">
 
-    <!-- Ambient Background (Ocupa toda la pantalla del PC, detrás del "teléfono") -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="absolute inset-0 bg-gradient-to-br from-[#050505] via-[#0a0b10] to-[#06150a]"></div>
-        <div class="absolute top-1/4 left-10 w-64 h-64 bg-beatport-dark/30 rounded-full blur-[100px] animate-pulse-slow" style="transform: translate3d(0,0,0);"></div>
-        <div class="absolute bottom-1/3 right-10 w-96 h-96 bg-beatport-neon/15 rounded-full blur-[120px] animate-pulse-slow" style="animation-delay: 2s; transform: translate3d(0,0,0);"></div>
+    <!-- Background Ambient Lights -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-[0]">
+        <div class="absolute top-1/4 left-10 w-64 h-64 bg-beatport-dark/20 rounded-full blur-[100px] animate-pulse-slow translate-z-0"></div>
+        <div class="absolute bottom-1/3 right-10 w-96 h-96 bg-beatport-neon/10 rounded-full blur-[120px] animate-pulse-slow translate-z-0" style="animation-delay: 2s;"></div>
         
-        <svg class="doodle animate-float top-40 right-20 w-32 h-32 text-beatport-neon hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <!-- Synth Doodle -->
+        <svg class="doodle animate-float top-40 right-10 md:right-20 w-32 h-32 text-beatport-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
         </svg>
     </div>
 
-    <!-- Contenedor Principal "Tipo App Móvil" -->
-    <main class="w-full max-w-[768px] mx-auto bg-[#050505] min-h-screen relative shadow-[0_0_80px_rgba(0,0,0,0.9)] md:border-x md:border-gray-800 flex flex-col z-10 pb-[150px]">
-        
-        <!-- Navbar Móvil -->
-        <nav class="fixed w-full max-w-[768px] left-1/2 -translate-x-1/2 top-0 z-50 glass-panel border-b-0 transition-all duration-300" id="navbar">
-            <div class="px-4 sm:px-6">
-                <div class="flex items-center justify-between h-20">
+    <!-- MAIN CONTAINER (IPAD WIDTH) -->
+    <main class="max-w-[768px] mx-auto min-h-screen bg-dark-900 shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-x-hidden border-x border-gray-800/50 pb-32 z-10 flex flex-col">
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm cursor-zoom-out">
+            <span class="absolute top-6 right-6 text-white text-4xl hover:text-beatport-neon cursor-pointer transition-colors">&times;</span>
+            <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-[90vw] max-h-[90vh] rounded-2xl border-2 border-beatport-neon shadow-[0_0_30px_rgba(148,213,0,0.3)] object-contain">
+        </div>
+
+        <!-- Navigation -->
+        <nav class="fixed w-full max-w-[768px] z-50 glass-panel border-b-0 transition-all duration-300 left-1/2 -translate-x-1/2" id="navbar">
+            <div class="px-4 w-full">
+                <div class="flex items-center justify-between h-16 sm:h-20">
                     <a href="#" class="flex-shrink-0 group">
-                        <h1 class="font-display font-black text-3xl tracking-tighter text-white group-hover:text-glow transition-all duration-300">
+                        <h1 class="font-display font-black text-2xl sm:text-3xl tracking-tighter text-white group-hover:text-glow transition-all duration-300">
                             TAL<span class="text-beatport-neon">EON</span>
                         </h1>
                     </a>
                     
-                    <div class="flex">
+                    <div class="hidden sm:block">
+                        <div class="flex items-baseline space-x-8">
+                            <a href="#featured" class="relative font-display font-black text-[11px] sm:text-xs tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
+                                HIGHLIGHTS
+                                <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
+                            </a>
+                            <a href="#news" class="relative font-display font-black text-[11px] sm:text-xs tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
+                                FEED
+                                <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
+                            </a>
+                            <a href="#visuals" class="relative font-display font-black text-[11px] sm:text-xs tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
+                                VIDEOS
+                                <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
+                            </a>
+                            <a href="#contact" class="relative font-display font-black text-[11px] sm:text-xs tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
+                                CONTACT
+                                <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="-mr-2 flex sm:hidden">
                         <button type="button" id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-xl text-gray-300 hover:text-white hover:bg-beatport-neon/20 focus:outline-none transition-all">
-                            <i class="fas fa-bars text-2xl"></i>
+                            <i class="fas fa-bars text-xl"></i>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div class="hidden bg-dark-900/95 backdrop-blur-xl border-b border-beatport-neon/20 absolute w-full left-0 top-20 shadow-2xl" id="mobile-menu">
-                <div class="px-4 py-4 space-y-2 text-center">
-                    <a href="#featured" class="mobile-link block hover:text-beatport-neon hover:bg-gray-800 px-3 py-4 rounded-xl text-lg font-semibold transition-colors">HIGHLIGHTS</a>
-                    <a href="#news" class="mobile-link block hover:text-beatport-neon hover:bg-gray-800 px-3 py-4 rounded-xl text-lg font-semibold transition-colors">FEED</a>
-                    <a href="#visuals" class="mobile-link block hover:text-beatport-neon hover:bg-gray-800 px-3 py-4 rounded-xl text-lg font-semibold transition-colors">VIDEOS</a>
-                    <a href="#contact" class="mobile-link block hover:text-beatport-neon hover:bg-gray-800 px-3 py-4 rounded-xl text-lg font-semibold transition-colors">CONTACT</a>
+            <!-- Mobile Menu -->
+            <div class="sm:hidden hidden bg-dark-900/95 backdrop-blur-xl border-b border-beatport-neon/20 absolute w-full" id="mobile-menu">
+                <div class="px-4 pt-2 pb-6 space-y-2 text-center">
+                    <a href="#featured" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
+                        <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
+                        HIGHLIGHTS
+                    </a>
+                    <a href="#news" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
+                        <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
+                        FEED
+                    </a>
+                    <a href="#visuals" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
+                        <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
+                        VIDEOS
+                    </a>
+                    <a href="#contact" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
+                        <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
+                        CONTACT
+                    </a>
                 </div>
             </div>
         </nav>
 
-        <!-- Header / Hero -->
-        <header class="relative w-full h-[70vh] flex items-center justify-center overflow-hidden shrink-0">
+        <!-- Header -->
+        <header class="relative w-full h-[60vh] sm:h-[80vh] flex items-center justify-center overflow-hidden shrink-0">
             <div class="absolute inset-0 z-0">
                 <img src="https://i.imgur.com/8LNNbwP.jpg" 
                      alt="Taleon Live" 
                      class="w-full h-full object-cover object-center scale-105 animate-[pulse_10s_ease-in-out_infinite] opacity-60">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/40 to-transparent"></div>
                 <div class="absolute inset-0 bg-beatport-dark/20 mix-blend-overlay"></div>
             </div>
             
-            <div class="relative z-10 text-center px-4 w-full mt-10">
-                <h2 class="font-display font-black text-6xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-beatport-neon mb-3 drop-shadow-2xl">
+            <div class="relative z-10 text-center px-4 w-full">
+                <h2 class="font-display font-black text-5xl sm:text-7xl lg:text-8xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-beatport-neon mb-2 drop-shadow-2xl">
                     TALEON
                 </h2>
-                <p class="text-lg font-light tracking-widest text-gray-300 uppercase letter-spacing-2">
-                    Electronic <span class="text-beatport-neon font-bold">Resonance</span>
+                <p class="text-sm sm:text-lg font-light tracking-widest text-gray-300 uppercase">
+                    Organic Rhythms. Melodies That <span class="text-beatport-neon font-bold">Connect</span>
                 </p>
                 
-                <a href="#featured" class="inline-block mt-10 px-6 py-3 bg-transparent border-2 border-beatport-neon text-beatport-neon rounded-full text-sm font-bold hover:bg-beatport-neon hover:text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(148,213,0,0.8)] transform hover:scale-105">
-                    ENTER EXPERIENCE <i class="fas fa-arrow-down ml-2 animate-bounce"></i>
+                <a href="#featured" class="inline-block mt-8 px-6 py-3 bg-transparent border-2 border-beatport-neon text-beatport-neon rounded-full text-xs font-bold hover:bg-beatport-neon hover:text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(148,213,0,0.5)] transform hover:scale-105">
+                    ENTER <i class="fas fa-arrow-down ml-2 animate-bounce"></i>
                 </a>
             </div>
         </header>
 
         <!-- Career Highlights -->
-        <section id="featured" class="py-16 px-4 relative z-10 shrink-0">
-            <div class="text-center mb-10">
-                <h3 class="font-display text-3xl font-black mb-2 text-glow">HIGHLIGHTS</h3>
-                <div class="h-1 w-16 bg-beatport-neon mx-auto rounded-full"></div>
+        <section id="featured" class="py-12 sm:py-16 px-4 relative z-10 shrink-0">
+            <div class="text-center mb-8">
+                <h3 class="font-display text-2xl sm:text-3xl font-black mb-2 text-glow">HIGHLIGHTS</h3>
+                <div class="h-1 w-12 sm:w-16 bg-beatport-neon mx-auto rounded-full"></div>
             </div>
 
             <div class="space-y-4">
@@ -206,13 +233,15 @@
                     <button class="accordion-btn w-full px-5 py-4 flex items-center justify-between focus:outline-none hover:bg-white/5 transition-colors">
                         <div class="flex items-center gap-3">
                             <span class="font-mono text-gray-500 font-bold text-sm">01</span>
-                            <h4 class="accordion-title font-display text-lg font-bold text-white transition-colors text-left">About Me</h4>
+                            <h4 class="font-display text-base sm:text-lg font-bold text-white transition-colors text-left">About Me</h4>
                         </div>
                         <i class="fas fa-chevron-down accordion-icon text-gray-400 text-sm transition-transform duration-400"></i>
                     </button>
                     <div class="accordion-content px-5 border-t border-gray-800/50">
-                        <p class="text-gray-300 text-sm leading-relaxed">
-                            Emerging from the deep underground scenes, Taleon has crafted a unique signature sound that blends hypnotic basslines with futuristic synthesizer sequences.
+                        <p class="text-gray-300 text-sm leading-relaxed py-4">
+                            I'm <strong class="text-white">Jon Flores</strong>, the mind and soul behind the <strong class="text-white">Taleon</strong> project. Based in Spain, I've got serious skin in the game: I've been behind the decks as a DJ since 1996 and crafting tracks in the studio since 2002. My journey in the industry also includes founding my own label, <strong class="text-white">Undercool Productions</strong>, back in 2009. <br><br>
+                            After years of musical evolution, I launched my first single under the Taleon alias in 2022, focusing my sound entirely on <span class="text-beatport-neon font-medium">Organic, Progressive, and Melodic House</span>. <br><br>
+                            My ultimate goal is simple: to share music that is undeniably danceable, yet deeply emotional. I want to transmit good vibes through melodies that make your mind travel, provoke thought, or simply become the perfect soundtrack accompanying you through life.
                         </p>
                     </div>
                 </div>
@@ -222,19 +251,81 @@
                     <button class="accordion-btn w-full px-5 py-4 flex items-center justify-between focus:outline-none hover:bg-white/5 transition-colors">
                         <div class="flex items-center gap-3">
                             <span class="font-mono text-gray-500 font-bold text-sm">02</span>
-                            <h4 class="accordion-title font-display text-lg font-bold text-white transition-colors text-left">Top 1 Beatport</h4>
+                            <h4 class="font-display text-base sm:text-lg font-bold text-white transition-colors text-left">Top 1 Beatport</h4>
                         </div>
                         <i class="fas fa-chevron-down accordion-icon text-gray-400 text-sm transition-transform duration-400"></i>
                     </button>
-                    <div class="accordion-content px-5 border-t border-gray-800/50">
-                        <div class="flex flex-col gap-4 items-center">
-                            <div class="w-full aspect-square rounded-xl overflow-hidden border border-beatport-neon/30 shadow-[0_0_15px_rgba(148,213,0,0.2)]">
-                                <img src="https://images.unsplash.com/photo-1571266028243-cb40f6733261?auto=format&fit=crop&w=400&q=80" alt="Top 1 Cover" class="w-full h-full object-cover">
+                    <div class="accordion-content px-0 border-t border-gray-800/50">
+                        <div class="bg-transparent pb-4">
+                            <!-- Header -->
+                            <div class="flex justify-between items-center px-4 py-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full overflow-hidden border border-beatport-neon p-[1px]">
+                                        <img src="https://i.imgur.com/gWmzcM1.jpg" class="w-full h-full rounded-full object-cover">
+                                    </div>
+                                    <div class="leading-tight">
+                                        <p class="text-sm font-bold text-white flex items-center gap-1">taleon_music <i class="fas fa-check-circle text-beatport-neon text-[10px]"></i></p>
+                                        <p class="text-[11px] text-gray-500">April 30 • Milestone</p>
+                                    </div>
+                                </div>
+                                <div class="relative">
+                                    <button class="text-gray-400 hover:text-white px-2 focus:outline-none" onclick="toggleMenu('acc2')">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                    <div id="menu-acc2" class="hidden absolute right-0 top-full mt-2 w-48 bg-dark-900/95 backdrop-blur-md border border-gray-700 rounded-xl overflow-hidden shadow-2xl z-30 transition-all">
+                                        <a href="https://www.beatport.com/track/solemnia/27203539" target="_blank" class="block px-4 py-3 border-b border-gray-800 text-sm text-white hover:bg-beatport-neon hover:text-black transition-colors"><i class="fas fa-headphones mr-2 w-4"></i> Buy on Beatport</a>
+                                        <a href="https://www.beatstats.com/artist/taleon/1077287" target="_blank" class="block px-4 py-3 border-b border-gray-800 text-sm text-white hover:bg-beatport-neon hover:text-black transition-colors"><i class="fas fa-chart-line mr-2 w-4"></i> Verify on Beatstats</a>
+                                        <a href="#" class="block px-4 py-3 text-sm text-gray-400 hover:bg-gray-800 transition-colors text-center" onclick="toggleMenu('acc2'); return false;">Cancel</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="w-full text-center">
-                                <span class="inline-block px-3 py-1 bg-beatport-neon text-black font-black text-xs rounded-full mb-2 uppercase">Milestone</span>
-                                <h5 class="text-xl font-black text-white mb-2">Neon Systems</h5>
-                                <p class="text-gray-300 text-sm">Reaching the pinnacle of the Beatport Hype Top 100 chart globally.</p>
+                            <!-- Image Carousel -->
+                            <div class="relative w-full overflow-hidden border-y border-gray-800">
+                                <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar" id="carousel-acc2" onscroll="updateDots('acc2', 5)">
+                                    <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/ApXpu4M.png')">
+                                        <img src="https://i.imgur.com/ApXpu4M.png" class="w-full aspect-square object-cover">
+                                    </div>
+                                    <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/N63eYi0.png')">
+                                        <img src="https://i.imgur.com/N63eYi0.png" class="w-full aspect-square object-cover">
+                                    </div>
+                                    <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/Ty6OWsh.png')">
+                                        <img src="https://i.imgur.com/Ty6OWsh.png" class="w-full aspect-square object-cover">
+                                    </div>
+                                    <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/NuLEBrd.png')">
+                                        <img src="https://i.imgur.com/NuLEBrd.png" class="w-full aspect-square object-cover">
+                                    </div>
+                                    <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/rviGqbQ.png')">
+                                        <img src="https://i.imgur.com/rviGqbQ.png" class="w-full aspect-square object-cover">
+                                    </div>
+                                </div>
+                                <div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md px-2 py-1 rounded-full text-xs text-white font-bold tracking-widest pointer-events-none">
+                                    <span id="counter-acc2">1</span>/5
+                                </div>
+                            </div>
+                            <!-- Actions -->
+                            <div class="flex justify-between items-center px-4 py-3">
+                                <div class="flex gap-2">
+                                    <a href="https://www.beatport.com/track/solemnia/27203539" target="_blank" class="px-4 py-1.5 bg-white/10 hover:bg-beatport-neon text-white hover:text-black rounded-lg text-[10px] sm:text-xs font-bold transition-colors border border-white/20 hover:border-beatport-neon flex items-center">
+                                        BEATPORT
+                                    </a>
+                                </div>
+                                <div class="flex gap-1.5">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-beatport-neon dot-acc2-0"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-gray-600 dot-acc2-1"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-gray-600 dot-acc2-2"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-gray-600 dot-acc2-3"></div>
+                                    <div class="w-1.5 h-1.5 rounded-full bg-gray-600 dot-acc2-4"></div>
+                                </div>
+                            </div>
+                            <!-- Text -->
+                            <div class="px-4 text-sm">
+                                <div class="flex flex-col">
+                                    <div class="line-clamp-3 leading-snug break-words" id="text-container-acc2">
+                                        <span class="font-bold text-white mr-1">taleon_music</span>
+                                        <span class="text-gray-300">Number ONE! 🏆 We just hit #1 on the Hype Organic House chart and climbed to #4 on the Global Main Chart! 📈 A massive thank you to the Beatport curation team for selecting 'Solemnia' as the #1 Hype Pick of the week. Swipe left to see the journey. Thank you all for the incredible support! 🙏🌿✨</span>
+                                    </div>
+                                    <button onclick="toggleText('acc2')" id="btn-acc2" class="text-gray-500 font-medium text-left mt-1 w-fit hover:text-gray-300 text-xs">more</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -245,7 +336,7 @@
                     <button class="accordion-btn w-full px-5 py-4 flex items-center justify-between focus:outline-none hover:bg-white/5 transition-colors group">
                         <div class="flex items-center gap-3">
                             <span class="font-mono text-gray-500 font-bold text-sm">03</span>
-                            <h4 class="accordion-title font-display text-lg font-bold text-white transition-colors text-left flex items-center gap-2">
+                            <h4 class="font-display text-base sm:text-lg font-bold text-white transition-colors text-left flex items-center gap-2">
                                 Beatstats 
                                 <span class="flex items-center gap-1 bg-black/50 px-2 py-0.5 rounded border border-gray-700 text-[10px]">
                                     <div class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></div> LIVE
@@ -254,396 +345,539 @@
                         </div>
                         <i class="fas fa-chevron-down accordion-icon text-gray-400 text-sm transition-transform duration-400"></i>
                     </button>
-                    <div class="accordion-content px-5 border-t border-gray-800/50">
-                        <div class="bg-black/40 rounded-xl p-3 border border-beatport-neon/20 font-mono">
-                            <div class="grid grid-cols-2 gap-2 mb-4">
-                                <div class="bg-dark-900 p-2 rounded-lg border border-gray-800 text-center">
-                                    <p class="text-gray-500 text-[9px] uppercase tracking-widest mb-1">Global</p>
-                                    <p class="text-white text-lg font-black">#248</p>
-                                </div>
-                                <div class="bg-dark-900 p-2 rounded-lg border border-beatport-neon/30 text-center shadow-[0_0_10px_rgba(148,213,0,0.1)]">
-                                    <p class="text-beatport-neon text-[9px] uppercase tracking-widest mb-1">Tech House</p>
-                                    <p class="text-white text-lg font-black">#85</p>
-                                </div>
+                    
+                    <div class="accordion-content px-0 border-t border-gray-800/50 bg-black/40">
+                        <div class="p-5">
+                            <!-- Header Dashboard -->
+                            <div class="flex items-center justify-between mb-6 border-b border-gray-800 pb-3">
+                                <h5 class="text-xs font-mono text-gray-400 tracking-widest uppercase flex items-center gap-2">
+                                    <i class="fas fa-chart-bar text-gray-500"></i> Current Chart Positions
+                                </h5>
+                                <i class="fas fa-satellite-dish text-beatport-neon animate-pulse text-sm"></i>
                             </div>
-                            <div class="space-y-2 mb-4">
-                                <div class="flex items-center justify-between bg-dark-900/80 p-2 rounded border border-gray-800">
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-beatport-neon font-bold text-xs">1</span>
-                                        <div>
-                                            <p class="text-white text-xs truncate w-32">Solemnia (Org.)</p>
+
+                            <!-- Taleon Stats -->
+                            <div class="mb-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <img src="https://i.imgur.com/gWmzcM1.jpg" class="w-10 h-10 rounded-full border border-beatport-neon object-cover shadow-[0_0_10px_rgba(148,213,0,0.2)]">
+                                    <div>
+                                        <h6 class="font-bold text-white text-sm tracking-wide">TALEON</h6>
+                                        <p class="text-[9px] text-beatport-neon uppercase tracking-widest font-mono">Artist Ranking</p>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="bg-dark-900 border border-gray-800 rounded-xl p-3 flex flex-col justify-center items-center relative overflow-hidden hover:border-beatport-neon transition-colors group">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <span class="text-[9px] text-gray-400 text-center mb-1 h-6 flex items-center font-mono leading-tight">HYPE - ORGANIC HOUSE</span>
+                                        <div class="flex items-end gap-1">
+                                            <span class="font-display font-black text-3xl text-white">68</span>
+                                            <i class="fas fa-caret-up text-beatport-neon text-sm mb-1 animate-bounce"></i>
                                         </div>
                                     </div>
-                                    <i class="fas fa-arrow-up text-beatport-neon text-[10px]"></i>
+                                    <div class="bg-dark-900 border border-gray-800 rounded-xl p-3 flex flex-col justify-center items-center relative overflow-hidden hover:border-beatport-neon transition-colors group">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <span class="text-[9px] text-gray-400 text-center mb-1 h-6 flex items-center font-mono leading-tight">ORGANIC HOUSE</span>
+                                        <div class="flex items-end gap-1">
+                                            <span class="font-display font-black text-3xl text-white">141</span>
+                                            <i class="fas fa-caret-up text-beatport-neon text-sm mb-1 animate-bounce"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <a href="https://www.beatstats.com/artist/taleon/1077287" target="_blank" class="block w-full py-2 text-center bg-white/5 hover:bg-beatport-neon hover:text-black text-beatport-neon text-[10px] font-bold uppercase tracking-wider rounded-lg transition-colors border border-beatport-neon/20">
-                                View Full Stats <i class="fas fa-external-link-alt ml-1"></i>
-                            </a>
+
+                            <!-- Undercool Stats -->
+                            <div class="mb-2">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <img src="https://www.traxsource.com/files/labels/3912.jpg" class="w-10 h-10 rounded-md border border-gray-700 object-cover bg-white">
+                                    <div>
+                                        <h6 class="font-bold text-white text-sm tracking-wide">UNDERCOOL PROD.</h6>
+                                        <p class="text-[9px] text-beatport-neon uppercase tracking-widest font-mono">Label Ranking</p>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="bg-dark-900 border border-gray-800 rounded-xl p-3 flex flex-col justify-center items-center relative overflow-hidden hover:border-beatport-neon transition-colors group">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <span class="text-[9px] text-gray-400 text-center mb-1 h-6 flex items-center font-mono leading-tight">HYPE - ORGANIC HOUSE</span>
+                                        <div class="flex items-end gap-1">
+                                            <span class="font-display font-black text-3xl text-white">42</span>
+                                            <i class="fas fa-caret-up text-beatport-neon text-sm mb-1 animate-bounce"></i>
+                                        </div>
+                                    </div>
+                                    <div class="bg-dark-900 border border-gray-800 rounded-xl p-3 flex flex-col justify-center items-center relative overflow-hidden hover:border-beatport-neon transition-colors group">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <span class="text-[9px] text-gray-400 text-center mb-1 h-6 flex items-center font-mono leading-tight">ORGANIC HOUSE</span>
+                                        <div class="flex items-end gap-1">
+                                            <span class="font-display font-black text-3xl text-white">78</span>
+                                            <i class="fas fa-caret-up text-beatport-neon text-sm mb-1 animate-bounce"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Action Button -->
+                            <div class="mt-6 border-t border-gray-800 pt-5 text-center">
+                                <a href="https://www.beatstats.com/artist/taleon/1077287" target="_blank" class="inline-flex items-center gap-2 px-6 py-2 bg-gray-800 hover:bg-white text-gray-300 hover:text-black rounded-full text-xs font-bold transition-all border border-gray-700 hover:border-white">
+                                    <i class="fas fa-external-link-alt"></i> VERIFY FULL STATS
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- News / Transmissions (Instagram Style) -->
-        <section id="news" class="py-10 bg-[#0a0b10] border-y border-gray-800 relative z-10 shrink-0">
-            <div class="px-4 mb-6">
-                <h3 class="font-display text-2xl font-black text-white flex items-center gap-3">
-                    <!-- Icono Inventado: Ecualizador animado de señal -->
-                    <div class="flex items-end justify-center gap-1 w-8 h-8 rounded-lg bg-beatport-neon/10 border border-beatport-neon/30 pb-2">
-                        <div class="w-1 bg-beatport-neon rounded-t-sm h-2 animate-pulse"></div>
-                        <div class="w-1 bg-beatport-neon rounded-t-sm h-4 animate-[pulse_1.5s_ease-in-out_infinite]"></div>
-                        <div class="w-1 bg-beatport-neon rounded-t-sm h-3 animate-[pulse_0.8s_ease-in-out_infinite]"></div>
+        <!-- Feed / Instagram Style Section -->
+        <section id="news" class="py-12 bg-dark-900/50 relative z-10 shrink-0">
+            <div class="px-0 sm:px-4">
+                <div class="flex items-center justify-between mb-8 px-4 sm:px-0">
+                    <h3 class="font-display text-2xl sm:text-3xl font-black text-glow uppercase">FEED</h3>
+                    <!-- Invented Animated Equalizer Icon -->
+                    <div class="flex items-end gap-1 h-6">
+                        <div class="w-1.5 h-3 bg-beatport-neon rounded-t-sm animate-equalizer" style="animation-delay: 0.1s;"></div>
+                        <div class="w-1.5 h-6 bg-beatport-neon rounded-t-sm animate-equalizer" style="animation-delay: 0.3s;"></div>
+                        <div class="w-1.5 h-4 bg-beatport-neon rounded-t-sm animate-equalizer" style="animation-delay: 0.2s;"></div>
                     </div>
-                    FEED
-                </h3>
-            </div>
-            
-            <div class="flex flex-col gap-8 w-full" id="mobile-feed">
-                <!-- Se llena con JS -->
+                </div>
+
+                <!-- Feed Container: Full width mobile, Grid on desktop -->
+                <div class="flex flex-col gap-8 sm:grid sm:grid-cols-2 md:grid-cols-3 sm:gap-6" id="feed-container">
+                    <!-- Posts injected by JavaScript -->
+                </div>
             </div>
         </section>
 
-        <!-- Videos -->
-        <section id="visuals" class="py-16 px-4 relative z-10 shrink-0">
+        <!-- Visuals / YouTube Section -->
+        <section id="visuals" class="py-12 px-4 relative z-10 shrink-0">
             <div class="text-center mb-10">
-                <h3 class="font-display text-3xl font-black mb-2 text-glow">VIDEOS</h3>
+                <h3 class="font-display text-2xl sm:text-3xl font-black mb-2 text-glow">VIDEOS</h3>
+                <div class="h-1 w-12 bg-beatport-neon mx-auto rounded-full"></div>
             </div>
 
-            <div class="flex flex-col gap-6">
-                <div class="glass-panel p-1.5 rounded-2xl box-glow transition-all duration-300">
-                    <div class="aspect-video rounded-xl overflow-hidden relative bg-black">
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/lGU3pFWwSIs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="grid grid-cols-1 gap-6 sm:gap-8">
+                <!-- Video 1 -->
+                <div class="glass-panel p-2 rounded-2xl sm:rounded-3xl box-glow transition-all duration-300">
+                    <div class="aspect-video rounded-xl sm:rounded-2xl overflow-hidden relative bg-black">
+                        <iframe class="absolute top-0 left-0 w-full h-full rounded-xl sm:rounded-2xl" src="https://www.youtube.com/embed/lGU3pFWwSIs?si=mUqRUqCX5wFbAz2I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
                 
-                <div class="glass-panel p-1.5 rounded-2xl box-glow transition-all duration-300">
-                    <div class="aspect-video rounded-xl overflow-hidden relative bg-black">
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/XQtxeSmStek" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- Video 2 -->
+                <div class="glass-panel p-2 rounded-2xl sm:rounded-3xl box-glow transition-all duration-300">
+                    <div class="aspect-video rounded-xl sm:rounded-2xl overflow-hidden relative bg-black">
+                        <iframe class="absolute top-0 left-0 w-full h-full rounded-xl sm:rounded-2xl" src="https://www.youtube.com/embed/XQtxeSmStek?si=5Fhlmt03bawJ02aa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="py-16 px-4 relative z-10 bg-dark-900/80 border-t border-beatport-dark/40 shrink-0">
-            <div class="text-center mb-8">
-                <h3 class="font-display text-3xl font-black mb-2 text-glow">DIRECT LINE</h3>
-            </div>
-
-            <div class="glass-panel rounded-3xl p-5 shadow-2xl">
-                <div class="space-y-4 flex flex-col">
+        <!-- Contact / Direct Line -->
+        <section id="contact" class="py-16 relative z-10 bg-dark-900/80 border-t border-beatport-dark/20 shrink-0">
+            <div class="px-4">
+                <div class="text-center mb-8 flex flex-col items-center">
+                    <h3 class="font-display text-2xl sm:text-3xl font-black mb-3 text-glow">DIRECT LINE</h3>
                     
-                    <div class="flex items-end gap-3 w-full">
-                        <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-beatport-neon/50 mb-1 shadow-[0_0_10px_rgba(148,213,0,0.2)] bg-black">
-                            <img src="https://i.imgur.com/gWmzcM1.jpg" alt="Taleon" class="w-full h-full object-cover">
+                    <!-- Status Badge Redesigned -->
+                    <div class="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-black/50 border border-beatport-neon/30 px-4 py-2 rounded-xl backdrop-blur-sm">
+                        <div class="flex items-center gap-2">
+                            <div class="relative flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-beatport-neon opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-beatport-neon"></span>
+                            </div>
+                            <span class="text-white text-xs font-bold tracking-widest">ONLINE</span>
                         </div>
-                        <div class="flex flex-col w-full items-start space-y-2">
-                            <div class="chat-bubble-left text-white px-5 py-3 rounded-2xl rounded-bl-none max-w-[90%] text-sm font-medium shadow-md">
-                                Hey! I'm always open to connect for bookings or remixes. 🎛️
+                        <div class="hidden sm:block w-px h-4 bg-gray-700"></div>
+                        <span class="text-gray-400 text-xs italic">"In the studio. Hit me up, I'll reply soon."</span>
+                    </div>
+                </div>
+
+                <div class="glass-panel rounded-3xl p-6 shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-gray-800">
+                    <div class="space-y-6 flex flex-col">
+                        <!-- Chat Message 1 -->
+                        <div class="flex w-full mb-2 items-end gap-3">
+                            <img src="https://i.imgur.com/gWmzcM1.jpg" class="w-8 h-8 rounded-full border border-gray-700 object-cover flex-shrink-0">
+                            <div class="chat-bubble-left text-white px-5 py-3 rounded-2xl rounded-bl-none max-w-[85%] text-sm font-medium">
+                                Hey! Booking inquiries, promos or just want to connect?
                             </div>
-                            <div class="chat-bubble-left text-white px-5 py-3 rounded-2xl rounded-bl-none max-w-[90%] text-sm font-medium shadow-md">
-                                You can reach my management directly at my email. Drop a message!
+                        </div>
+
+                        <!-- Chat Message 2 -->
+                        <div class="flex w-full mb-6 items-end gap-3">
+                            <img src="https://i.imgur.com/gWmzcM1.jpg" class="w-8 h-8 rounded-full border border-gray-700 object-cover flex-shrink-0">
+                            <div class="chat-bubble-left text-white px-5 py-3 rounded-2xl rounded-bl-none max-w-[85%] text-sm font-medium">
+                                Drop me an email directly. I read everything.
                             </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <div class="flex justify-center mt-2">
+                            <button onclick="copyEmail()" id="copy-btn" class="w-full sm:w-auto bg-transparent border-2 border-beatport-neon text-beatport-neon font-bold px-8 py-4 rounded-xl hover:bg-beatport-neon hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(148,213,0,0.2)] flex items-center justify-center gap-3">
+                                <i class="fas fa-envelope text-lg"></i>
+                                <span>taleonmusic@gmail.com</span>
+                                <i class="fas fa-copy ml-2 opacity-50" id="copy-icon"></i>
+                            </button>
                         </div>
                     </div>
-
-                    <div class="flex flex-col w-full items-end mt-2">
-                        <button id="copy-email-btn" class="chat-bubble-right group relative text-white font-black px-5 py-3 rounded-2xl rounded-br-none max-w-[90%] outline-none transition-all text-right hover:bg-beatport-neon hover:text-black flex items-center gap-3 border border-beatport-neon/30 text-sm">
-                            <span id="copy-text">taleonmusic@gmail.com</span>
-                            <i id="copy-icon" class="fas fa-copy text-beatport-neon group-hover:text-black"></i>
-                        </button>
-                    </div>
-                    
                 </div>
             </div>
         </section>
 
-        <footer class="bg-[#050505] pt-12 pb-10 border-t border-dark-800 relative z-10 shrink-0">
-            <div class="px-4 text-center flex flex-col items-center">
-                <h2 class="font-display font-black text-2xl mb-6 text-white">TAL<span class="text-beatport-neon">EON</span></h2>
+        <!-- Redesigned Linktree / Footer Section -->
+        <footer class="bg-black pt-16 pb-40 border-t border-gray-900 relative z-10 shrink-0">
+            <div class="px-4 text-center max-w-sm mx-auto">
+                <div class="w-20 h-20 mx-auto rounded-full border-2 border-beatport-neon p-1 mb-4 shadow-[0_0_20px_rgba(148,213,0,0.4)]">
+                     <img src="https://i.imgur.com/gWmzcM1.jpg" class="w-full h-full rounded-full object-cover">
+                </div>
+                <h2 class="font-display font-black text-3xl mb-1 text-white tracking-wider">TAL<span class="text-beatport-neon">EON</span></h2>
+                <p class="text-gray-500 text-xs tracking-widest font-mono uppercase mb-10">Official Links</p>
                 
-                <div class="flex flex-wrap justify-center gap-3 mb-8 w-full max-w-[300px]">
-                    <!-- Botón Beatport con el logo actualizado adaptado al diseño -->
-                    <a href="https://www.beatport.com/artist/taleon/1077287" target="_blank" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center transition-all group overflow-hidden border border-transparent hover:border-beatport-neon shadow-none hover:shadow-[0_0_15px_rgba(148,213,0,0.5)] bg-black p-[2px]">
-                        <img src="https://i1.sndcdn.com/avatars-JxaRv18vXtTglVU3-z0ws9A-t1080x1080.jpg" alt="Beatport" class="w-full h-full object-cover rounded-full filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+                <!-- Links Stack -->
+                <div class="flex flex-col gap-4 mb-16">
+                    <!-- Beatport Original Logo -->
+                    <a href="https://www.beatport.com/artist/taleon/1077287" target="_blank" class="w-full glass-panel flex items-center p-4 rounded-2xl hover:bg-beatport-neon group transition-all duration-300 border border-gray-800 hover:border-beatport-neon relative overflow-hidden transform hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(148,213,0,0.2)]">
+                        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 relative z-20">
+                            <img src="https://i1.sndcdn.com/avatars-JxaRv18vXtTglVU3-z0ws9A-t1080x1080.jpg" class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-300">
+                        </div>
+                        <span class="flex-grow text-center font-bold text-gray-300 group-hover:text-black tracking-widest text-sm transition-colors z-20 relative left-[-20px]">BEATPORT</span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-beatport-neon/0 via-beatport-neon/40 to-beatport-neon/0 opacity-0 group-hover:opacity-100 animate-[pulse-slow_2s_infinite] z-10"></div>
                     </a>
-                    <a href="https://soundcloud.com/taleonmusic" target="_blank" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-beatport-neon hover:text-black transition-all text-sm">
-                        <i class="fab fa-soundcloud"></i>
+
+                    <!-- Spotify -->
+                    <a href="https://open.spotify.com/intl-es/artist/22jXZlcnm6s2SidCCQ23rh" target="_blank" class="w-full glass-panel flex items-center p-4 rounded-2xl hover:bg-[#1DB954] group transition-all duration-300 border border-gray-800 hover:border-[#1DB954] transform hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(29,185,84,0.2)]">
+                        <div class="w-10 h-10 rounded-full bg-gray-900 group-hover:bg-white flex items-center justify-center flex-shrink-0 transition-colors z-20">
+                            <i class="fab fa-spotify text-2xl text-gray-400 group-hover:text-[#1DB954] transition-colors"></i>
+                        </div>
+                        <span class="flex-grow text-center font-bold text-gray-300 group-hover:text-white tracking-widest text-sm transition-colors z-20 relative left-[-20px]">SPOTIFY</span>
                     </a>
-                    <a href="https://open.spotify.com/intl-es/artist/22jXZlcnm6s2SidCCQ23rh" target="_blank" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-beatport-neon hover:text-black transition-all text-sm">
-                        <i class="fab fa-spotify"></i>
+
+                    <!-- Soundcloud -->
+                    <a href="https://soundcloud.com/taleonmusic" target="_blank" class="w-full glass-panel flex items-center p-4 rounded-2xl hover:bg-[#ff5500] group transition-all duration-300 border border-gray-800 hover:border-[#ff5500] transform hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,85,0,0.2)]">
+                        <div class="w-10 h-10 rounded-full bg-gray-900 group-hover:bg-white flex items-center justify-center flex-shrink-0 transition-colors z-20">
+                            <i class="fab fa-soundcloud text-xl text-gray-400 group-hover:text-[#ff5500] transition-colors mt-1"></i>
+                        </div>
+                        <span class="flex-grow text-center font-bold text-gray-300 group-hover:text-white tracking-widest text-sm transition-colors z-20 relative left-[-20px]">SOUNDCLOUD</span>
                     </a>
-                    <a href="https://www.youtube.com/@taleon_music" target="_blank" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-beatport-neon hover:text-black transition-all text-sm">
-                        <i class="fab fa-youtube"></i>
+
+                    <!-- Apple Music -->
+                    <a href="https://music.apple.com/fm/artist/taleon/1648665295" target="_blank" class="w-full glass-panel flex items-center p-4 rounded-2xl hover:bg-[#fa243c] group transition-all duration-300 border border-gray-800 hover:border-[#fa243c] transform hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(250,36,60,0.2)]">
+                         <div class="w-10 h-10 rounded-full bg-gray-900 group-hover:bg-white flex items-center justify-center flex-shrink-0 transition-colors z-20">
+                            <i class="fab fa-apple text-2xl text-gray-400 group-hover:text-[#fa243c] transition-colors mb-0.5"></i>
+                        </div>
+                        <span class="flex-grow text-center font-bold text-gray-300 group-hover:text-white tracking-widest text-sm transition-colors z-20 relative left-[-20px]">APPLE MUSIC</span>
                     </a>
-                    <a href="https://music.apple.com/fm/artist/taleon/1648665295" target="_blank" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:bg-beatport-neon hover:text-black transition-all text-sm">
-                        <i class="fab fa-apple"></i>
+                    
+                    <!-- YouTube -->
+                    <a href="https://www.youtube.com/@taleon_music" target="_blank" class="w-full glass-panel flex items-center p-4 rounded-2xl hover:bg-[#FF0000] group transition-all duration-300 border border-gray-800 hover:border-[#FF0000] transform hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,0,0,0.2)]">
+                         <div class="w-10 h-10 rounded-full bg-gray-900 group-hover:bg-white flex items-center justify-center flex-shrink-0 transition-colors z-20">
+                            <i class="fab fa-youtube text-lg text-gray-400 group-hover:text-[#FF0000] transition-colors"></i>
+                        </div>
+                        <span class="flex-grow text-center font-bold text-gray-300 group-hover:text-white tracking-widest text-sm transition-colors z-20 relative left-[-20px]">YOUTUBE</span>
                     </a>
+
+                    <div class="grid grid-cols-2 gap-4 mt-2">
+                        <!-- Beatstats -->
+                        <a href="https://www.beatstats.com/artist/taleon/1077287" target="_blank" class="w-full glass-panel flex flex-col items-center justify-center p-4 rounded-2xl hover:bg-gray-800 group transition-all duration-300 border border-gray-800 hover:border-gray-500">
+                            <span class="font-black text-xl text-gray-400 group-hover:text-white transition-colors mb-1">BS</span>
+                            <span class="font-mono text-[10px] text-gray-500 uppercase tracking-widest group-hover:text-gray-300 transition-colors">Beatstats</span>
+                        </a>
+                        <!-- Traxsource -->
+                        <a href="https://www.traxsource.com/artist/681477/taleon" target="_blank" class="w-full glass-panel flex flex-col items-center justify-center p-4 rounded-2xl hover:bg-gray-800 group transition-all duration-300 border border-gray-800 hover:border-gray-500">
+                            <span class="font-black text-xl text-gray-400 group-hover:text-white transition-colors mb-1">TS</span>
+                            <span class="font-mono text-[10px] text-gray-500 uppercase tracking-widest group-hover:text-gray-300 transition-colors">Traxsource</span>
+                        </a>
+                    </div>
                 </div>
                 
-                <p class="text-gray-600 text-xs">© 2026 Taleon Music. All Rights Reserved.</p>
+                <p class="text-gray-600 text-xs sm:text-sm">© 2026 Taleon Music. All Rights Reserved.<br>Engineered for the future.</p>
             </div>
         </footer>
 
-        <!-- Fixed Player (Enclavado al fondo de la app) -->
-        <div id="player-container" class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[768px] z-50 transition-transform duration-500 ease-in-out transform translate-y-0 shadow-[0_-15px_30px_rgba(0,0,0,0.9)]">
-            <button id="toggle-player-btn" class="absolute -top-7 right-4 w-12 h-7 bg-beatport-neon text-black rounded-t-lg flex items-center justify-center shadow-[0_-5px_15px_rgba(0,0,0,0.8)] border-t border-x border-beatport-neon/50 outline-none">
-                <i id="toggle-player-icon" class="fas fa-chevron-down text-sm"></i>
-            </button>
-            
-            <div class="w-full bg-[#050505] h-[150px] border-t-2 border-beatport-neon/50 flex">
-                <!-- ID de Solemnia incrustado -->
-                <iframe src="https://embed.beatport.com/?id=27203539&type=track" width="100%" height="150" frameborder="0" scrolling="no" class="w-full block"></iframe>
-            </div>
-        </div>
-
     </main>
 
-    <!-- Lightbox de Fotos (Este sí ocupa pantalla completa siempre) -->
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm cursor-zoom-out">
-        <span class="absolute top-6 right-6 text-white text-4xl hover:text-beatport-neon cursor-pointer transition-colors">&times;</span>
-        <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-[90vw] max-h-[90vh] rounded-2xl border border-beatport-neon shadow-[0_0_30px_rgba(148,213,0,0.2)] object-contain">
+    <!-- Beatport Player Sticky Bottom -->
+    <div id="player-container" class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[768px] z-50 transition-transform duration-500 transform translate-y-0 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
+        <!-- Tab to collapse/expand -->
+        <div class="absolute -top-6 right-4 sm:right-6 bg-beatport-neon text-black px-3 py-1 rounded-t-lg cursor-pointer hover:bg-white transition-colors shadow-[0_-5px_15px_rgba(148,213,0,0.3)]" onclick="togglePlayer()">
+            <i id="player-arrow" class="fas fa-chevron-down text-sm"></i>
+        </div>
+        <!-- Beatport Embed -->
+        <div class="w-full bg-black/90 backdrop-blur-xl border-t border-x border-beatport-neon/30 sm:rounded-t-2xl">
+            <iframe src="https://embed.beatport.com/?id=27203539&type=track" width="100%" height="162" frameborder="0" scrolling="no" class="max-w-full"></iframe>
+        </div>
     </div>
 
     <script>
-        // Data for IG Posts
-        const img1 = "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"; 
-        const img2 = "https://images.unsplash.com/photo-1571266028243-cb40f6733261?auto=format&fit=crop&w=800&q=80"; 
-        const img3 = "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=800&q=80";
-        const avatarImg = "https://i.imgur.com/gWmzcM1.jpg";
-
-        const newsItems = Array.from({ length: 6 }, (_, i) => { // Reducido a 6 para no hacer el feed eterno
-            const hasMultiple = i % 2 === 0;
-            return {
-                id: i + 1,
-                date: `May ${12 - i}, 2026`,
-                images: hasMultiple ? [img1, img2, img3] : [i % 2 === 0 ? img1 : img2],
-                text: "Diving deep into the electronic resonance. The new frequencies are ready for the upcoming summer tour. Thanks to everyone who supported 'Solemnia' this week! Link in bio to listen to the full set from last night. 🎛️⚡ #techno #techhouse #taleon",
+        // --- 1. FEED POSTS DATA (MANUAL UPDATES HERE) ---
+        const posts = [
+            {
+                id: 'post1',
+                title: 'Beatport Domination',
+                subtitle: 'Trending now',
+                images: [
+                    "https://i.imgur.com/qL9Cp5o.jpeg",
+                    "https://i.imgur.com/3JkMHel.png"
+                ],
+                text: "Mind blown! 🤯 We currently have 5 tracks sitting in the Beatport Hype Top 100 at the same time. The support from the community and DJs around the globe has been unreal. Thank you for riding this wave with me! 🌊🚀 #OrganicHouse #Beatport",
                 link: "https://www.beatport.com/artist/taleon/1077287"
-            };
-        });
+            },
+            {
+                id: 'post2',
+                title: 'Hype Organic House',
+                subtitle: 'Trending now',
+                images: [
+                    "https://i.imgur.com/bJzVSfR.jpeg",
+                    "https://i.imgur.com/Cav8Gs0.jpeg"
+                ],
+                text: "Taking over the charts! 🔥 We just hit the #1 Trending spot in Hype Organic House. Seeing the sound connect with so many of you is the ultimate reward. Let's keep this momentum going! 🌿🎶 #Trending #BeatportHype",
+                link: "https://www.beatport.com/artist/taleon/1077287"
+            },
+            {
+                id: 'post3',
+                title: 'New Sounds',
+                subtitle: '3 days ago',
+                images: [
+                    "https://i.imgur.com/uQtKqzR.jpeg",
+                    "https://i.imgur.com/X5m4Qv9.jpeg"
+                ],
+                text: "STUDIO TIME! 🎛️🎹 Lock down mode. Testing new analog gear and cooking up some deep, emotional grooves for the next release. Can't wait to test these out on the dancefloor. #StudioSession",
+                link: "https://www.beatport.com/artist/taleon/1077287"
+            }
+        ];
 
-        // 1. Render App Feed (Mobile Style Always)
-        const mobileFeed = document.getElementById('mobile-feed');
-        newsItems.forEach(item => {
-            const hasMultiple = item.images.length > 1;
-            
+        // Render Feed
+        const feedContainer = document.getElementById('feed-container');
+        posts.forEach(post => {
+            const hasMultipleImages = post.images.length > 1;
             let imagesHtml = '';
             let dotsHtml = '';
             
-            item.images.forEach((img, index) => {
+            post.images.forEach((img, index) => {
                 imagesHtml += `
                     <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in" onclick="openLightbox('${img}')">
                         <img src="${img}" class="w-full aspect-square object-cover">
                     </div>
                 `;
-                dotsHtml += `<div class="w-1.5 h-1.5 rounded-full ${index === 0 ? 'bg-beatport-neon' : 'bg-gray-600'} transition-colors duration-300 dot-${item.id}-${index}"></div>`;
+                if(hasMultipleImages) {
+                    dotsHtml += `<div class="w-1.5 h-1.5 rounded-full ${index === 0 ? 'bg-beatport-neon' : 'bg-gray-600'} transition-colors duration-300 dot-${post.id}-${index}"></div>`;
+                }
             });
 
             const html = `
-                <div class="bg-[#050505] border-y border-gray-800 pb-4">
+                <div class="glass-panel border-y sm:border border-gray-800 bg-dark-900/40 sm:rounded-2xl overflow-hidden mb-6 sm:mb-0 box-glow transition-colors">
                     <!-- Header -->
                     <div class="flex justify-between items-center px-4 py-3">
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded-full overflow-hidden border border-beatport-neon p-[1px]">
-                                <img src="${avatarImg}" class="w-full h-full rounded-full object-cover">
+                                <img src="https://i.imgur.com/gWmzcM1.jpg" class="w-full h-full rounded-full object-cover">
                             </div>
                             <div class="leading-tight">
                                 <p class="text-sm font-bold text-white flex items-center gap-1">taleon_music <i class="fas fa-check-circle text-beatport-neon text-[10px]"></i></p>
-                                <p class="text-[11px] text-gray-500">${item.date}</p>
+                                <p class="text-[11px] text-gray-500">${post.subtitle}</p>
                             </div>
                         </div>
                         <div class="relative">
-                            <button class="text-gray-400 hover:text-white px-2 focus:outline-none" onclick="toggleMenu(${item.id})">
+                            <button class="text-gray-400 hover:text-white px-2 focus:outline-none" onclick="toggleMenu('${post.id}')">
                                 <i class="fas fa-ellipsis-h"></i>
                             </button>
                             <!-- Dropdown Menu -->
-                            <div id="menu-${item.id}" class="hidden absolute right-0 top-full mt-2 w-48 bg-dark-900/95 backdrop-blur-md border border-gray-700 rounded-xl overflow-hidden shadow-2xl z-30 transition-all">
+                            <div id="menu-${post.id}" class="hidden absolute right-0 top-full mt-2 w-48 bg-dark-900/95 backdrop-blur-md border border-gray-700 rounded-xl overflow-hidden shadow-2xl z-30 transition-all">
                                 <a href="https://www.beatport.com/artist/taleon/1077287" target="_blank" class="block px-4 py-3 border-b border-gray-800 text-sm text-white hover:bg-beatport-neon hover:text-black transition-colors"><i class="fas fa-headphones mr-2 w-4"></i> Beatport</a>
                                 <a href="https://open.spotify.com/intl-es/artist/22jXZlcnm6s2SidCCQ23rh" target="_blank" class="block px-4 py-3 border-b border-gray-800 text-sm text-white hover:bg-beatport-neon hover:text-black transition-colors"><i class="fab fa-spotify mr-2 w-4"></i> Spotify</a>
-                                <a href="#" class="block px-4 py-3 text-sm text-gray-400 hover:bg-gray-800 transition-colors text-center" onclick="toggleMenu(${item.id}); return false;">Cancel</a>
+                                <a href="https://music.apple.com/fm/artist/taleon/1648665295" target="_blank" class="block px-4 py-3 border-b border-gray-800 text-sm text-white hover:bg-beatport-neon hover:text-black transition-colors"><i class="fab fa-apple mr-2 w-4"></i> Apple Music</a>
+                                <a href="#" class="block px-4 py-3 text-sm text-gray-400 hover:bg-gray-800 transition-colors text-center" onclick="toggleMenu('${post.id}'); return false;">Cancel</a>
                             </div>
                         </div>
                     </div>
-
+                    
                     <!-- Image Carousel -->
                     <div class="relative w-full overflow-hidden group">
-                        <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar" id="carousel-${item.id}" onscroll="updateDots(${item.id}, ${item.images.length})">
+                        <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar" id="carousel-${post.id}" onscroll="updateDots('${post.id}', ${post.images.length})">
                             ${imagesHtml}
                         </div>
-                        ${hasMultiple ? `
-                            <div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md px-2 py-1 rounded-full text-xs text-white font-bold tracking-widest z-10 pointer-events-none">
-                                <span id="counter-${item.id}">1</span>/${item.images.length}
-                            </div>
-                        ` : ''}
+                        ${hasMultipleImages ? `
+                        <div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md px-2 py-1 rounded-full text-xs text-white font-bold tracking-widest z-10 pointer-events-none">
+                            <span id="counter-${post.id}">1</span>/${post.images.length}
+                        </div>
+                        <!-- Desktop Carousel Indicator -->
+                        <div class="hidden sm:flex absolute top-3 right-3 bg-black/50 p-1.5 rounded-md pointer-events-none">
+                            <i class="far fa-clone text-white text-xs"></i>
+                        </div>` : ''}
                     </div>
 
                     <!-- Actions & Dots -->
                     <div class="flex justify-between items-center px-4 py-3">
-                        <a href="${item.link}" target="_blank" class="px-5 py-1.5 bg-white/10 hover:bg-beatport-neon text-white hover:text-black rounded-lg text-xs font-bold transition-colors border border-white/20 hover:border-beatport-neon">
+                        <a href="${post.link}" target="_blank" class="px-5 py-1.5 bg-white/10 hover:bg-beatport-neon text-white hover:text-black rounded-lg text-xs font-bold transition-colors border border-white/20 hover:border-beatport-neon">
                             LISTEN NOW
                         </a>
-                        ${hasMultiple ? `<div class="flex gap-1.5">${dotsHtml}</div>` : '<div></div>'}
+                        <div class="flex gap-1.5">
+                            ${dotsHtml}
+                        </div>
                     </div>
 
                     <!-- Caption -->
-                    <div class="px-4 text-sm">
+                    <div class="px-4 pb-4 text-sm">
                         <div class="flex flex-col">
-                            <div class="line-clamp-3 leading-snug break-words" id="text-container-${item.id}">
+                            <div class="line-clamp-3 leading-snug break-words" id="text-container-${post.id}">
                                 <span class="font-bold text-white mr-1">taleon_music</span>
-                                <span class="text-gray-300">${item.text}</span>
+                                <span class="text-gray-300">${post.text}</span>
                             </div>
-                            <button onclick="toggleText(${item.id})" id="btn-${item.id}" class="text-gray-500 font-medium text-left mt-1 w-fit hover:text-gray-300 text-xs">more</button>
+                            <button onclick="toggleText('${post.id}')" id="btn-${post.id}" class="text-gray-500 font-medium text-left mt-1 w-fit hover:text-gray-300 text-xs">more</button>
                         </div>
                     </div>
                 </div>
             `;
-            mobileFeed.innerHTML += html;
+            feedContainer.innerHTML += html;
         });
 
-        // Toggle Text Logic
-        function toggleText(id) {
-            const containerEl = document.getElementById(`text-container-${id}`);
-            const btnEl = document.getElementById(`btn-${id}`);
-            if (containerEl.classList.contains('line-clamp-3')) {
-                containerEl.classList.remove('line-clamp-3');
-                btnEl.innerText = "less";
-            } else {
-                containerEl.classList.add('line-clamp-3');
-                btnEl.innerText = "more";
-            }
-        }
+        // --- UI HELPER FUNCTIONS ---
 
-        // Dropdown Menu Logic
+        // Dropdown Menus
         function toggleMenu(id) {
             const menu = document.getElementById(`menu-${id}`);
-            // Close others first
-            document.querySelectorAll('[id^="menu-"]').forEach(el => {
-                if(el.id !== `menu-${id}`) el.classList.add('hidden');
-            });
-            menu.classList.toggle('hidden');
+            const isHidden = menu.classList.contains('hidden');
+            
+            // Close all other menus
+            document.querySelectorAll('[id^="menu-"]').forEach(m => m.classList.add('hidden'));
+            
+            if (isHidden) {
+                menu.classList.remove('hidden');
+            }
         }
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('.relative')) {
-                document.querySelectorAll('[id^="menu-"]').forEach(el => {
-                    el.classList.add('hidden');
-                });
+        // Close dropdowns on outside click
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.relative')) {
+                document.querySelectorAll('[id^="menu-"]').forEach(m => m.classList.add('hidden'));
             }
         });
 
-        // Carousel Dots Logic
-        function updateDots(id, totalImages) {
+        // Carousel Dots & Counter
+        function updateDots(id, total) {
             const carousel = document.getElementById(`carousel-${id}`);
-            const scrollLeft = carousel.scrollLeft;
-            const width = carousel.clientWidth;
-            const activeIndex = Math.round(scrollLeft / width);
+            if(!carousel) return;
             
-            const counter = document.getElementById(`counter-${id}`);
-            if(counter) counter.innerText = activeIndex + 1;
-
-            for (let i = 0; i < totalImages; i++) {
+            const scrollLeft = carousel.scrollLeft;
+            const width = carousel.offsetWidth;
+            const index = Math.round(scrollLeft / width);
+            
+            // Update dots
+            for (let i = 0; i < total; i++) {
                 const dot = document.querySelector(`.dot-${id}-${i}`);
                 if (dot) {
-                    if (i === activeIndex) {
-                        dot.classList.remove('bg-gray-600');
-                        dot.classList.add('bg-beatport-neon');
-                    } else {
-                        dot.classList.remove('bg-beatport-neon');
-                        dot.classList.add('bg-gray-600');
-                    }
+                    dot.classList.remove('bg-beatport-neon');
+                    dot.classList.add('bg-gray-600');
                 }
+            }
+            const activeDot = document.querySelector(`.dot-${id}-${index}`);
+            if (activeDot) {
+                activeDot.classList.remove('bg-gray-600');
+                activeDot.classList.add('bg-beatport-neon');
+            }
+
+            // Update counter
+            const counter = document.getElementById(`counter-${id}`);
+            if (counter) counter.innerText = index + 1;
+        }
+
+        // Expand Text
+        function toggleText(id) {
+            const textContainer = document.getElementById(`text-container-${id}`);
+            const btn = document.getElementById(`btn-${id}`);
+            
+            if (textContainer.classList.contains('line-clamp-3')) {
+                textContainer.classList.remove('line-clamp-3');
+                btn.innerText = 'less';
+            } else {
+                textContainer.classList.add('line-clamp-3');
+                btn.innerText = 'more';
             }
         }
 
-        // Accordion Logic
-        const accordionBtns = document.querySelectorAll('.accordion-btn');
-        accordionBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const item = this.parentElement;
-                const isActive = item.classList.contains('active');
+        // Accordion Logic (With fixed height calculation for nested posts)
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionItem = button.parentElement;
+                const accordionContent = button.nextElementSibling;
+                const icon = button.querySelector('.accordion-icon');
                 
-                document.querySelectorAll('.accordion-item').forEach(acc => {
-                    acc.classList.remove('active');
+                // Close others
+                document.querySelectorAll('.accordion-item').forEach(item => {
+                    if (item !== accordionItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.accordion-content').style.maxHeight = '0px';
+                        item.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
+                        
+                        // Fix: Check if title exists using class or h4 tag directly
+                        const otherTitle = item.querySelector('.accordion-title') || item.querySelector('h4');
+                        if (otherTitle) otherTitle.classList.remove('text-beatport-neon');
+                    }
                 });
 
-                if (!isActive) {
-                    item.classList.add('active');
+                // Toggle current
+                accordionItem.classList.toggle('active');
+                
+                // Fix: Check if title exists using class or h4 tag directly
+                const currentTitle = button.querySelector('.accordion-title') || button.querySelector('h4');
+                
+                if (accordionItem.classList.contains('active')) {
+                    // Force a large enough height for posts to render dropdowns, carousels etc.
+                    accordionContent.style.maxHeight = "2500px";
+                    // After transition, allow overflow to show dropdowns properly
+                    setTimeout(() => { accordionContent.style.overflow = "visible"; }, 400);
+                    
+                    icon.style.transform = 'rotate(180deg)';
+                    if (currentTitle) currentTitle.classList.add('text-beatport-neon');
+                } else {
+                    accordionContent.style.overflow = "hidden";
+                    accordionContent.style.maxHeight = '0px';
+                    icon.style.transform = 'rotate(0deg)';
+                    if (currentTitle) currentTitle.classList.remove('text-beatport-neon');
                 }
             });
         });
 
-        // Copy Email Logic
-        const copyBtn = document.getElementById('copy-email-btn');
-        const copyText = document.getElementById('copy-text');
-        const copyIcon = document.getElementById('copy-icon');
-
-        copyBtn.addEventListener('click', async (e) => {
-            e.preventDefault();
-            const email = "taleonmusic@gmail.com";
-            try {
-                const tempInput = document.createElement("input");
-                tempInput.value = email;
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                document.execCommand("copy");
-                document.body.removeChild(tempInput);
-
-                const originalText = copyText.innerText;
-                copyText.innerText = "COPIED! ✔";
-                copyBtn.classList.add('bg-beatport-neon', 'text-black');
-                copyIcon.classList.remove('fa-copy');
-                copyIcon.classList.add('fa-check');
+        // Initialize first accordion Open
+        window.addEventListener('DOMContentLoaded', () => {
+            const firstAcc = document.querySelector('.accordion-item');
+            if(firstAcc) {
+                firstAcc.classList.add('active');
+                firstAcc.querySelector('.accordion-content').style.maxHeight = "2500px";
+                setTimeout(() => { firstAcc.querySelector('.accordion-content').style.overflow = "visible"; }, 400);
+                firstAcc.querySelector('.accordion-icon').style.transform = 'rotate(180deg)';
                 
-                setTimeout(() => {
-                    copyText.innerText = originalText;
-                    copyBtn.classList.remove('bg-beatport-neon', 'text-black');
-                    copyIcon.classList.remove('fa-check');
-                    copyIcon.classList.add('fa-copy');
-                }, 2000);
-            } catch (err) {
-                console.error('Failed to copy text: ', err);
+                // Fix: Safely add neon color to first open tab
+                const firstTitle = firstAcc.querySelector('.accordion-title') || firstAcc.querySelector('h4');
+                if (firstTitle) firstTitle.classList.add('text-beatport-neon');
             }
         });
 
-        // Player Toggle Logic
-        const playerContainer = document.getElementById('player-container');
-        const togglePlayerBtn = document.getElementById('toggle-player-btn');
-        const togglePlayerIcon = document.getElementById('toggle-player-icon');
-        let playerVisible = true;
+        // Mobile Menu Navigation
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
 
-        togglePlayerBtn.addEventListener('click', () => {
-            if (playerVisible) {
-                playerContainer.classList.add('translate-y-[150px]');
-                togglePlayerIcon.classList.remove('fa-chevron-down');
-                togglePlayerIcon.classList.add('fa-chevron-up');
-            } else {
-                playerContainer.classList.remove('translate-y-[150px]');
-                togglePlayerIcon.classList.remove('fa-chevron-up');
-                togglePlayerIcon.classList.add('fa-chevron-down');
-            }
-            playerVisible = !playerVisible;
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
         });
 
-        // Mobile Nav Menu Logic
-        const navBtn = document.getElementById('mobile-menu-btn');
-        const navMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelectorAll('.mobile-link');
-
-        navBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('hidden');
-        });
-
-        navLinks.forEach(link => {
+        links.forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.add('hidden');
+                menu.classList.add('hidden');
             });
         });
 
-        // Lightbox Logic
+        // Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-dark-900/90', 'shadow-[0_10px_30px_rgba(0,0,0,0.5)]', 'border-b', 'border-beatport-neon/20');
+                nav.classList.remove('glass-panel', 'border-b-0');
+            } else {
+                nav.classList.add('glass-panel', 'border-b-0');
+                nav.classList.remove('bg-dark-900/90', 'shadow-[0_10px_30px_rgba(0,0,0,0.5)]', 'border-b', 'border-beatport-neon/20');
+            }
+        });
+
+        // Lightbox
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
 
@@ -666,18 +900,47 @@
             }
         });
 
-        // Navbar Scroll Effect Customizado para la App View
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-dark-900/95', 'backdrop-blur-xl', 'border-b', 'border-beatport-neon/20');
-                nav.classList.remove('glass-panel', 'border-b-0');
-            } else {
-                nav.classList.add('glass-panel', 'border-b-0');
-                nav.classList.remove('bg-dark-900/95', 'backdrop-blur-xl', 'border-b', 'border-beatport-neon/20');
-            }
-        });
+        // Copy Email Logic
+        function copyEmail() {
+            const email = "taleonmusic@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const btn = document.getElementById('copy-btn');
+                const icon = document.getElementById('copy-icon');
+                
+                // Visual feedback
+                btn.classList.add('bg-beatport-neon', 'text-black');
+                btn.classList.remove('bg-transparent', 'text-beatport-neon');
+                icon.classList.remove('fa-copy', 'opacity-50');
+                icon.classList.add('fa-check');
+                
+                setTimeout(() => {
+                    btn.classList.remove('bg-beatport-neon', 'text-black');
+                    btn.classList.add('bg-transparent', 'text-beatport-neon');
+                    icon.classList.add('fa-copy', 'opacity-50');
+                    icon.classList.remove('fa-check');
+                }, 2000);
+            });
+        }
 
+        // Hide/Show Beatport Player
+        function togglePlayer() {
+            const container = document.getElementById('player-container');
+            const arrow = document.getElementById('player-arrow');
+            
+            if (container.classList.contains('translate-y-0')) {
+                // Hide it (move down 162px, which is the iframe height)
+                container.classList.remove('translate-y-0');
+                container.classList.add('translate-y-[162px]');
+                arrow.classList.remove('fa-chevron-down');
+                arrow.classList.add('fa-chevron-up');
+            } else {
+                // Show it
+                container.classList.add('translate-y-0');
+                container.classList.remove('translate-y-[162px]');
+                arrow.classList.add('fa-chevron-down');
+                arrow.classList.remove('fa-chevron-up');
+            }
+        }
     </script>
 </body>
 </html>
