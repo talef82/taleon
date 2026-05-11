@@ -128,10 +128,24 @@
     <!-- MAIN CONTAINER -->
     <main class="w-full min-h-screen bg-transparent relative overflow-x-hidden pb-32 z-10 flex flex-col">
 
-        <!-- Lightbox -->
-        <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm cursor-zoom-out">
-            <span class="absolute top-6 right-6 text-white text-4xl hover:text-beatport-neon cursor-pointer transition-colors">&times;</span>
-            <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-[90vw] max-h-[90vh] rounded-2xl border-2 border-beatport-neon shadow-[0_0_30px_rgba(148,213,0,0.3)] object-contain">
+        <!-- Lightbox Dynamic Gallery Overlay -->
+        <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+            <div class="absolute inset-0 w-full h-full cursor-zoom-out" onclick="closeLightbox()"></div>
+            
+            <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-4xl hover:text-beatport-neon cursor-pointer transition-colors z-[110]">
+                &times;
+            </button>
+            
+            <!-- Floating Navigation Arrows for Lightbox -->
+            <button id="lightbox-prev" onclick="navigateLightbox(-1, event)" class="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-white text-3xl md:text-5xl opacity-70 hover:opacity-100 hover:text-beatport-neon transition-all z-[110] hidden drop-shadow-[0_0_10px_rgba(0,0,0,1)]">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <button id="lightbox-next" onclick="navigateLightbox(1, event)" class="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 text-white text-3xl md:text-5xl opacity-70 hover:opacity-100 hover:text-beatport-neon transition-all z-[110] hidden drop-shadow-[0_0_10px_rgba(0,0,0,1)]">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-[90vw] max-h-[90vh] rounded-2xl border-2 border-beatport-neon shadow-[0_0_30px_rgba(148,213,0,0.3)] object-contain relative z-[105] cursor-zoom-out" onclick="closeLightbox()">
         </div>
 
         <!-- Navigation -->
@@ -239,7 +253,8 @@
                             <i class="fas fa-chevron-down accordion-icon text-gray-400 text-lg transition-transform duration-400"></i>
                         </button>
                         <div class="accordion-content px-6 md:px-8 border-t border-gray-800/50">
-                            <p class="text-gray-300 text-sm md:text-base leading-relaxed py-6 md:py-8 max-w-4xl">
+                            <!-- ANCHO COMPLETO PARA ABOUT ME CORREGIDO -->
+                            <p class="text-gray-300 text-sm md:text-base leading-relaxed py-6 md:py-8 w-full">
                                 I'm <strong class="text-white">Jon Flores</strong>, the mind and soul behind the <strong class="text-white">Taleon</strong> project. Based in Spain, I've got serious skin in the game: I've been behind the decks as a DJ since 1996 and crafting tracks in the studio since 2002. My journey in the industry also includes founding my own label, <strong class="text-white">Undercool Productions</strong>, back in 2009. <br><br>
                                 After years of musical evolution, I launched my first single under the Taleon alias in 2022, focusing my sound entirely on <span class="text-beatport-neon font-medium">Organic, Progressive, and Melodic House</span>. <br><br>
                                 My ultimate goal is simple: to share music that is undeniably danceable, yet deeply emotional. I want to transmit good vibes through melodies that make your mind travel, provoke thought, or simply become the perfect soundtrack accompanying you through life.
@@ -281,25 +296,34 @@
                                     </div>
                                 </div>
                                 <!-- Image Carousel (Optimized for Landscape/Wide images) -->
-                                <div class="relative w-full overflow-hidden border-y border-gray-800 bg-black/50">
-                                    <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar" id="carousel-acc2" onscroll="updateDots('acc2', 5)">
-                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-2 md:p-6" onclick="openLightbox('https://i.imgur.com/1QYE7Wj.jpeg')">
+                                <div class="relative w-full overflow-hidden border-y border-gray-800 bg-black/50 group">
+                                    
+                                    <!-- Flechas Flotantes del Carrusel -->
+                                    <button onclick="scrollCarousel('acc2', -1, event)" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                                        <i class="fas fa-chevron-left text-sm md:text-base"></i>
+                                    </button>
+                                    <button onclick="scrollCarousel('acc2', 1, event)" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                                        <i class="fas fa-chevron-right text-sm md:text-base"></i>
+                                    </button>
+
+                                    <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar relative" id="carousel-acc2" onscroll="updateDots('acc2', 5)">
+                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-2 md:p-6" onclick="openGallery('acc2', 0)">
                                             <img src="https://i.imgur.com/1QYE7Wj.jpeg" class="w-full h-auto object-contain max-h-[500px] md:max-h-[700px] shadow-lg rounded-md">
                                         </div>
-                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-2 md:p-6" onclick="openLightbox('https://i.imgur.com/NVZv1eb.png')">
+                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-2 md:p-6" onclick="openGallery('acc2', 1)">
                                             <img src="https://i.imgur.com/NVZv1eb.png" class="w-full h-auto object-contain max-h-[500px] md:max-h-[700px] shadow-lg rounded-md">
                                         </div>
-                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-2 md:p-6" onclick="openLightbox('https://i.imgur.com/H7MtTwi.png')">
+                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-2 md:p-6" onclick="openGallery('acc2', 2)">
                                             <img src="https://i.imgur.com/H7MtTwi.png" class="w-full h-auto object-contain max-h-[500px] md:max-h-[700px] shadow-lg rounded-md">
                                         </div>
-                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-2 md:p-6" onclick="openLightbox('https://i.imgur.com/vYRgpWH.png')">
+                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-2 md:p-6" onclick="openGallery('acc2', 3)">
                                             <img src="https://i.imgur.com/vYRgpWH.png" class="w-full h-auto object-contain max-h-[500px] md:max-h-[700px] shadow-lg rounded-md">
                                         </div>
-                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-2 md:p-6" onclick="openLightbox('https://i.imgur.com/h5LFVbZ.png')">
+                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-2 md:p-6" onclick="openGallery('acc2', 4)">
                                             <img src="https://i.imgur.com/h5LFVbZ.png" class="w-full h-auto object-contain max-h-[500px] md:max-h-[700px] shadow-lg rounded-md">
                                         </div>
                                     </div>
-                                    <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full text-xs text-white font-bold tracking-widest pointer-events-none">
+                                    <div class="absolute top-4 right-4 md:right-16 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full text-xs text-white font-bold tracking-widest pointer-events-none z-10">
                                         <span id="counter-acc2">1</span>/5
                                     </div>
                                 </div>
@@ -656,6 +680,15 @@
             }
         ];
 
+        // Global Registry for the Static Accordion 2
+        const galleryAcc2 = [
+            "https://i.imgur.com/1QYE7Wj.jpeg",
+            "https://i.imgur.com/NVZv1eb.png",
+            "https://i.imgur.com/H7MtTwi.png",
+            "https://i.imgur.com/vYRgpWH.png",
+            "https://i.imgur.com/h5LFVbZ.png"
+        ];
+
         // Render Feed
         const feedContainer = document.getElementById('feed-container');
         posts.forEach(post => {
@@ -665,7 +698,7 @@
             
             post.images.forEach((img, index) => {
                 imagesHtml += `
-                    <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in" onclick="openLightbox('${img}')">
+                    <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in" onclick="openGallery('${post.id}', ${index})">
                         <img src="${img}" class="w-full aspect-square object-cover">
                     </div>
                 `;
@@ -703,15 +736,27 @@
                     
                     <!-- Image Carousel -->
                     <div class="relative w-full overflow-hidden group">
-                        <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar" id="carousel-${post.id}" onscroll="updateDots('${post.id}', ${post.images.length})">
+                        
+                        ${hasMultipleImages ? `
+                        <!-- Flechas Flotantes del Carrusel -->
+                        <button onclick="scrollCarousel('${post.id}', -1, event)" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                            <i class="fas fa-chevron-left text-sm"></i>
+                        </button>
+                        <button onclick="scrollCarousel('${post.id}', 1, event)" class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </button>
+                        ` : ''}
+
+                        <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar relative" id="carousel-${post.id}" onscroll="updateDots('${post.id}', ${post.images.length})">
                             ${imagesHtml}
                         </div>
+                        
                         ${hasMultipleImages ? `
-                        <div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-xs text-white font-bold tracking-widest z-10 pointer-events-none">
+                        <div class="absolute top-3 right-3 md:right-14 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-xs text-white font-bold tracking-widest pointer-events-none z-10">
                             <span id="counter-${post.id}">1</span>/${post.images.length}
                         </div>
                         <!-- Desktop Carousel Indicator -->
-                        <div class="hidden sm:flex absolute top-3 right-3 bg-black/50 p-1.5 rounded-md pointer-events-none">
+                        <div class="hidden sm:flex absolute top-3 right-3 bg-black/50 p-1.5 rounded-md pointer-events-none z-10">
                             <i class="far fa-clone text-white text-xs"></i>
                         </div>` : ''}
                     </div>
@@ -762,6 +807,15 @@
                 document.querySelectorAll('[id^="menu-"]').forEach(m => m.classList.add('hidden'));
             }
         });
+
+        // Carousel Arrow Navigation
+        function scrollCarousel(id, direction, event) {
+            if (event) event.stopPropagation();
+            const carousel = document.getElementById(`carousel-${id}`);
+            if (!carousel) return;
+            const width = carousel.offsetWidth;
+            carousel.scrollBy({ left: direction * width, behavior: 'smooth' });
+        }
 
         // Carousel Dots & Counter
         function updateDots(id, total) {
@@ -885,12 +939,36 @@
             }
         });
 
-        // Lightbox
+        // --- DYNAMIC LIGHTBOX GALLERY ---
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        
+        let currentGalleryContext = [];
+        let currentGalleryIndex = 0;
 
-        function openLightbox(src) {
-            lightboxImg.src = src;
+        function openGallery(id, index) {
+            // Determine which gallery was clicked
+            if (id === 'acc2') {
+                currentGalleryContext = galleryAcc2;
+            } else {
+                const post = posts.find(p => p.id === id);
+                if (post) currentGalleryContext = post.images;
+            }
+            
+            currentGalleryIndex = index;
+            updateLightboxImage();
+
+            // Show/Hide navigation arrows based on gallery length
+            if (currentGalleryContext.length > 1) {
+                lightboxPrev.classList.remove('hidden');
+                lightboxNext.classList.remove('hidden');
+            } else {
+                lightboxPrev.classList.add('hidden');
+                lightboxNext.classList.add('hidden');
+            }
+
             lightbox.classList.remove('hidden');
             setTimeout(() => {
                 lightbox.classList.remove('opacity-0');
@@ -898,15 +976,33 @@
             }, 10);
         }
 
-        lightbox.addEventListener('click', (e) => {
-            if (e.target !== lightboxImg) {
-                lightbox.classList.remove('opacity-100');
-                lightbox.classList.add('opacity-0');
-                setTimeout(() => {
-                    lightbox.classList.add('hidden');
-                }, 300);
+        function updateLightboxImage() {
+            lightboxImg.src = currentGalleryContext[currentGalleryIndex];
+        }
+
+        function navigateLightbox(direction, event) {
+            if (event) event.stopPropagation();
+            if (currentGalleryContext.length <= 1) return;
+            
+            currentGalleryIndex += direction;
+            
+            // Loop functionality
+            if (currentGalleryIndex < 0) {
+                currentGalleryIndex = currentGalleryContext.length - 1;
+            } else if (currentGalleryIndex >= currentGalleryContext.length) {
+                currentGalleryIndex = 0;
             }
-        });
+            
+            updateLightboxImage();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('opacity-100');
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+            }, 300);
+        }
 
         // Copy Email Logic
         function copyEmail() {
