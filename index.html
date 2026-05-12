@@ -253,7 +253,6 @@
                             <i class="fas fa-chevron-down accordion-icon text-gray-400 text-lg transition-transform duration-400"></i>
                         </button>
                         <div class="accordion-content px-6 md:px-8 border-t border-gray-800/50">
-                            <!-- ANCHO COMPLETO PARA ABOUT ME CORREGIDO -->
                             <p class="text-gray-300 text-sm md:text-base leading-relaxed pt-6 md:pt-8 pb-5 w-full">
                                 I'm <strong class="text-white">Jon Flores</strong>, the mind and soul behind the <strong class="text-white">Taleon</strong> project. Based in Spain, I've got serious skin in the game: I've been behind the decks as a DJ since 1996 and crafting tracks in the studio since 2002. My journey in the industry also includes founding my own label, <strong class="text-white">Undercool Productions</strong>, back in 2009. <br><br>
                                 After years of musical evolution, I launched my first single under the Taleon alias in 2022, focusing my sound entirely on <span class="text-beatport-neon font-medium">Organic, Progressive, and Melodic House</span>. <br><br>
@@ -288,7 +287,7 @@
                                         </div>
                                         <div class="leading-tight">
                                             <p class="text-base md:text-lg font-bold text-white flex items-center gap-2">taleon_music <i class="fas fa-check-circle text-beatport-neon text-xs"></i></p>
-                                            <p class="text-xs md:text-sm text-gray-500">April 30 • Milestone</p>
+                                            <p class="text-xs md:text-sm text-gray-500">April 30</p>
                                         </div>
                                     </div>
                                     <div class="relative">
@@ -302,10 +301,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Image Carousel (Optimized for Landscape/Wide images) -->
+                                <!-- Image Carousel -->
                                 <div class="relative w-full overflow-hidden border-y border-gray-800 bg-black/50 group">
-                                    
-                                    <!-- Flechas Flotantes del Carrusel -->
                                     <button onclick="scrollCarousel('acc2', -1, event)" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
                                         <i class="fas fa-chevron-left text-sm md:text-base"></i>
                                     </button>
@@ -578,8 +575,15 @@
             </div>
         </section>
 
+        <!-- Full Width Separator Image -->
+        <div class="relative w-full h-[60vh] min-h-[450px] z-10 shrink-0 overflow-hidden bg-black border-t border-gray-900">
+            <img src="https://i.imgur.com/TtY7SR0.jpeg" alt="Taleon Studio" class="w-full h-full object-cover object-center opacity-70 hover:opacity-100 hover:scale-105 transition-all duration-1000 cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/TtY7SR0.jpeg')">
+            <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent pointer-events-none"></div>
+        </div>
+
         <!-- Contact / Direct Line (Footer) -->
-        <footer id="contact" class="pt-16 md:pt-24 relative z-10 bg-dark-900/80 border-t border-beatport-dark/20 shrink-0 flex flex-col">
+        <footer id="contact" class="pt-16 md:pt-24 relative z-10 bg-dark-900/90 shrink-0 flex flex-col">
             <div class="max-w-7xl mx-auto px-4 w-full">
                 <div class="text-center mb-10 md:mb-12 flex flex-col items-center">
                     <h3 class="font-display text-3xl md:text-5xl font-black mb-4 text-glow">DIRECT LINE</h3>
@@ -628,18 +632,8 @@
                 </div>
             </div>
 
-            <!-- Full Width Closing Image -->
-            <div class="relative w-full h-[60vh] min-h-[450px] mt-16 md:mt-24 border-t border-gray-900 overflow-hidden">
-                <!-- Image with subtle hover effect -->
-                <img src="https://i.imgur.com/TtY7SR0.jpeg" alt="Taleon" class="w-full h-full object-cover object-center opacity-70 hover:opacity-100 hover:scale-105 transition-all duration-1000 cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/TtY7SR0.jpeg')">
-                
-                <!-- Gradients for blending into the dark theme -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent pointer-events-none"></div>
-                <div class="absolute inset-0 bg-gradient-to-b from-dark-900/90 via-transparent to-transparent pointer-events-none"></div>
-            </div>
-
             <!-- Copyright Footer -->
-            <div class="w-full bg-black pt-8 pb-48 md:pb-44 px-4 relative z-20 flex items-center justify-center">
+            <div class="w-full bg-dark-900 pt-16 pb-48 md:pb-44 px-4 relative z-20 flex items-center justify-center mt-16 md:mt-24 border-t border-gray-900">
                 <p class="text-center text-gray-500 text-xs sm:text-sm font-medium tracking-widest">
                     © 2026 Taleon Music. All Rights Reserved.<br>Engineered for the future.
                 </p>
