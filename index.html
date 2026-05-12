@@ -168,7 +168,7 @@
                                 FEED
                                 <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
                             </a>
-                            <a href="#visuals" class="relative font-display font-black text-xs md:text-sm tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
+                            <a href="#videos" class="relative font-display font-black text-xs md:text-sm tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
                                 VIDEOS
                                 <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
                             </a>
@@ -198,7 +198,7 @@
                         <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
                         FEED
                     </a>
-                    <a href="#visuals" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
+                    <a href="#videos" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
                         <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
                         VIDEOS
                     </a>
@@ -301,8 +301,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Image Carousel -->
+                                <!-- Image Carousel (Optimized for Landscape/Wide images) -->
                                 <div class="relative w-full overflow-hidden border-y border-gray-800 bg-black/50 group">
+                                    
+                                    <!-- Flechas Flotantes del Carrusel -->
                                     <button onclick="scrollCarousel('acc2', -1, event)" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
                                         <i class="fas fa-chevron-left text-sm md:text-base"></i>
                                     </button>
@@ -479,7 +481,7 @@
         </section>
 
         <!-- Visuals / YouTube Section -->
-        <section id="visuals" class="py-16 md:py-24 px-4 relative z-10 shrink-0">
+        <section id="videos" class="py-16 md:py-24 px-4 relative z-10 shrink-0">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-10 md:mb-16">
                     <h3 class="font-display text-3xl md:text-5xl font-black mb-4 text-glow">VIDEOS</h3>
@@ -575,15 +577,18 @@
             </div>
         </section>
 
-        <!-- Full Width Separator Image -->
-        <div class="relative w-full h-[60vh] min-h-[450px] z-10 shrink-0 overflow-hidden bg-black border-t border-gray-900">
-            <img src="https://i.imgur.com/TtY7SR0.jpeg" alt="Taleon Studio" class="w-full h-full object-cover object-center opacity-70 hover:opacity-100 hover:scale-105 transition-all duration-1000 cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/TtY7SR0.jpeg')">
-            <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent pointer-events-none"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent pointer-events-none"></div>
+        <!-- Full Width Separator Image Constrained inside Grid -->
+        <div class="w-full bg-black py-12 md:py-20 border-t border-gray-900 relative z-10 shrink-0">
+            <div class="max-w-7xl mx-auto px-4 w-full">
+                <div class="relative w-full h-[40vh] md:h-[60vh] min-h-[300px] md:min-h-[500px] rounded-2xl md:rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.5)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/TtY7SR0.jpeg')">
+                    <!-- Opacidad al 100% como pediste -->
+                    <img src="https://i.imgur.com/TtY7SR0.jpeg" alt="Taleon Studio" class="w-full h-full object-cover object-center opacity-100 group-hover:scale-105 transition-transform duration-1000">
+                </div>
+            </div>
         </div>
 
         <!-- Contact / Direct Line (Footer) -->
-        <footer id="contact" class="pt-16 md:pt-24 relative z-10 bg-dark-900/90 shrink-0 flex flex-col">
+        <footer id="contact" class="pt-8 md:pt-12 relative z-10 bg-dark-900/90 shrink-0 flex flex-col">
             <div class="max-w-7xl mx-auto px-4 w-full">
                 <div class="text-center mb-10 md:mb-12 flex flex-col items-center">
                     <h3 class="font-display text-3xl md:text-5xl font-black mb-4 text-glow">DIRECT LINE</h3>
@@ -633,7 +638,7 @@
             </div>
 
             <!-- Copyright Footer -->
-            <div class="w-full bg-dark-900 pt-16 pb-48 md:pb-44 px-4 relative z-20 flex items-center justify-center mt-16 md:mt-24 border-t border-gray-900">
+            <div class="w-full bg-dark-900 pt-16 pb-48 md:pb-44 px-4 relative z-20 flex items-center justify-center mt-16 border-t border-gray-900">
                 <p class="text-center text-gray-500 text-xs sm:text-sm font-medium tracking-widest">
                     © 2026 Taleon Music. All Rights Reserved.<br>Engineered for the future.
                 </p>
@@ -964,8 +969,19 @@
         let currentGalleryContext = [];
         let currentGalleryIndex = 0;
 
+        // Modificado para ocultar las flechas si es una foto individual (About me o Separator)
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightboxPrev.classList.add('hidden');
+            lightboxNext.classList.add('hidden');
+            lightbox.classList.remove('hidden');
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                lightbox.classList.add('opacity-100');
+            }, 10);
+        }
+
         function openGallery(id, index) {
-            // Determine which gallery was clicked
             if (id === 'acc2') {
                 currentGalleryContext = galleryAcc2;
             } else {
@@ -976,7 +992,6 @@
             currentGalleryIndex = index;
             updateLightboxImage();
 
-            // Show/Hide navigation arrows based on gallery length
             if (currentGalleryContext.length > 1) {
                 lightboxPrev.classList.remove('hidden');
                 lightboxNext.classList.remove('hidden');
