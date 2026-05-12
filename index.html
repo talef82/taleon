@@ -253,6 +253,7 @@
                             <i class="fas fa-chevron-down accordion-icon text-gray-400 text-lg transition-transform duration-400"></i>
                         </button>
                         <div class="accordion-content px-6 md:px-8 border-t border-gray-800/50">
+                            <!-- ANCHO COMPLETO PARA ABOUT ME -->
                             <p class="text-gray-300 text-sm md:text-base leading-relaxed pt-6 md:pt-8 pb-5 w-full">
                                 I'm <strong class="text-white">Jon Flores</strong>, the mind and soul behind the <strong class="text-white">Taleon</strong> project. Based in Spain, I've got serious skin in the game: I've been behind the decks as a DJ since 1996 and crafting tracks in the studio since 2002. My journey in the industry also includes founding my own label, <strong class="text-white">Undercool Productions</strong>, back in 2009. <br><br>
                                 After years of musical evolution, I launched my first single under the Taleon alias in 2022, focusing my sound entirely on <span class="text-beatport-neon font-medium">Organic, Progressive, and Melodic House</span>. <br><br>
@@ -301,7 +302,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Image Carousel (Optimized for Landscape/Wide images) -->
+                                <!-- Image Carousel -->
                                 <div class="relative w-full overflow-hidden border-y border-gray-800 bg-black/50 group">
                                     
                                     <!-- Flechas Flotantes del Carrusel -->
@@ -530,7 +531,7 @@
                     </a>
 
                     <!-- Spotify -->
-                    <a href="https://open.spotify.com/intl-es/artist/22jXZlcnm6s2SidCCQ23rh" target="_blank" class="w-full glass-panel flex items-center p-4 md:p-5 rounded-2xl hover:bg-[#1DB954] group transition-all duration-300 border border-gray-800 hover:border-[#1DB954] transform hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(29,185,84,0.2)]">
+                    <a href="https://open.spotify.com/intl-es/artist/0Bar3NdKt7kFM1j8CX5zIg" target="_blank" class="w-full glass-panel flex items-center p-4 md:p-5 rounded-2xl hover:bg-[#1DB954] group transition-all duration-300 border border-gray-800 hover:border-[#1DB954] transform hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(29,185,84,0.2)]">
                         <div class="w-12 h-12 rounded-full bg-gray-900 group-hover:bg-white flex items-center justify-center flex-shrink-0 transition-colors z-20">
                             <i class="fab fa-spotify text-2xl md:text-3xl text-gray-400 group-hover:text-[#1DB954] transition-colors"></i>
                         </div>
@@ -577,18 +578,17 @@
             </div>
         </section>
 
-        <!-- Full Width Separator Image Constrained inside Grid -->
-        <div class="w-full bg-black py-12 md:py-20 border-t border-gray-900 relative z-10 shrink-0">
-            <div class="max-w-7xl mx-auto px-4 w-full">
-                <div class="relative w-full h-[40vh] md:h-[60vh] min-h-[300px] md:min-h-[500px] rounded-2xl md:rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.5)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/TtY7SR0.jpeg')">
-                    <!-- Opacidad al 100% como pediste -->
-                    <img src="https://i.imgur.com/TtY7SR0.jpeg" alt="Taleon Studio" class="w-full h-full object-cover object-center opacity-100 group-hover:scale-105 transition-transform duration-1000">
+        <!-- Studio Image Separator -->
+        <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
+            <div class="w-full max-w-7xl mx-auto px-4">
+                <div class="relative w-full h-[40vh] md:h-[60vh] min-h-[300px] md:min-h-[450px] rounded-2xl md:rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/TtY7SR0.jpeg')">
+                    <img src="https://i.imgur.com/TtY7SR0.jpeg" alt="Taleon Studio" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Contact / Direct Line (Footer) -->
-        <footer id="contact" class="pt-8 md:pt-12 relative z-10 bg-dark-900/90 shrink-0 flex flex-col">
+        <footer id="contact" class="pt-8 md:pt-12 relative z-10 bg-transparent shrink-0 flex flex-col">
             <div class="max-w-7xl mx-auto px-4 w-full">
                 <div class="text-center mb-10 md:mb-12 flex flex-col items-center">
                     <h3 class="font-display text-3xl md:text-5xl font-black mb-4 text-glow">DIRECT LINE</h3>
@@ -638,7 +638,7 @@
             </div>
 
             <!-- Copyright Footer -->
-            <div class="w-full bg-dark-900 pt-16 pb-48 md:pb-44 px-4 relative z-20 flex items-center justify-center mt-16 border-t border-gray-900">
+            <div class="w-full bg-dark-900 pt-16 pb-48 md:pb-44 px-4 relative z-20 flex items-center justify-center mt-16 md:mt-24 border-t border-gray-900">
                 <p class="text-center text-gray-500 text-xs sm:text-sm font-medium tracking-widest">
                     © 2026 Taleon Music. All Rights Reserved.<br>Engineered for the future.
                 </p>
@@ -748,7 +748,7 @@
                             <!-- Dropdown Menu -->
                             <div id="menu-${post.id}" class="hidden absolute right-0 top-full mt-2 w-48 bg-dark-900/95 backdrop-blur-md border border-gray-700 rounded-xl overflow-hidden shadow-2xl z-30 transition-all">
                                 <a href="https://www.beatport.com/artist/taleon/1077287" target="_blank" class="block px-4 py-3 border-b border-gray-800 text-sm text-white hover:bg-beatport-neon hover:text-black transition-colors"><i class="fas fa-headphones mr-2 w-4"></i> Beatport</a>
-                                <a href="https://open.spotify.com/intl-es/artist/22jXZlcnm6s2SidCCQ23rh" target="_blank" class="block px-4 py-3 border-b border-gray-800 text-sm text-white hover:bg-beatport-neon hover:text-black transition-colors"><i class="fab fa-spotify mr-2 w-4"></i> Spotify</a>
+                                <a href="https://open.spotify.com/intl-es/artist/0Bar3NdKt7kFM1j8CX5zIg" target="_blank" class="block px-4 py-3 border-b border-gray-800 text-sm text-white hover:bg-beatport-neon hover:text-black transition-colors"><i class="fab fa-spotify mr-2 w-4"></i> Spotify</a>
                                 <a href="https://music.apple.com/fm/artist/taleon/1648665295" target="_blank" class="block px-4 py-3 border-b border-gray-800 text-sm text-white hover:bg-beatport-neon hover:text-black transition-colors"><i class="fab fa-apple mr-2 w-4"></i> Apple Music</a>
                                 <a href="#" class="block px-4 py-3 text-sm text-gray-400 hover:bg-gray-800 transition-colors text-center" onclick="toggleMenu('${post.id}'); return false;">Cancel</a>
                             </div>
@@ -969,19 +969,8 @@
         let currentGalleryContext = [];
         let currentGalleryIndex = 0;
 
-        // Modificado para ocultar las flechas si es una foto individual (About me o Separator)
-        function openLightbox(src) {
-            lightboxImg.src = src;
-            lightboxPrev.classList.add('hidden');
-            lightboxNext.classList.add('hidden');
-            lightbox.classList.remove('hidden');
-            setTimeout(() => {
-                lightbox.classList.remove('opacity-0');
-                lightbox.classList.add('opacity-100');
-            }, 10);
-        }
-
         function openGallery(id, index) {
+            // Determine which gallery was clicked
             if (id === 'acc2') {
                 currentGalleryContext = galleryAcc2;
             } else {
@@ -992,6 +981,7 @@
             currentGalleryIndex = index;
             updateLightboxImage();
 
+            // Show/Hide navigation arrows based on gallery length
             if (currentGalleryContext.length > 1) {
                 lightboxPrev.classList.remove('hidden');
                 lightboxNext.classList.remove('hidden');
