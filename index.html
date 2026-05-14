@@ -253,7 +253,6 @@
                             <i class="fas fa-chevron-down accordion-icon text-gray-400 text-lg transition-transform duration-400"></i>
                         </button>
                         <div class="accordion-content px-6 md:px-8 border-t border-gray-800/50">
-                            <!-- ANCHO COMPLETO PARA ABOUT ME -->
                             <p class="text-gray-300 text-sm md:text-base leading-relaxed pt-6 md:pt-8 pb-5 w-full">
                                 I'm <strong class="text-white">Jon Flores</strong>, the mind and soul behind the <strong class="text-white">Taleon</strong> project. Based in Spain, I've got serious skin in the game: I've been behind the decks as a DJ since 1996 and crafting tracks in the studio since 2002. My journey in the industry also includes founding my own label, <strong class="text-white">Undercool Productions</strong>, back in 2009. <br><br>
                                 After years of musical evolution, I launched my first single under the Taleon alias in 2022, focusing my sound entirely on <span class="text-beatport-neon font-medium">Organic, Progressive, and Melodic House</span>. <br><br>
@@ -302,7 +301,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Image Carousel -->
+                                <!-- Image Carousel (Optimized for Landscape/Wide images) -->
                                 <div class="relative w-full overflow-hidden border-y border-gray-800 bg-black/50 group">
                                     
                                     <!-- Flechas Flotantes del Carrusel -->
@@ -403,7 +402,7 @@
                                                 <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                                 <span class="text-[10px] md:text-xs text-gray-400 text-center mb-2 h-8 flex items-center font-mono leading-tight">HYPE - ORGANIC HOUSE</span>
                                                 <div class="flex items-end gap-2">
-                                                    <span class="font-display font-black text-4xl md:text-5xl text-white">62</span>
+                                                    <span class="font-display font-black text-4xl md:text-5xl text-white">57</span>
                                                     <i class="fas fa-caret-up text-beatport-neon text-lg md:text-xl mb-1 md:mb-2 animate-bounce"></i>
                                                 </div>
                                             </div>
@@ -411,7 +410,7 @@
                                                 <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                                 <span class="text-[10px] md:text-xs text-gray-400 text-center mb-2 h-8 flex items-center font-mono leading-tight">ORGANIC HOUSE</span>
                                                 <div class="flex items-end gap-2">
-                                                    <span class="font-display font-black text-4xl md:text-5xl text-white">138</span>
+                                                    <span class="font-display font-black text-4xl md:text-5xl text-white">123</span>
                                                     <i class="fas fa-caret-up text-beatport-neon text-lg md:text-xl mb-1 md:mb-2 animate-bounce"></i>
                                                 </div>
                                             </div>
@@ -432,7 +431,7 @@
                                                 <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                                 <span class="text-[10px] md:text-xs text-gray-400 text-center mb-2 h-8 flex items-center font-mono leading-tight">HYPE - ORGANIC HOUSE</span>
                                                 <div class="flex items-end gap-2">
-                                                    <span class="font-display font-black text-4xl md:text-5xl text-white">40</span>
+                                                    <span class="font-display font-black text-4xl md:text-5xl text-white">39</span>
                                                     <i class="fas fa-caret-up text-beatport-neon text-lg md:text-xl mb-1 md:mb-2 animate-bounce"></i>
                                                 </div>
                                             </div>
@@ -440,7 +439,7 @@
                                                 <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                                 <span class="text-[10px] md:text-xs text-gray-400 text-center mb-2 h-8 flex items-center font-mono leading-tight">ORGANIC HOUSE</span>
                                                 <div class="flex items-end gap-2">
-                                                    <span class="font-display font-black text-4xl md:text-5xl text-white">76</span>
+                                                    <span class="font-display font-black text-4xl md:text-5xl text-white">72</span>
                                                     <i class="fas fa-caret-up text-beatport-neon text-lg md:text-xl mb-1 md:mb-2 animate-bounce"></i>
                                                 </div>
                                             </div>
@@ -886,23 +885,10 @@
                 const accordionItem = button.parentElement;
                 const accordionContent = button.nextElementSibling;
                 const icon = button.querySelector('.accordion-icon');
+                const currentTitle = button.querySelector('.accordion-title') || button.querySelector('h4');
                 
-                // Close others
-                document.querySelectorAll('.accordion-item').forEach(item => {
-                    if (item !== accordionItem) {
-                        item.classList.remove('active');
-                        item.querySelector('.accordion-content').style.maxHeight = '0px';
-                        item.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
-                        
-                        const otherTitle = item.querySelector('.accordion-title') || item.querySelector('h4');
-                        if (otherTitle) otherTitle.classList.remove('text-beatport-neon');
-                    }
-                });
-
                 // Toggle current
                 accordionItem.classList.toggle('active');
-                
-                const currentTitle = button.querySelector('.accordion-title') || button.querySelector('h4');
                 
                 if (accordionItem.classList.contains('active')) {
                     accordionContent.style.maxHeight = "2500px";
@@ -919,18 +905,17 @@
             });
         });
 
-        // Initialize first accordion Open
+        // Initialize ALL accordions Open
         window.addEventListener('DOMContentLoaded', () => {
-            const firstAcc = document.querySelector('.accordion-item');
-            if(firstAcc) {
-                firstAcc.classList.add('active');
-                firstAcc.querySelector('.accordion-content').style.maxHeight = "2500px";
-                setTimeout(() => { firstAcc.querySelector('.accordion-content').style.overflow = "visible"; }, 400);
-                firstAcc.querySelector('.accordion-icon').style.transform = 'rotate(180deg)';
+            document.querySelectorAll('.accordion-item').forEach(acc => {
+                acc.classList.add('active');
+                acc.querySelector('.accordion-content').style.maxHeight = "2500px";
+                setTimeout(() => { acc.querySelector('.accordion-content').style.overflow = "visible"; }, 400);
+                acc.querySelector('.accordion-icon').style.transform = 'rotate(180deg)';
                 
-                const firstTitle = firstAcc.querySelector('.accordion-title') || firstAcc.querySelector('h4');
-                if (firstTitle) firstTitle.classList.add('text-beatport-neon');
-            }
+                const title = acc.querySelector('.accordion-title') || acc.querySelector('h4');
+                if (title) title.classList.add('text-beatport-neon');
+            });
         });
 
         // Mobile Menu Navigation
