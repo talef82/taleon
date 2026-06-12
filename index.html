@@ -43,7 +43,7 @@
     </script>
     <style>
         body {
-            background: #000000; /* Negro puro absoluto */
+            background: #000000;
             color: #ffffff;
             overflow-x: hidden;
         }
@@ -134,6 +134,7 @@
                         </h1>
                     </a>
                     
+                    <!-- Desktop Menu -->
                     <div class="hidden lg:block">
                         <div class="flex items-baseline space-x-8 xl:space-x-12">
                             <a href="#highlights" class="relative font-display font-black text-xs md:text-sm tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
@@ -141,11 +142,15 @@
                                 <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
                             </a>
                             <a href="#beatstats" class="relative font-display font-black text-xs md:text-sm tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
-                                BEATSTATS
+                                STATS
                                 <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
                             </a>
                             <a href="#trending" class="relative font-display font-black text-xs md:text-sm tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
                                 TRENDING
+                                <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
+                            </a>
+                            <a href="#tracks" class="relative font-display font-black text-xs md:text-sm tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
+                                TRACKS
                                 <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
                             </a>
                             <a href="#news" class="relative font-display font-black text-xs md:text-sm tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
@@ -188,11 +193,15 @@
                     </a>
                     <a href="#beatstats" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
                         <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
-                        BEATSTATS
+                        STATS
                     </a>
                     <a href="#trending" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
                         <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
                         TRENDING
+                    </a>
+                    <a href="#tracks" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
+                        <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
+                        TRACKS
                     </a>
                     <a href="#news" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
                         <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
@@ -218,17 +227,15 @@
             </div>
         </nav>
 
-        <!-- Header -->
+        <!-- Image 1 (Header) -->
         <div class="w-full max-w-7xl mx-auto px-4 pt-24 md:pt-32 pb-8 md:pb-12 shrink-0 relative z-10">
             <div class="flex flex-col items-center">
-                <!-- Image Container 1 (16:9) -->
                 <div class="w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] relative group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/KrtDMxP.jpeg')">
                     <img src="https://i.imgur.com/KrtDMxP.jpeg" 
                          alt="Taleon Live" 
                          class="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105 opacity-100 block">
                 </div>
                 
-                <!-- Text Container (Below Image) -->
                 <div class="relative z-10 text-center px-4 w-full mt-10 md:mt-16">
                     <h2 class="font-display font-black text-6xl md:text-[8rem] lg:text-[10rem] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-beatport-neon mb-2 md:mb-6 drop-shadow-2xl leading-none">
                         TALEON
@@ -271,13 +278,6 @@
                         </div>
                     </div>
 
-                    <!-- Image Container 2 (16:9) -->
-                    <div class="w-full relative z-10 shrink-0 group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/48BYq8p.jpeg')">
-                        <div class="w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] relative">
-                            <img src="https://i.imgur.com/48BYq8p.jpeg" alt="Taleon Studio" class="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105 opacity-100 block">
-                        </div>
-                    </div>
-
                     <!-- Accordion 2: Top 2 Beatport -->
                     <div class="accordion-item glass-panel rounded-2xl overflow-hidden active border border-gray-800 transition-all duration-300 hover:border-gray-600">
                         <button class="accordion-btn w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between focus:outline-none hover:bg-white/5 transition-colors">
@@ -289,7 +289,6 @@
                         </button>
                         <div class="accordion-content px-0 border-t border-gray-800/50">
                             <div class="bg-transparent pb-6 md:pb-8">
-                                <!-- Header -->
                                 <div class="flex justify-between items-center px-6 md:px-8 py-4">
                                     <div class="flex items-center gap-4">
                                         <div class="w-10 md:w-12 h-10 md:h-12 rounded-full overflow-hidden border-2 border-beatport-neon p-[2px]">
@@ -311,7 +310,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Image Carousel -->
                                 <div class="relative w-full overflow-hidden border-y border-gray-800 bg-black/50 group">
                                     <button onclick="scrollCarousel('acc_top2', -1, event)" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
                                         <i class="fas fa-chevron-left text-sm md:text-base"></i>
@@ -332,7 +330,6 @@
                                         <span id="counter-acc_top2">1</span>/2
                                     </div>
                                 </div>
-                                <!-- Actions -->
                                 <div class="flex items-center px-6 md:px-8 py-4 md:py-5 relative w-full">
                                     <div class="flex gap-2 z-10">
                                         <a href="https://www.beatport.com/track/solemnia/27203539" target="_blank" class="px-5 py-2 bg-white/10 hover:bg-beatport-neon text-white hover:text-black rounded-lg text-xs md:text-sm font-bold transition-colors border border-white/20 hover:border-beatport-neon flex items-center">
@@ -344,7 +341,6 @@
                                         <div class="w-2 h-2 rounded-full bg-gray-600 dot-acc_top2-1"></div>
                                     </div>
                                 </div>
-                                <!-- Text -->
                                 <div class="px-6 md:px-8 text-sm md:text-base w-full">
                                     <div class="flex flex-col">
                                         <div class="line-clamp-3 leading-relaxed break-words" id="text-container-acc_top2">
@@ -369,7 +365,6 @@
                         </button>
                         <div class="accordion-content px-0 border-t border-gray-800/50">
                             <div class="bg-transparent pb-6 md:pb-8">
-                                <!-- Header -->
                                 <div class="flex justify-between items-center px-6 md:px-8 py-4">
                                     <div class="flex items-center gap-4">
                                         <div class="w-10 md:w-12 h-10 md:h-12 rounded-full overflow-hidden border-2 border-beatport-neon p-[2px]">
@@ -391,7 +386,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Image Carousel -->
                                 <div class="relative w-full overflow-hidden border-y border-gray-800 bg-black/50 group">
                                     <button onclick="scrollCarousel('acc_top1', -1, event)" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
                                         <i class="fas fa-chevron-left text-sm md:text-base"></i>
@@ -418,7 +412,6 @@
                                         <span id="counter-acc_top1">1</span>/4
                                     </div>
                                 </div>
-                                <!-- Actions -->
                                 <div class="flex items-center px-6 md:px-8 py-4 md:py-5 relative w-full">
                                     <div class="flex gap-2 z-10">
                                         <a href="https://www.beatport.com/track/solemnia/27203539" target="_blank" class="px-5 py-2 bg-white/10 hover:bg-beatport-neon text-white hover:text-black rounded-lg text-xs md:text-sm font-bold transition-colors border border-white/20 hover:border-beatport-neon flex items-center">
@@ -432,7 +425,6 @@
                                         <div class="w-2 h-2 rounded-full bg-gray-600 dot-acc_top1-3"></div>
                                     </div>
                                 </div>
-                                <!-- Text -->
                                 <div class="px-6 md:px-8 text-sm md:text-base w-full">
                                     <div class="flex flex-col">
                                         <div class="line-clamp-3 leading-relaxed break-words" id="text-container-acc_top1">
@@ -450,11 +442,11 @@
             </div>
         </section>
 
-        <!-- Image Container 3 (16:9) -->
+        <!-- Image 2 (Highlights -> Beatstats) -->
         <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
             <div class="w-full max-w-7xl mx-auto px-4">
-                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/r7HpAcu.jpeg')">
-                    <img src="https://i.imgur.com/r7HpAcu.jpeg" alt="Taleon Breakout Image" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/48BYq8p.jpeg')">
+                    <img src="https://i.imgur.com/48BYq8p.jpeg" alt="Taleon Studio" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
                 </div>
             </div>
         </section>
@@ -506,7 +498,7 @@
                                         <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                         <span class="text-[10px] md:text-xs text-gray-400 text-center mb-2 h-8 flex items-center font-mono leading-tight">ORGANIC HOUSE</span>
                                         <div class="flex items-end gap-2">
-                                            <span class="font-display font-black text-4xl md:text-5xl text-white">56</span>
+                                            <span class="font-display font-black text-4xl md:text-5xl text-white">57</span>
                                             <i class="fas fa-caret-up text-beatport-neon text-lg md:text-xl mb-1 md:mb-2 animate-bounce"></i>
                                         </div>
                                     </div>
@@ -543,70 +535,6 @@
                             </div>
                         </div>
 
-                        <!-- TOP 3 TRACKS -->
-                        <div class="mt-12 border-t border-gray-800 pt-8">
-                            <h5 class="text-sm md:text-base font-mono text-gray-400 tracking-widest uppercase flex items-center gap-3 mb-6">
-                                <i class="fas fa-play-circle text-beatport-neon"></i> TOP 3 TRACKS
-                            </h5>
-                            <div class="space-y-3">
-                                <!-- Track 1 -->
-                                <div class="flex items-center justify-between p-4 bg-black border border-gray-800 rounded-xl hover:border-beatport-neon transition-all group cursor-pointer" onclick="toggleTrack('27203539', this)">
-                                    <div class="flex items-center gap-4">
-                                        <span class="font-mono text-gray-600 group-hover:text-beatport-neon transition-colors w-4">01</span>
-                                        <div class="flex flex-col">
-                                            <span class="font-bold text-white tracking-wider text-sm md:text-base">SOLEMNIA</span>
-                                            <span class="text-[10px] md:text-xs text-beatport-neon font-mono mt-0.5 uppercase tracking-wider">TOP1 Hype Organic House / TOP2 Organic House Beatport</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-4">
-                                        <a href="https://www.beatport.com/track/solemnia/27203539" target="_blank" class="text-gray-500 hover:text-white transition-colors" onclick="event.stopPropagation()">
-                                            <i class="fas fa-external-link-alt text-sm"></i>
-                                        </a>
-                                        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-beatport-neon group-hover:text-black transition-colors text-white play-btn-icon">
-                                            <i class="fas fa-play text-xs ml-0.5"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Track 2 -->
-                                <div class="flex items-center justify-between p-4 bg-black border border-gray-800 rounded-xl hover:border-beatport-neon transition-all group cursor-pointer" onclick="toggleTrack('28785112', this)">
-                                    <div class="flex items-center gap-4">
-                                        <span class="font-mono text-gray-600 group-hover:text-beatport-neon transition-colors w-4">02</span>
-                                        <div class="flex flex-col">
-                                            <span class="font-bold text-white tracking-wider text-sm md:text-base">BALINEMA</span>
-                                            <span class="text-[10px] md:text-xs text-beatport-neon font-mono mt-0.5 uppercase tracking-wider">TOP4 Hype Organic House Beatport</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-4">
-                                        <a href="https://www.beatport.com/track/balinema/28785112" target="_blank" class="text-gray-500 hover:text-white transition-colors" onclick="event.stopPropagation()">
-                                            <i class="fas fa-external-link-alt text-sm"></i>
-                                        </a>
-                                        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-beatport-neon group-hover:text-black transition-colors text-white play-btn-icon">
-                                            <i class="fas fa-play text-xs ml-0.5"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Track 3 -->
-                                <div class="flex items-center justify-between p-4 bg-black border border-gray-800 rounded-xl hover:border-beatport-neon transition-all group cursor-pointer" onclick="toggleTrack('26919671', this)">
-                                    <div class="flex items-center gap-4">
-                                        <span class="font-mono text-gray-600 group-hover:text-beatport-neon transition-colors w-4">03</span>
-                                        <div class="flex flex-col">
-                                            <span class="font-bold text-white tracking-wider text-sm md:text-base">AVENUVIA</span>
-                                            <span class="text-[10px] md:text-xs text-beatport-neon font-mono mt-0.5 uppercase tracking-wider">TOP8 Hype Organic House Beatport</span>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-4">
-                                        <a href="https://www.beatport.com/track/avenuvia/26919671" target="_blank" class="text-gray-500 hover:text-white transition-colors" onclick="event.stopPropagation()">
-                                            <i class="fas fa-external-link-alt text-sm"></i>
-                                        </a>
-                                        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-beatport-neon group-hover:text-black transition-colors text-white play-btn-icon">
-                                            <i class="fas fa-play text-xs ml-0.5"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END TOP 3 TRACKS -->
-
                         <!-- Action Button -->
                         <div class="mt-10 border-t border-gray-800 pt-8 text-center">
                             <a href="https://www.beatstats.com/artist/taleon/1077287" target="_blank" class="inline-flex items-center gap-3 px-8 py-3 md:py-4 bg-gray-800 hover:bg-white text-gray-300 hover:text-black rounded-full text-xs md:text-sm font-bold transition-all border border-gray-700 hover:border-white tracking-widest">
@@ -619,11 +547,11 @@
             </div>
         </section>
 
-        <!-- Image Container 4 (16:9) -->
-        <section class="w-full relative z-10 shrink-0 mb-16 md:mb-24 mt-16 md:mt-24">
+        <!-- Image 3 (Beatstats -> Trending) -->
+        <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
             <div class="w-full max-w-7xl mx-auto px-4">
-                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/Fa7rRO6.jpeg')">
-                    <img src="https://i.imgur.com/Fa7rRO6.jpeg" alt="Taleon Breakout Image" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/r7HpAcu.jpeg')">
+                    <img src="https://i.imgur.com/r7HpAcu.jpeg" alt="Taleon Breakout Image" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
                 </div>
             </div>
         </section>
@@ -633,7 +561,6 @@
             <div class="max-w-7xl mx-auto px-4">
                 <div class="flex items-center justify-between mb-10 md:mb-16">
                     <h3 class="font-display text-3xl md:text-5xl font-black text-glow uppercase">TRENDING</h3>
-                    <!-- Invented Animated Equalizer Icon -->
                     <div class="flex items-end gap-1.5 h-8 md:h-10">
                         <div class="w-2 md:w-3 h-4 md:h-5 bg-beatport-neon rounded-t-sm animate-equalizer" style="animation-delay: 0.3s;"></div>
                         <div class="w-2 md:w-3 h-7 md:h-8 bg-beatport-neon rounded-t-sm animate-equalizer" style="animation-delay: 0.1s;"></div>
@@ -641,9 +568,98 @@
                     </div>
                 </div>
 
-                <!-- Trending Container: Full width mobile, 3 Column Grid on desktop -->
                 <div class="flex flex-col gap-8 md:grid md:grid-cols-3 md:gap-8" id="trending-container">
                     <!-- Trending injected by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Image 4 (Trending -> Tracks) -->
+        <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
+            <div class="w-full max-w-7xl mx-auto px-4">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/Fa7rRO6.jpeg')">
+                    <img src="https://i.imgur.com/Fa7rRO6.jpeg" alt="Taleon Breakout Image" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
+                </div>
+            </div>
+        </section>
+
+        <!-- Top 3 Tracks Independent Section -->
+        <section id="tracks" class="py-16 md:py-24 relative z-10 shrink-0 border-y border-white/5 bg-white/[0.02]">
+            <div class="w-full max-w-7xl mx-auto px-4">
+                
+                <div class="text-center mb-10 md:mb-12">
+                    <h3 class="font-display text-3xl md:text-5xl font-black mb-4 text-glow uppercase flex items-center justify-center gap-4">
+                        <i class="fas fa-play-circle text-beatport-neon"></i> TOP 3 TRACKS
+                    </h3>
+                    <div class="h-1.5 w-16 md:w-24 bg-beatport-neon mx-auto rounded-full"></div>
+                </div>
+
+                <div class="w-full">
+                    <div class="space-y-4 w-full">
+                        <!-- Track 1 -->
+                        <div class="flex items-center justify-between p-5 md:p-6 bg-black border border-gray-800 rounded-2xl hover:border-beatport-neon transition-all group cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.4)]" onclick="toggleTrack('27203539', this)">
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="font-mono text-gray-600 group-hover:text-beatport-neon transition-colors text-lg md:text-2xl font-black w-6">01</span>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-white tracking-wider text-base md:text-xl">SOLEMNIA</span>
+                                    <span class="text-[10px] md:text-sm text-beatport-neon font-mono mt-0.5 uppercase tracking-wider">TOP1 Hype Organic House / TOP2 Organic House Beatport</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <a href="https://www.beatport.com/track/solemnia/27203539" target="_blank" class="text-gray-500 hover:text-white transition-colors" onclick="event.stopPropagation()">
+                                    <i class="fas fa-external-link-alt text-base md:text-lg"></i>
+                                </a>
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-beatport-neon group-hover:text-black transition-colors text-white play-btn-icon shadow-[0_0_15px_rgba(148,213,0,0)] group-hover:shadow-[0_0_15px_rgba(148,213,0,0.4)]">
+                                    <i class="fas fa-play text-sm md:text-base ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Track 2 -->
+                        <div class="flex items-center justify-between p-5 md:p-6 bg-black border border-gray-800 rounded-2xl hover:border-beatport-neon transition-all group cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.4)]" onclick="toggleTrack('28785112', this)">
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="font-mono text-gray-600 group-hover:text-beatport-neon transition-colors text-lg md:text-2xl font-black w-6">02</span>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-white tracking-wider text-base md:text-xl">BALINEMA</span>
+                                    <span class="text-[10px] md:text-sm text-beatport-neon font-mono mt-0.5 uppercase tracking-wider">TOP4 Hype Organic House Beatport</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <a href="https://www.beatport.com/track/balinema/28785112" target="_blank" class="text-gray-500 hover:text-white transition-colors" onclick="event.stopPropagation()">
+                                    <i class="fas fa-external-link-alt text-base md:text-lg"></i>
+                                </a>
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-beatport-neon group-hover:text-black transition-colors text-white play-btn-icon shadow-[0_0_15px_rgba(148,213,0,0)] group-hover:shadow-[0_0_15px_rgba(148,213,0,0.4)]">
+                                    <i class="fas fa-play text-sm md:text-base ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Track 3 -->
+                        <div class="flex items-center justify-between p-5 md:p-6 bg-black border border-gray-800 rounded-2xl hover:border-beatport-neon transition-all group cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.4)]" onclick="toggleTrack('26919671', this)">
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <span class="font-mono text-gray-600 group-hover:text-beatport-neon transition-colors text-lg md:text-2xl font-black w-6">03</span>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-white tracking-wider text-base md:text-xl">AVENUVIA</span>
+                                    <span class="text-[10px] md:text-sm text-beatport-neon font-mono mt-0.5 uppercase tracking-wider">TOP8 Hype Organic House Beatport</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 md:gap-6">
+                                <a href="https://www.beatport.com/track/avenuvia/26919671" target="_blank" class="text-gray-500 hover:text-white transition-colors" onclick="event.stopPropagation()">
+                                    <i class="fas fa-external-link-alt text-base md:text-lg"></i>
+                                </a>
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-beatport-neon group-hover:text-black transition-colors text-white play-btn-icon shadow-[0_0_15px_rgba(148,213,0,0)] group-hover:shadow-[0_0_15px_rgba(148,213,0,0.4)]">
+                                    <i class="fas fa-play text-sm md:text-base ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image 5 (Tracks -> News) -->
+        <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
+            <div class="w-full max-w-7xl mx-auto px-4">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/gMcNkpI.jpeg')">
+                    <img src="https://i.imgur.com/gMcNkpI.jpeg" alt="Taleon Breakout Image" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
                 </div>
             </div>
         </section>
@@ -653,7 +669,6 @@
             <div class="max-w-7xl mx-auto px-4">
                 <div class="flex items-center justify-between mb-10 md:mb-16">
                     <h3 class="font-display text-3xl md:text-5xl font-black text-glow uppercase">LATEST NEWS</h3>
-                    <!-- Invented Animated Equalizer Icon -->
                     <div class="flex items-end gap-1.5 h-8 md:h-10">
                         <div class="w-2 md:w-3 h-6 md:h-7 bg-beatport-neon rounded-t-sm animate-equalizer" style="animation-delay: 0.1s;"></div>
                         <div class="w-2 md:w-3 h-10 md:h-12 bg-beatport-neon rounded-t-sm animate-equalizer" style="animation-delay: 0.3s;"></div>
@@ -661,7 +676,6 @@
                     </div>
                 </div>
 
-                <!-- Container for news items -->
                 <div class="w-full flex flex-col gap-4" id="news-container">
                     <!-- News Headlines injected by JavaScript -->
                 </div>
@@ -673,7 +687,6 @@
             <div class="max-w-7xl mx-auto px-4">
                 <div class="flex items-center justify-between mb-10 md:mb-16">
                     <h3 class="font-display text-3xl md:text-5xl font-black text-glow uppercase">CHARTS</h3>
-                    <!-- Invented Animated Equalizer Icon (Different rhythm for Charts) -->
                     <div class="flex items-end gap-1.5 h-8 md:h-10">
                         <div class="w-2 md:w-3 h-5 md:h-6 bg-beatport-neon rounded-t-sm animate-equalizer" style="animation-delay: 0.2s;"></div>
                         <div class="w-2 md:w-3 h-3 md:h-4 bg-beatport-neon rounded-t-sm animate-equalizer" style="animation-delay: 0.1s;"></div>
@@ -681,7 +694,6 @@
                     </div>
                 </div>
 
-                <!-- Charts Container: Full width mobile, 3 Column Grid on desktop -->
                 <div class="flex flex-col gap-8 md:grid md:grid-cols-3 md:gap-8" id="charts-container">
                     <!-- Charts injected by JavaScript -->
                 </div>
@@ -696,16 +708,13 @@
                     <div class="h-1.5 w-16 md:w-24 bg-beatport-neon mx-auto rounded-full"></div>
                 </div>
 
-                <!-- Expanded to 2 columns on desktop -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                    <!-- Video 1 -->
                     <div class="glass-panel p-2 md:p-3 rounded-3xl border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] box-glow transition-all duration-300">
                         <div class="aspect-video rounded-2xl overflow-hidden relative bg-black">
                             <iframe class="absolute top-0 left-0 w-full h-full rounded-2xl" src="https://www.youtube.com/embed/lGU3pFWwSIs?si=mUqRUqCX5wFbAz2I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
                     
-                    <!-- Video 2 -->
                     <div class="glass-panel p-2 md:p-3 rounded-3xl border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] box-glow transition-all duration-300">
                         <div class="aspect-video rounded-2xl overflow-hidden relative bg-black">
                             <iframe class="absolute top-0 left-0 w-full h-full rounded-2xl" src="https://www.youtube.com/embed/XQtxeSmStek?si=5Fhlmt03bawJ02aa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -715,11 +724,11 @@
             </div>
         </section>
 
-        <!-- Image Container 5 (16:9) -->
+        <!-- Image 6 (Videos -> Links) -->
         <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
             <div class="w-full max-w-7xl mx-auto px-4">
-                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/gMcNkpI.jpeg')">
-                    <img src="https://i.imgur.com/gMcNkpI.jpeg" alt="Taleon Studio" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/gMAMMzD.jpeg')">
+                    <img src="https://i.imgur.com/gMAMMzD.jpeg" alt="Taleon Studio" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
                 </div>
             </div>
         </section>
@@ -735,9 +744,7 @@
                     <p class="text-gray-500 text-xs md:text-sm tracking-widest font-mono uppercase mb-12">Official Links</p>
                 </div>
                 
-                <!-- Links Grid Desktop / Stack Mobile -->
                 <div class="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-6">
-                    <!-- Beatport Original Logo -->
                     <a href="https://www.beatport.com/artist/taleon/1077287" target="_blank" class="w-full glass-panel flex items-center p-4 md:p-5 rounded-2xl hover:bg-beatport-neon group transition-all duration-300 border border-gray-800 hover:border-beatport-neon relative overflow-hidden transform hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(148,213,0,0.2)]">
                         <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0 relative z-20">
                             <img src="https://i1.sndcdn.com/avatars-JxaRv18vXtTglVU3-z0ws9A-t1080x1080.jpg" class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-300">
@@ -746,7 +753,6 @@
                         <div class="absolute inset-0 bg-gradient-to-r from-beatport-neon/0 via-beatport-neon/40 to-beatport-neon/0 opacity-0 group-hover:opacity-100 animate-[pulse-slow_2s_infinite] z-10"></div>
                     </a>
 
-                    <!-- Spotify -->
                     <a href="https://open.spotify.com/intl-es/artist/0Bar3NdKt7kFM1j8CX5zIg" target="_blank" class="w-full glass-panel flex items-center p-4 md:p-5 rounded-2xl hover:bg-[#1DB954] group transition-all duration-300 border border-gray-800 hover:border-[#1DB954] transform hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(29,185,84,0.2)]">
                         <div class="w-12 h-12 rounded-full bg-black group-hover:bg-white flex items-center justify-center flex-shrink-0 transition-colors z-20">
                             <i class="fab fa-spotify text-2xl md:text-3xl text-gray-400 group-hover:text-[#1DB954] transition-colors"></i>
@@ -754,7 +760,6 @@
                         <span class="flex-grow text-center font-bold text-gray-300 group-hover:text-white tracking-[0.2em] md:text-base text-sm transition-colors z-20 relative left-[-24px]">SPOTIFY</span>
                     </a>
 
-                    <!-- Soundcloud -->
                     <a href="https://soundcloud.com/taleonmusic" target="_blank" class="w-full glass-panel flex items-center p-4 md:p-5 rounded-2xl hover:bg-[#ff5500] group transition-all duration-300 border border-gray-800 hover:border-[#ff5500] transform hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,85,0,0.2)]">
                         <div class="w-12 h-12 rounded-full bg-black group-hover:bg-white flex items-center justify-center flex-shrink-0 transition-colors z-20">
                             <i class="fab fa-soundcloud text-xl md:text-2xl text-gray-400 group-hover:text-[#ff5500] transition-colors mt-1"></i>
@@ -762,7 +767,6 @@
                         <span class="flex-grow text-center font-bold text-gray-300 group-hover:text-white tracking-[0.2em] md:text-base text-sm transition-colors z-20 relative left-[-24px]">SOUNDCLOUD</span>
                     </a>
 
-                    <!-- Apple Music -->
                     <a href="https://music.apple.com/fm/artist/taleon/1648665295" target="_blank" class="w-full glass-panel flex items-center p-4 md:p-5 rounded-2xl hover:bg-[#fa243c] group transition-all duration-300 border border-gray-800 hover:border-[#fa243c] transform hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(250,36,60,0.2)]">
                          <div class="w-12 h-12 rounded-full bg-black group-hover:bg-white flex items-center justify-center flex-shrink-0 transition-colors z-20">
                             <i class="fab fa-apple text-2xl md:text-3xl text-gray-400 group-hover:text-[#fa243c] transition-colors mb-0.5"></i>
@@ -770,7 +774,6 @@
                         <span class="flex-grow text-center font-bold text-gray-300 group-hover:text-white tracking-[0.2em] md:text-base text-sm transition-colors z-20 relative left-[-24px]">APPLE MUSIC</span>
                     </a>
                     
-                    <!-- YouTube -->
                     <a href="https://www.youtube.com/@taleon_music" target="_blank" class="w-full glass-panel flex items-center p-4 md:p-5 rounded-2xl hover:bg-[#FF0000] group transition-all duration-300 border border-gray-800 hover:border-[#FF0000] transform hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,0,0,0.2)]">
                          <div class="w-12 h-12 rounded-full bg-black group-hover:bg-white flex items-center justify-center flex-shrink-0 transition-colors z-20">
                             <i class="fab fa-youtube text-lg md:text-xl text-gray-400 group-hover:text-[#FF0000] transition-colors"></i>
@@ -779,26 +782,15 @@
                     </a>
 
                     <div class="grid grid-cols-2 gap-4 md:gap-6">
-                        <!-- Beatstats -->
                         <a href="https://www.beatstats.com/artist/taleon/1077287" target="_blank" class="w-full glass-panel flex flex-col items-center justify-center p-5 md:p-6 rounded-2xl hover:bg-gray-800 group transition-all duration-300 border border-gray-800 hover:border-gray-500">
                             <span class="font-black text-2xl md:text-3xl text-gray-400 group-hover:text-white transition-colors mb-2">BS</span>
                             <span class="font-mono text-xs text-gray-500 uppercase tracking-widest group-hover:text-gray-300 transition-colors">Beatstats</span>
                         </a>
-                        <!-- Traxsource -->
                         <a href="https://www.traxsource.com/artist/681477/taleon" target="_blank" class="w-full glass-panel flex flex-col items-center justify-center p-5 md:p-6 rounded-2xl hover:bg-gray-800 group transition-all duration-300 border border-gray-800 hover:border-gray-500">
                             <span class="font-black text-2xl md:text-3xl text-gray-400 group-hover:text-white transition-colors mb-2">TS</span>
                             <span class="font-mono text-xs text-gray-500 uppercase tracking-widest group-hover:text-gray-300 transition-colors">Traxsource</span>
                         </a>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Image Container 6 (16:9) -->
-        <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
-            <div class="w-full max-w-7xl mx-auto px-4">
-                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/gMAMMzD.jpeg')">
-                    <img src="https://i.imgur.com/gMAMMzD.jpeg" alt="Taleon Breakout Image" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
                 </div>
             </div>
         </section>
@@ -809,7 +801,6 @@
                 <div class="text-center mb-10 md:mb-12 flex flex-col items-center">
                     <h3 class="font-display text-3xl md:text-5xl font-black mb-4 text-glow">DIRECT LINE</h3>
                     
-                    <!-- Status Badge Redesigned -->
                     <div class="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-4 bg-black/50 border border-beatport-neon/30 px-5 py-3 md:py-2 rounded-xl backdrop-blur-sm">
                         <div class="flex items-center gap-3">
                             <div class="relative flex h-4 w-4">
@@ -825,7 +816,6 @@
 
                 <div class="glass-panel rounded-3xl p-6 md:p-10 shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-gray-800">
                     <div class="space-y-6 flex flex-col">
-                        <!-- Chat Message 1 -->
                         <div class="flex w-full mb-2 items-end gap-4">
                             <img src="https://i.imgur.com/gWmzcM1.jpg" class="w-10 md:w-12 h-10 md:h-12 rounded-full border border-gray-700 object-cover flex-shrink-0">
                             <div class="chat-bubble-left text-white px-5 py-4 md:px-6 md:py-5 rounded-2xl rounded-bl-none max-w-[85%] md:max-w-[60%] lg:max-w-[50%] text-sm md:text-base font-medium">
@@ -833,7 +823,6 @@
                             </div>
                         </div>
 
-                        <!-- Chat Message 2 -->
                         <div class="flex w-full mb-8 md:mb-10 items-end gap-4">
                             <img src="https://i.imgur.com/gWmzcM1.jpg" class="w-10 md:w-12 h-10 md:h-12 rounded-full border border-gray-700 object-cover flex-shrink-0">
                             <div class="chat-bubble-left text-white px-5 py-4 md:px-6 md:py-5 rounded-2xl rounded-bl-none max-w-[85%] md:max-w-[60%] lg:max-w-[50%] text-sm md:text-base font-medium">
@@ -841,7 +830,6 @@
                             </div>
                         </div>
 
-                        <!-- Action Button -->
                         <div class="flex md:justify-end justify-center mt-2">
                             <button onclick="copyEmail()" id="copy-btn" class="w-full sm:w-auto bg-transparent border-2 border-beatport-neon text-beatport-neon font-bold px-8 md:px-12 py-4 md:py-5 rounded-xl hover:bg-beatport-neon hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(148,213,0,0.2)] flex items-center justify-center gap-3 text-sm md:text-base tracking-widest">
                                 <i class="fas fa-envelope text-lg md:text-xl"></i>
@@ -863,15 +851,13 @@
 
     </main>
 
-    <!-- Beatport Player Sticky Bottom (Full Width on Desktop) -->
+    <!-- Beatport Player Sticky Bottom -->
     <div id="player-container" class="fixed bottom-0 left-0 w-full z-50 transition-transform duration-500 transform translate-y-0 shadow-[0_-10px_40px_rgba(0,0,0,0.9)]">
         <div class="w-full max-w-7xl mx-auto relative">
-            <!-- Tab to collapse/expand -->
             <div class="absolute -top-7 right-4 sm:right-8 bg-beatport-neon text-black px-4 py-1.5 rounded-t-lg cursor-pointer hover:bg-white transition-colors shadow-[0_-5px_15px_rgba(148,213,0,0.3)] z-50" onclick="togglePlayer()">
                 <i id="player-arrow" class="fas fa-chevron-down text-sm md:text-base"></i>
             </div>
         </div>
-        <!-- Beatport Embed -->
         <div class="w-full bg-black/95 backdrop-blur-xl border-t border-beatport-neon/30">
             <div class="max-w-7xl mx-auto">
                 <iframe src="https://embed.beatport.com/?id=27203539&type=track" width="100%" height="162" frameborder="0" scrolling="no" class="w-full" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
@@ -987,13 +973,11 @@
             }
         ];
 
-        // Global Registry for the Static Accordion 2
         const galleryAcc2 = [
             "https://i.imgur.com/6Mhftqc.png",
             "https://i.imgur.com/T0AUmE6.png"
         ];
         
-        // Global Registry for the Static Accordion 3 (Top 1)
         const galleryAcc3 = [
             "https://i.imgur.com/NVZv1eb.png",
             "https://i.imgur.com/H7MtTwi.png",
@@ -1001,7 +985,7 @@
             "https://i.imgur.com/1QYE7Wj.jpeg"
         ];
 
-        // --- RENDERING FUNCTION FOR NEWS (HEADLINE ACCORDIONS) ---
+        // --- RENDERING FUNCTION FOR NEWS ---
         function renderNewsItems(dataArray, containerId) {
             const container = document.getElementById(containerId);
             if (!container) return;
@@ -1035,12 +1019,10 @@
                         <div id="news-content-${post.id}" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                             <div class="p-5 md:p-6 border-t border-gray-800/50 bg-black flex flex-col gap-6">
                                 
-                                <!-- Text -->
                                 <p class="text-gray-300 text-sm md:text-base leading-relaxed">
                                     <span class="font-bold text-white mr-2">taleon_music</span> ${post.text}
                                 </p>
                                 
-                                <!-- Images (Full width) -->
                                 <div class="relative w-full overflow-hidden group/carousel rounded-2xl border border-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
                                     ${hasMultipleImages ? `
                                     <button onclick="scrollCarousel('${post.id}', -1, event)" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-0 group-hover/carousel:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
@@ -1062,7 +1044,6 @@
                                     ` : ''}
                                 </div>
                                 
-                                <!-- Dots outside for cleaner look -->
                                 ${hasMultipleImages ? `
                                 <div class="flex justify-center items-center -mt-2">
                                     <div class="flex gap-1.5 md:gap-2">
@@ -1071,7 +1052,6 @@
                                 </div>
                                 ` : ''}
                                 
-                                <!-- Action -->
                                 ${post.link ? `
                                 <div class="flex justify-center md:justify-start mt-2">
                                     <a href="${post.link}" target="_blank" class="w-full md:w-auto text-center px-6 py-3 bg-white/10 hover:bg-beatport-neon text-white hover:text-black rounded-lg text-xs md:text-sm font-bold transition-colors border border-white/20 hover:border-beatport-neon tracking-widest uppercase">
@@ -1087,7 +1067,76 @@
             });
         }
 
-        // --- RENDERING FUNCTION FOR CHARTS & TRENDING ---
+        // --- RENDERING FUNCTION FOR TRENDING ---
+        function renderTrendingItems(dataArray, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            dataArray.forEach(post => {
+                let imagesHtml = '';
+                let dotsHtml = '';
+                const hasMultipleImages = post.images.length > 1;
+                const aspectClass = 'aspect-[9/16]';
+
+                post.images.forEach((img, index) => {
+                    imagesHtml += `
+                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in" onclick="openGallery('${post.id}', ${index})">
+                            <img src="${img}" class="w-full ${aspectClass} object-cover object-top">
+                        </div>
+                    `;
+                    if(hasMultipleImages) {
+                        dotsHtml += `<div class="w-1.5 h-1.5 rounded-full ${index === 0 ? 'bg-beatport-neon' : 'bg-gray-600'} transition-colors duration-300 dot-${post.id}-${index}"></div>`;
+                    }
+                });
+
+                const html = `
+                    <div class="glass-panel border border-gray-800 bg-black/40 rounded-3xl overflow-hidden mb-6 sm:mb-0 box-glow transition-all hover:-translate-y-1 h-fit flex flex-col shadow-[0_0_40px_rgba(0,0,0,0.6)]">
+                        
+                        <div class="p-4 md:p-5 flex flex-col items-center justify-center bg-black border-b border-gray-800 text-center">
+                            <span class="text-[10px] md:text-xs text-beatport-neon font-mono uppercase tracking-widest mb-1">${post.subtitle}</span>
+                            <span class="font-bold text-white text-sm md:text-base uppercase tracking-wider">${post.title}</span>
+                        </div>
+
+                        <div class="relative w-full overflow-hidden group">
+                            ${hasMultipleImages ? `
+                            <button onclick="scrollCarousel('${post.id}', -1, event)" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                                <i class="fas fa-chevron-left text-sm"></i>
+                            </button>
+                            <button onclick="scrollCarousel('${post.id}', 1, event)" class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                                <i class="fas fa-chevron-right text-sm"></i>
+                            </button>
+                            ` : ''}
+
+                            <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar relative" id="carousel-${post.id}" onscroll="updateDots('${post.id}', ${post.images.length})">
+                                ${imagesHtml}
+                            </div>
+                            
+                            ${hasMultipleImages ? `
+                            <div class="absolute top-3 right-3 md:right-14 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-xs text-white font-bold tracking-widest pointer-events-none z-10">
+                                <span id="counter-${post.id}">1</span>/${post.images.length}
+                            </div>
+                            ` : ''}
+                        </div>
+
+                        <div class="p-4 md:p-5 flex flex-col bg-black border-t border-gray-800">
+                            ${hasMultipleImages ? `
+                            <div class="flex justify-center items-center w-full mb-3">
+                                <div class="flex gap-1.5 md:gap-2">
+                                    ${dotsHtml}
+                                </div>
+                            </div>
+                            ` : ''}
+                            <a href="${post.link}" target="_blank" class="w-full text-center px-5 py-3 md:py-2.5 bg-white/10 hover:bg-beatport-neon text-white hover:text-black rounded-lg text-xs md:text-sm font-bold transition-colors border border-white/20 hover:border-beatport-neon tracking-widest uppercase">
+                                ${post.buttonText || 'VIEW CHART'}
+                            </a>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += html;
+            });
+        }
+
+        // --- RENDERING FUNCTION FOR CHARTS ---
         function renderCharts(dataArray, containerId) {
             const container = document.getElementById(containerId);
             if (!container) return;
@@ -1111,7 +1160,6 @@
 
                 const html = `
                     <div class="glass-panel border border-gray-800 bg-black/40 rounded-3xl overflow-hidden mb-6 sm:mb-0 box-glow transition-all hover:-translate-y-1 h-fit flex flex-col shadow-[0_0_40px_rgba(0,0,0,0.6)]">
-                        <!-- Image Carousel -->
                         <div class="relative w-full overflow-hidden group">
                             ${hasMultipleImages ? `
                             <button onclick="scrollCarousel('${post.id}', -1, event)" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
@@ -1133,7 +1181,6 @@
                             ` : ''}
                         </div>
 
-                        <!-- Chart/Trending Details -->
                         <div class="p-4 md:p-5 flex flex-col gap-4 bg-black border-t border-gray-800">
                             <div class="flex justify-between items-center w-full">
                                 <div class="flex flex-col">
@@ -1154,14 +1201,11 @@
             });
         }
 
-        // Run the rendering
         renderNewsItems(posts, 'news-container');
-        renderCharts(trendingStats, 'trending-container');
+        renderTrendingItems(trendingStats, 'trending-container');
         renderCharts(charts, 'charts-container');
 
         // --- UI HELPER FUNCTIONS ---
-
-        // Toggle Nested News Items
         function toggleNews(id) {
             const content = document.getElementById(`news-content-${id}`);
             const icon = document.getElementById(`news-icon-${id}`);
@@ -1171,14 +1215,12 @@
                 icon.classList.remove('rotate-45', 'text-beatport-neon');
                 icon.classList.add('text-gray-500');
             } else {
-                // Expanding to a safe large value to ensure smooth transition
                 content.style.maxHeight = '2500px';
                 icon.classList.add('rotate-45', 'text-beatport-neon');
                 icon.classList.remove('text-gray-500');
             }
         }
 
-        // Carousel Arrow Navigation
         function scrollCarousel(id, direction, event) {
             if (event) event.stopPropagation();
             const carousel = document.getElementById(`carousel-${id}`);
@@ -1187,7 +1229,6 @@
             carousel.scrollBy({ left: direction * width, behavior: 'smooth' });
         }
 
-        // Carousel Dots & Counter
         function updateDots(id, total) {
             const carousel = document.getElementById(`carousel-${id}`);
             if(!carousel) return;
@@ -1196,7 +1237,6 @@
             const width = carousel.offsetWidth;
             const index = Math.round(scrollLeft / width);
             
-            // Update dots
             for (let i = 0; i < total; i++) {
                 const dot = document.querySelector(`.dot-${id}-${i}`);
                 if (dot) {
@@ -1210,12 +1250,10 @@
                 activeDot.classList.add('bg-beatport-neon');
             }
 
-            // Update counter
             const counter = document.getElementById(`counter-${id}`);
             if (counter) counter.innerText = index + 1;
         }
 
-        // Accordion Logic (Main Highlights)
         document.querySelectorAll('.accordion-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const accordionItem = button.parentElement;
@@ -1223,7 +1261,6 @@
                 const icon = button.querySelector('.accordion-icon');
                 const currentTitle = button.querySelector('.accordion-title') || button.querySelector('h4');
                 
-                // Toggle current
                 accordionItem.classList.toggle('active');
                 
                 if (accordionItem.classList.contains('active')) {
@@ -1241,7 +1278,6 @@
             });
         });
 
-        // Initialize ALL accordions Open
         window.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.accordion-item').forEach(acc => {
                 acc.classList.add('active');
@@ -1254,7 +1290,6 @@
             });
         });
 
-        // Mobile Menu Navigation
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         const links = document.querySelectorAll('.mobile-link');
@@ -1269,7 +1304,6 @@
             });
         });
 
-        // Navbar Scroll
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -1281,7 +1315,6 @@
             }
         });
 
-        // --- DYNAMIC LIGHTBOX GALLERY ---
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxPrev = document.getElementById('lightbox-prev');
@@ -1291,7 +1324,6 @@
         let currentGalleryIndex = 0;
 
         function openGallery(id, index) {
-            // Determine which gallery was clicked
             if (id === 'acc_top2') {
                 currentGalleryContext = galleryAcc2;
             } else if (id === 'acc_top1') {
@@ -1306,7 +1338,6 @@
             currentGalleryIndex = index;
             updateLightboxImage();
 
-            // Show/Hide navigation arrows based on gallery length
             if (currentGalleryContext && currentGalleryContext.length > 1) {
                 lightboxPrev.classList.remove('hidden');
                 lightboxNext.classList.remove('hidden');
@@ -1322,7 +1353,6 @@
             }, 10);
         }
 
-        // Open Lightbox for standalone images (like About Me, Studio Separator)
         function openLightbox(src) {
             currentGalleryContext = [src];
             currentGalleryIndex = 0;
@@ -1350,7 +1380,6 @@
             
             currentGalleryIndex += direction;
             
-            // Loop functionality
             if (currentGalleryIndex < 0) {
                 currentGalleryIndex = currentGalleryContext.length - 1;
             } else if (currentGalleryIndex >= currentGalleryContext.length) {
@@ -1368,7 +1397,6 @@
             }, 300);
         }
 
-        // Copy Email Logic
         function copyEmail() {
             const email = "taleonmusic@gmail.com";
             navigator.clipboard.writeText(email).then(() => {
@@ -1389,41 +1417,34 @@
             });
         }
 
-        // Interactive Top Tracks Player Logic
         let currentTrackId = null;
 
         function toggleTrack(trackId, element) {
             const iframe = document.querySelector('#player-container iframe');
             const container = document.getElementById('player-container');
             
-            // Reset all play icons
             document.querySelectorAll('.play-btn-icon i').forEach(icon => {
                 icon.className = 'fas fa-play text-xs ml-0.5';
             });
 
             if (currentTrackId === trackId) {
-                // Stop the track (reset iframe without autoplay)
                 iframe.src = `https://embed.beatport.com/?id=${trackId}&type=track`;
                 currentTrackId = null;
             } else {
-                // Play new track -> ADDED AUTOPLAY=1 AND TIMESTAMP CACHE BUSTER
                 iframe.src = `https://embed.beatport.com/?id=${trackId}&type=track&autoplay=1&_t=${Date.now()}`;
                 currentTrackId = trackId;
                 
-                // Set pause icon on the clicked track
                 const icon = element.querySelector('.play-btn-icon i');
                 if (icon) {
                     icon.className = 'fas fa-pause text-xs';
                 }
                 
-                // Expand player if it's collapsed
                 if (container.classList.contains('translate-y-[162px]')) {
                     togglePlayer();
                 }
             }
         }
 
-        // Hide/Show Beatport Player
         function togglePlayer() {
             const container = document.getElementById('player-container');
             const arrow = document.getElementById('player-arrow');
