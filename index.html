@@ -662,7 +662,7 @@
                 </div>
 
                 <!-- Container for news items -->
-                <div class="max-w-4xl mx-auto flex flex-col gap-4" id="news-container">
+                <div class="w-full flex flex-col gap-4" id="news-container">
                     <!-- News Headlines injected by JavaScript -->
                 </div>
             </div>
@@ -908,7 +908,7 @@
                 title: '"AVENUVIA" TOP8 HYPE ORGANIC HOUSE BEATPORT',
                 subtitle: '2026-04-15',
                 images: [
-                    "https://i.imgur.com/K2xiXPt.png"
+                    "https://i.imgur.com/njjlR7A.png"
                 ],
                 text: "Incredible news! 🎶 'AVENUVIA' has climbed to the Top 8 in the Beatport Hype Organic House chart. Even better, it’s been handpicked for two official Beatport curated playlists: 'Best New Hype Organic House' and 'Afterhours Essentials 2026'. Huge thanks to the curation team and everyone playing it out loud! 🎧🔥",
                 link: "https://www.beatport.com/track/avenuvia/26919671",
@@ -1014,7 +1014,7 @@
                 post.images.forEach((img, index) => {
                     imagesHtml += `
                         <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in" onclick="openGallery('${post.id}', ${index})">
-                            <img src="${img}" class="w-full h-auto max-h-[500px] object-cover object-top">
+                            <img src="${img}" class="w-full h-auto object-cover object-top">
                         </div>
                     `;
                     if(hasMultipleImages) {
@@ -1040,8 +1040,8 @@
                                     <span class="font-bold text-white mr-2">taleon_music</span> ${post.text}
                                 </p>
                                 
-                                <!-- Images (Constrained width for elegance) -->
-                                <div class="relative w-full max-w-sm mx-auto overflow-hidden group/carousel rounded-2xl border border-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                                <!-- Images (Full width) -->
+                                <div class="relative w-full overflow-hidden group/carousel rounded-2xl border border-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
                                     ${hasMultipleImages ? `
                                     <button onclick="scrollCarousel('${post.id}', -1, event)" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-0 group-hover/carousel:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
                                         <i class="fas fa-chevron-left text-sm"></i>
