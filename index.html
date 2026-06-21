@@ -490,7 +490,7 @@
                                         <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                         <span class="text-[10px] md:text-xs text-gray-400 text-center mb-2 h-8 flex items-center font-mono leading-tight">HYPE - ORGANIC HOUSE</span>
                                         <div class="flex items-end gap-2">
-                                            <span class="font-display font-black text-4xl md:text-5xl text-white">15</span>
+                                            <span class="font-display font-black text-4xl md:text-5xl text-white">13</span>
                                             <i class="fas fa-caret-up text-beatport-neon text-lg md:text-xl mb-1 md:mb-2 animate-bounce"></i>
                                         </div>
                                     </div>
@@ -498,7 +498,7 @@
                                         <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                         <span class="text-[10px] md:text-xs text-gray-400 text-center mb-2 h-8 flex items-center font-mono leading-tight">ORGANIC HOUSE</span>
                                         <div class="flex items-end gap-2">
-                                            <span class="font-display font-black text-4xl md:text-5xl text-white">47</span>
+                                            <span class="font-display font-black text-4xl md:text-5xl text-white">42</span>
                                             <i class="fas fa-caret-up text-beatport-neon text-lg md:text-xl mb-1 md:mb-2 animate-bounce"></i>
                                         </div>
                                     </div>
@@ -519,7 +519,7 @@
                                         <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                         <span class="text-[10px] md:text-xs text-gray-400 text-center mb-2 h-8 flex items-center font-mono leading-tight">HYPE - ORGANIC HOUSE</span>
                                         <div class="flex items-end gap-2">
-                                            <span class="font-display font-black text-4xl md:text-5xl text-white">18</span>
+                                            <span class="font-display font-black text-4xl md:text-5xl text-white">13</span>
                                             <i class="fas fa-caret-up text-beatport-neon text-lg md:text-xl mb-1 md:mb-2 animate-bounce"></i>
                                         </div>
                                     </div>
@@ -527,7 +527,7 @@
                                         <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                         <span class="text-[10px] md:text-xs text-gray-400 text-center mb-2 h-8 flex items-center font-mono leading-tight">ORGANIC HOUSE</span>
                                         <div class="flex items-end gap-2">
-                                            <span class="font-display font-black text-4xl md:text-5xl text-white">35</span>
+                                            <span class="font-display font-black text-4xl md:text-5xl text-white">32</span>
                                             <i class="fas fa-caret-up text-beatport-neon text-lg md:text-xl mb-1 md:mb-2 animate-bounce"></i>
                                         </div>
                                     </div>
@@ -574,15 +574,6 @@
             </div>
         </section>
 
-        <!-- Image 4 (Trending -> Tracks) -->
-        <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
-            <div class="w-full max-w-7xl mx-auto px-4">
-                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/gsAvLT5.jpeg')">
-                    <img src="https://i.imgur.com/gsAvLT5.jpeg" alt="Taleon Breakout Image" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
-                </div>
-            </div>
-        </section>
-
         <!-- Top 3 Tracks Independent Section -->
         <section id="tracks" class="py-16 md:py-24 relative z-10 shrink-0 border-y border-white/5 bg-white/[0.02]">
             <div class="w-full max-w-7xl mx-auto px-4">
@@ -592,6 +583,11 @@
                         <i class="fas fa-play-circle text-beatport-neon"></i> TOP 3 TRACKS
                     </h3>
                     <div class="h-1.5 w-16 md:w-24 bg-beatport-neon mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Header Image inside Top 3 Tracks -->
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in mb-8 md:mb-12" onclick="openLightbox('https://i.imgur.com/gsAvLT5.jpeg')">
+                    <img src="https://i.imgur.com/gsAvLT5.jpeg" alt="Taleon DJ Set" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
                 </div>
 
                 <div class="w-full">
@@ -860,6 +856,18 @@
         // --- 1. NEWS DATA ---
         const posts = [
             {
+                id: 'post_dorannia',
+                title: '"DORANNIA" TOP7 HYPE ORGANIC HOUSE BEATPORT',
+                subtitle: '2026-06-21',
+                images: [
+                    "https://i.imgur.com/DTqSbBD.png",
+                    "https://i.imgur.com/rTMJogr.png"
+                ],
+                text: "The momentum is real! 🚀 'DORANNIA' has just climbed to the #7 spot on the Beatport Hype Organic House chart. A massive thank you to all the DJs and listeners supporting this release and pushing it higher. Let's keep the vibe alive! 🙏✨",
+                link: "https://www.beatport.com/track/dorannia/28879019",
+                buttonText: "BEATPORT"
+            },
+            {
                 id: 'post1',
                 title: '"BALINEMA" TOP4 HYPE ORGANIC HOUSE BEATPORT',
                 subtitle: '2026-06-01',
@@ -917,12 +925,12 @@
             },
             {
                 id: 'trend3',
-                title: 'HYPE ORGANIC HOUSE',
+                title: 'ORGANIC HOUSE',
                 subtitle: 'UNDERCOOL',
                 images: [
-                    "https://i.imgur.com/95aueIK.png"
+                    "https://i.imgur.com/WK2DGQS.jpeg"
                 ],
-                link: "https://www.beatstats.com/labels/undercool-productions/15298?genre=1093#15298",
+                link: "https://www.beatstats.com/labels/undercool-productions/15298?genre=93#15298",
                 buttonText: "VERIFY STATS"
             }
         ];
@@ -931,6 +939,17 @@
         const charts = [
             {
                 id: 'chart1',
+                title: 'DORANNIA CHART',
+                subtitle: '2026-06-15',
+                images: [
+                    "https://i.imgur.com/hAtbtlZ.png"
+                ],
+                text: "DORANNIA CHART. Fresh organic rhythms and deep melodic grooves for the dancefloor.",
+                link: "https://www.beatport.com/chart/dorannia-chart/893696",
+                buttonText: "VIEW CHART"
+            },
+            {
+                id: 'chart2',
                 title: 'BALINEMA CHART',
                 subtitle: '2026-05-30',
                 images: [
@@ -941,7 +960,7 @@
                 buttonText: "VIEW CHART"
             },
             {
-                id: 'chart2',
+                id: 'chart3',
                 title: 'IMALAIA CHART',
                 subtitle: '2026-05-21',
                 images: [
@@ -949,17 +968,6 @@
                 ],
                 text: "IMALAIA CHART. Introspective and hypnotic melodic grooves currently driving my energy.",
                 link: "https://www.beatport.com/chart/imalaia-chart/891141",
-                buttonText: "VIEW CHART"
-            },
-            {
-                id: 'chart3',
-                title: 'SOLEMNIA CHART',
-                subtitle: '2026-04-10',
-                images: [
-                    "https://i.imgur.com/hAtbtlZ.png"
-                ],
-                text: "SOLEMNIA CHART. Essential organic grooves for your next DJ set, featuring my #1 Hype release 'Solemnia'.",
-                link: "https://www.beatport.com/chart/solemnia-chart/886948",
                 buttonText: "VIEW CHART"
             }
         ];
