@@ -149,10 +149,7 @@
                                 TRENDING
                                 <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
                             </a>
-                            <a href="#tracks" class="relative font-display font-black text-xs md:text-sm tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
-                                TRACKS
-                                <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
-                            </a>
+                            <!-- TRACKS ELIMINADO -->
                             <a href="#news" class="relative font-display font-black text-xs md:text-sm tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
                                 NEWS
                                 <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
@@ -199,10 +196,7 @@
                         <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
                         TRENDING
                     </a>
-                    <a href="#tracks" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
-                        <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
-                        TRACKS
-                    </a>
+                    <!-- TRACKS ELIMINADO -->
                     <a href="#news" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
                         <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
                         NEWS
@@ -331,11 +325,6 @@
                                     </div>
                                 </div>
                                 <div class="flex items-center px-6 md:px-8 py-4 md:py-5 relative w-full">
-                                    <div class="flex gap-2 z-10">
-                                        <a href="https://www.beatport.com/track/solemnia/27203539" target="_blank" class="px-5 py-2 bg-white/10 hover:bg-beatport-neon text-white hover:text-black rounded-lg text-xs md:text-sm font-bold transition-colors border border-white/20 hover:border-beatport-neon flex items-center">
-                                            BEATPORT
-                                        </a>
-                                    </div>
                                     <div class="absolute left-1/2 -translate-x-1/2 flex gap-2 z-0">
                                         <div class="w-2 h-2 rounded-full bg-beatport-neon dot-acc_top2-0"></div>
                                         <div class="w-2 h-2 rounded-full bg-gray-600 dot-acc_top2-1"></div>
@@ -394,35 +383,22 @@
                                         <i class="fas fa-chevron-right text-sm md:text-base"></i>
                                     </button>
 
-                                    <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar relative" id="carousel-acc_top1" onscroll="updateDots('acc_top1', 4)">
+                                    <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar relative" id="carousel-acc_top1" onscroll="updateDots('acc_top1', 2)">
                                         <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-4 md:p-8" onclick="openGallery('acc_top1', 0)">
                                             <img src="https://i.imgur.com/NVZv1eb.png" class="w-full h-auto object-contain max-h-[500px] md:max-h-[700px] rounded-3xl border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
                                         </div>
                                         <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-4 md:p-8" onclick="openGallery('acc_top1', 1)">
                                             <img src="https://i.imgur.com/H7MtTwi.png" class="w-full h-auto object-contain max-h-[500px] md:max-h-[700px] rounded-3xl border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
                                         </div>
-                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-4 md:p-8" onclick="openGallery('acc_top1', 2)">
-                                            <img src="https://i.imgur.com/vYRgpWH.png" class="w-full h-auto object-contain max-h-[500px] md:max-h-[700px] rounded-3xl border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
-                                        </div>
-                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-4 md:p-8" onclick="openGallery('acc_top1', 3)">
-                                            <img src="https://i.imgur.com/1QYE7Wj.jpeg" class="w-full h-auto object-contain max-h-[500px] md:max-h-[700px] rounded-3xl border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
-                                        </div>
                                     </div>
                                     <div class="absolute top-4 right-4 md:right-16 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full text-xs text-white font-bold tracking-widest pointer-events-none z-10">
-                                        <span id="counter-acc_top1">1</span>/4
+                                        <span id="counter-acc_top1">1</span>/2
                                     </div>
                                 </div>
                                 <div class="flex items-center px-6 md:px-8 py-4 md:py-5 relative w-full">
-                                    <div class="flex gap-2 z-10">
-                                        <a href="https://www.beatport.com/track/solemnia/27203539" target="_blank" class="px-5 py-2 bg-white/10 hover:bg-beatport-neon text-white hover:text-black rounded-lg text-xs md:text-sm font-bold transition-colors border border-white/20 hover:border-beatport-neon flex items-center">
-                                            BEATPORT
-                                        </a>
-                                    </div>
                                     <div class="absolute left-1/2 -translate-x-1/2 flex gap-2 z-0">
                                         <div class="w-2 h-2 rounded-full bg-beatport-neon dot-acc_top1-0"></div>
                                         <div class="w-2 h-2 rounded-full bg-gray-600 dot-acc_top1-1"></div>
-                                        <div class="w-2 h-2 rounded-full bg-gray-600 dot-acc_top1-2"></div>
-                                        <div class="w-2 h-2 rounded-full bg-gray-600 dot-acc_top1-3"></div>
                                     </div>
                                 </div>
                                 <div class="px-6 md:px-8 text-sm md:text-base w-full">
@@ -498,7 +474,7 @@
                                         <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                         <span class="text-[10px] md:text-xs text-gray-400 text-center mb-2 h-8 flex items-center font-mono leading-tight">ORGANIC HOUSE</span>
                                         <div class="flex items-end gap-2">
-                                            <span class="font-display font-black text-4xl md:text-5xl text-white">35</span>
+                                            <span class="font-display font-black text-4xl md:text-5xl text-white">30</span>
                                             <i class="fas fa-caret-up text-beatport-neon text-lg md:text-xl mb-1 md:mb-2 animate-bounce"></i>
                                         </div>
                                     </div>
@@ -519,7 +495,7 @@
                                         <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                         <span class="text-[10px] md:text-xs text-gray-400 text-center mb-2 h-8 flex items-center font-mono leading-tight">HYPE - ORGANIC HOUSE</span>
                                         <div class="flex items-end gap-2">
-                                            <span class="font-display font-black text-4xl md:text-5xl text-white">11</span>
+                                            <span class="font-display font-black text-4xl md:text-5xl text-white">10</span>
                                             <i class="fas fa-caret-up text-beatport-neon text-lg md:text-xl mb-1 md:mb-2 animate-bounce"></i>
                                         </div>
                                     </div>
@@ -527,7 +503,7 @@
                                         <div class="absolute inset-0 bg-gradient-to-t from-beatport-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                         <span class="text-[10px] md:text-xs text-gray-400 text-center mb-2 h-8 flex items-center font-mono leading-tight">ORGANIC HOUSE</span>
                                         <div class="flex items-end gap-2">
-                                            <span class="font-display font-black text-4xl md:text-5xl text-white">29</span>
+                                            <span class="font-display font-black text-4xl md:text-5xl text-white">27</span>
                                             <i class="fas fa-caret-up text-beatport-neon text-lg md:text-xl mb-1 md:mb-2 animate-bounce"></i>
                                         </div>
                                     </div>
@@ -535,11 +511,34 @@
                             </div>
                         </div>
 
-                        <!-- Action Button -->
-                        <div class="mt-10 border-t border-gray-800 pt-8 text-center">
-                            <a href="https://www.beatstats.com/artist/taleon/1077287" target="_blank" class="inline-flex items-center gap-3 px-8 py-3 md:py-4 bg-gray-800 hover:bg-white text-gray-300 hover:text-black rounded-full text-xs md:text-sm font-bold transition-all border border-gray-700 hover:border-white tracking-widest">
-                                <i class="fas fa-external-link-alt"></i> VERIFY FULL STATS
-                            </a>
+                        <!-- Beatstats Carousel -->
+                        <div class="mt-8 border-t border-gray-800 pt-8">
+                            <div class="relative w-full overflow-hidden group rounded-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.5)] bg-black">
+                                <button onclick="scrollCarousel('beatstats_gallery', -1, event)" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                                    <i class="fas fa-chevron-left text-sm md:text-base"></i>
+                                </button>
+                                <button onclick="scrollCarousel('beatstats_gallery', 1, event)" class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                                    <i class="fas fa-chevron-right text-sm md:text-base"></i>
+                                </button>
+
+                                <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar relative" id="carousel-beatstats_gallery" onscroll="updateDots('beatstats_gallery', 2)">
+                                    <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center bg-black/50" onclick="openGallery('beatstats_gallery', 0)">
+                                        <img src="https://i.imgur.com/DPVN6n9.png" class="w-full h-auto object-contain">
+                                    </div>
+                                    <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center bg-black/50" onclick="openGallery('beatstats_gallery', 1)">
+                                        <img src="https://i.imgur.com/DeivVmI.png" class="w-full h-auto object-contain">
+                                    </div>
+                                </div>
+                                <div class="absolute top-3 right-3 md:right-4 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-xs text-white font-bold tracking-widest pointer-events-none z-10">
+                                    <span id="counter-beatstats_gallery">1</span>/2
+                                </div>
+                            </div>
+                            <div class="flex justify-center items-center mt-5">
+                                <div class="flex gap-2 z-0">
+                                    <div class="w-2 h-2 rounded-full bg-beatport-neon dot-beatstats_gallery-0"></div>
+                                    <div class="w-2 h-2 rounded-full bg-gray-600 dot-beatstats_gallery-1"></div>
+                                </div>
+                            </div>
                         </div>
                         
                     </div>
@@ -570,83 +569,6 @@
 
                 <div class="flex flex-col gap-8 md:grid md:grid-cols-3 md:gap-8" id="trending-container">
                     <!-- Trending injected by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Top 3 Tracks Independent Section -->
-        <section id="tracks" class="py-16 md:py-24 relative z-10 shrink-0 border-y border-white/5 bg-white/[0.02]">
-            <div class="w-full max-w-7xl mx-auto px-4">
-                
-                <div class="text-center mb-10 md:mb-12">
-                    <h3 class="font-display text-3xl md:text-5xl font-black mb-4 text-glow uppercase flex items-center justify-center gap-4">
-                        <i class="fas fa-play-circle text-beatport-neon"></i> TOP 3 TRACKS
-                    </h3>
-                    <div class="h-1.5 w-16 md:w-24 bg-beatport-neon mx-auto rounded-full"></div>
-                </div>
-
-                <!-- Header Image inside Top 3 Tracks -->
-                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in mb-8 md:mb-12" onclick="openLightbox('https://i.imgur.com/gsAvLT5.jpeg')">
-                    <img src="https://i.imgur.com/gsAvLT5.jpeg" alt="Taleon DJ Set" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
-                </div>
-
-                <div class="w-full">
-                    <div class="space-y-4 w-full">
-                        <!-- Track 1 -->
-                        <div class="flex items-center justify-between p-5 md:p-6 bg-black border border-gray-800 rounded-2xl hover:border-beatport-neon transition-all group cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.4)]" onclick="toggleTrack('27203539', this)">
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="font-mono text-gray-600 group-hover:text-beatport-neon transition-colors text-lg md:text-2xl font-black w-6">01</span>
-                                <div class="flex flex-col">
-                                    <span class="font-bold text-white tracking-wider text-base md:text-xl">SOLEMNIA</span>
-                                    <span class="text-[10px] md:text-sm text-beatport-neon font-mono mt-0.5 uppercase tracking-wider">TOP1 Hype Organic House / TOP2 Organic House Beatport</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <a href="https://www.beatport.com/track/solemnia/27203539" target="_blank" class="text-gray-500 hover:text-white transition-colors" onclick="event.stopPropagation()">
-                                    <i class="fas fa-external-link-alt text-base md:text-lg"></i>
-                                </a>
-                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-beatport-neon group-hover:text-black transition-colors text-white play-btn-icon shadow-[0_0_15px_rgba(148,213,0,0)] group-hover:shadow-[0_0_15px_rgba(148,213,0,0.4)]">
-                                    <i class="fas fa-play text-sm md:text-base ml-1"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Track 2 -->
-                        <div class="flex items-center justify-between p-5 md:p-6 bg-black border border-gray-800 rounded-2xl hover:border-beatport-neon transition-all group cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.4)]" onclick="toggleTrack('28785112', this)">
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="font-mono text-gray-600 group-hover:text-beatport-neon transition-colors text-lg md:text-2xl font-black w-6">02</span>
-                                <div class="flex flex-col">
-                                    <span class="font-bold text-white tracking-wider text-base md:text-xl">BALINEMA</span>
-                                    <span class="text-[10px] md:text-sm text-beatport-neon font-mono mt-0.5 uppercase tracking-wider">TOP2 HYPE ORGANIC HOUSE / TOP9 ORGANIC HOUSE BEATPORT</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <a href="https://www.beatport.com/track/balinema/28785112" target="_blank" class="text-gray-500 hover:text-white transition-colors" onclick="event.stopPropagation()">
-                                    <i class="fas fa-external-link-alt text-base md:text-lg"></i>
-                                </a>
-                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-beatport-neon group-hover:text-black transition-colors text-white play-btn-icon shadow-[0_0_15px_rgba(148,213,0,0)] group-hover:shadow-[0_0_15px_rgba(148,213,0,0.4)]">
-                                    <i class="fas fa-play text-sm md:text-base ml-1"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Track 3 -->
-                        <div class="flex items-center justify-between p-5 md:p-6 bg-black border border-gray-800 rounded-2xl hover:border-beatport-neon transition-all group cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.4)]" onclick="toggleTrack('26919671', this)">
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <span class="font-mono text-gray-600 group-hover:text-beatport-neon transition-colors text-lg md:text-2xl font-black w-6">03</span>
-                                <div class="flex flex-col">
-                                    <span class="font-bold text-white tracking-wider text-base md:text-xl">AVENUVIA</span>
-                                    <span class="text-[10px] md:text-sm text-beatport-neon font-mono mt-0.5 uppercase tracking-wider">TOP8 Hype Organic House Beatport</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4 md:gap-6">
-                                <a href="https://www.beatport.com/track/avenuvia/26919671" target="_blank" class="text-gray-500 hover:text-white transition-colors" onclick="event.stopPropagation()">
-                                    <i class="fas fa-external-link-alt text-base md:text-lg"></i>
-                                </a>
-                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-beatport-neon group-hover:text-black transition-colors text-white play-btn-icon shadow-[0_0_15px_rgba(148,213,0,0)] group-hover:shadow-[0_0_15px_rgba(148,213,0,0.4)]">
-                                    <i class="fas fa-play text-sm md:text-base ml-1"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -847,7 +769,7 @@
         </div>
         <div class="w-full bg-black/95 backdrop-blur-xl border-t border-beatport-neon/30">
             <div class="max-w-7xl mx-auto">
-                <iframe src="https://embed.beatport.com/?id=27203539&type=track" width="100%" height="162" frameborder="0" scrolling="no" class="w-full" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <iframe src="https://embed.beatport.com/?id=28879019&type=track" width="100%" height="162" frameborder="0" scrolling="no" class="w-full" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
         </div>
     </div>
@@ -856,29 +778,28 @@
         // --- 1. NEWS DATA ---
         const posts = [
             {
+                id: 'post_dorannia',
+                title: '"DORANNIA" TOP4 HYPE ORGANIC HOUSE BEATPORT',
+                subtitle: '2026-07-03',
+                images: [
+                    "https://i.imgur.com/V9mw2Ra.png",
+                    "https://i.imgur.com/AZ5F35Z.png"
+                ],
+                text: "The momentum is real! 🚀 'DORANNIA' continues its unstoppable rise and has just reached the incredible #4 spot on the Beatport Hype Organic House chart. A massive thank you to all the DJs and listeners supporting this release and pushing it higher. Let's keep the vibe alive! 🙏✨",
+                link: "https://www.beatport.com/track/dorannia/28879019",
+                buttonText: "BEATPORT"
+            },
+            {
                 id: 'post1',
-                title: '"BALINEMA" TOP2 HYPE / TOP9 ORGANIC HOUSE BEATPORT',
-                subtitle: '2026-06-29',
+                title: '"BALINEMA" TOP4 HYPE ORGANIC HOUSE BEATPORT',
+                subtitle: '2026-06-01',
                 images: [
                     "https://i.imgur.com/Dt2YkJf.png",
                     "https://i.imgur.com/cdXuIIq.png",
                     "https://i.imgur.com/7M9VAn5.png"
                 ],
                 text: "Breaking through! 🏔️ 'BALINEMA' is now sitting at a massive #2 on the Beatport Hype Organic House chart AND has successfully crashed into the Main Top 10, securing the #9 spot overall! Huge gratitude to every single one of you making this journey possible. The support is unreal! 🙏🌿✨",
-                link: "https://www.beatport.com/track/balinema/28785112",
-                buttonText: "BEATPORT"
-            },
-            {
-                id: 'post_dorannia',
-                title: '"DORANNIA" TOP7 HYPE ORGANIC HOUSE BEATPORT',
-                subtitle: '2026-06-21',
-                images: [
-                    "https://i.imgur.com/DTqSbBD.png",
-                    "https://i.imgur.com/rTMJogr.png"
-                ],
-                text: "The momentum is real! 🚀 'DORANNIA' has just climbed to the #7 spot on the Beatport Hype Organic House chart. A massive thank you to all the DJs and listeners supporting this release and pushing it higher. Let's keep the vibe alive! 🙏✨",
-                link: "https://www.beatport.com/track/dorannia/28879019",
-                buttonText: "BEATPORT"
+                link: null
             },
             {
                 id: 'post2',
@@ -981,9 +902,12 @@
         
         const galleryAcc3 = [
             "https://i.imgur.com/NVZv1eb.png",
-            "https://i.imgur.com/H7MtTwi.png",
-            "https://i.imgur.com/vYRgpWH.png",
-            "https://i.imgur.com/1QYE7Wj.jpeg"
+            "https://i.imgur.com/H7MtTwi.png"
+        ];
+
+        const galleryBeatstats = [
+            "https://i.imgur.com/DPVN6n9.png",
+            "https://i.imgur.com/DeivVmI.png"
         ];
 
         // --- RENDERING FUNCTION FOR NEWS ---
@@ -1119,18 +1043,15 @@
                             ` : ''}
                         </div>
 
+                        ${hasMultipleImages ? `
                         <div class="p-4 md:p-5 flex flex-col bg-black border-t border-gray-800">
-                            ${hasMultipleImages ? `
-                            <div class="flex justify-center items-center w-full mb-3">
+                            <div class="flex justify-center items-center w-full">
                                 <div class="flex gap-1.5 md:gap-2">
                                     ${dotsHtml}
                                 </div>
                             </div>
-                            ` : ''}
-                            <a href="${post.link}" target="_blank" class="w-full text-center px-5 py-3 md:py-2.5 bg-white/10 hover:bg-beatport-neon text-white hover:text-black rounded-lg text-xs md:text-sm font-bold transition-colors border border-white/20 hover:border-beatport-neon tracking-widest uppercase">
-                                ${post.buttonText || 'VIEW CHART'}
-                            </a>
                         </div>
+                        ` : ''}
                     </div>
                 `;
                 container.innerHTML += html;
@@ -1329,6 +1250,8 @@
                 currentGalleryContext = galleryAcc2;
             } else if (id === 'acc_top1') {
                 currentGalleryContext = galleryAcc3;
+            } else if (id === 'beatstats_gallery') {
+                currentGalleryContext = galleryBeatstats;
             } else {
                 let post = posts.find(p => p.id === id);
                 if (!post) post = charts.find(c => c.id === id);
