@@ -145,7 +145,6 @@
                                 STATS
                                 <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
                             </a>
-                            <!-- TRENDING ELIMINADO -->
                             <a href="#news" class="relative font-display font-black text-xs md:text-sm tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
                                 NEWS
                                 <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
@@ -188,7 +187,6 @@
                         <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
                         STATS
                     </a>
-                    <!-- TRENDING ELIMINADO -->
                     <a href="#news" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
                         <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
                         NEWS
@@ -246,7 +244,7 @@
                 </div>
 
                 <div class="space-y-6">
-                    <!-- Accordion 1: About Me -->
+                    <!-- Accordion 1: About Me (único) -->
                     <div class="accordion-item glass-panel rounded-2xl overflow-hidden active border border-gray-800 transition-all duration-300 hover:border-gray-600">
                         <button class="accordion-btn w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between focus:outline-none hover:bg-white/5 transition-colors">
                             <div class="flex items-center gap-4">
@@ -263,163 +261,12 @@
                             </p>
                         </div>
                     </div>
-
-                    <!-- Accordion 2: Top 2 Beatport -->
-                    <div class="accordion-item glass-panel rounded-2xl overflow-hidden active border border-gray-800 transition-all duration-300 hover:border-gray-600">
-                        <button class="accordion-btn w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between focus:outline-none hover:bg-white/5 transition-colors">
-                            <div class="flex items-center gap-4">
-                                <span class="font-mono text-gray-500 font-bold text-base md:text-lg">02</span>
-                                <h4 class="font-display text-lg md:text-2xl font-bold text-white transition-colors text-left">TOP2 Organic House Beatport</h4>
-                            </div>
-                            <i class="fas fa-chevron-down accordion-icon text-gray-400 text-lg transition-transform duration-400"></i>
-                        </button>
-                        <div class="accordion-content px-0 border-t border-gray-800/50">
-                            <div class="bg-transparent pb-6 md:pb-8">
-                                <div class="flex justify-between items-center px-6 md:px-8 py-4">
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-10 md:w-12 h-10 md:h-12 rounded-full overflow-hidden border-2 border-beatport-neon p-[2px]">
-                                            <img src="https://i.imgur.com/gWmzcM1.jpg" class="w-full h-full rounded-full object-cover">
-                                        </div>
-                                        <div class="leading-tight">
-                                            <p class="text-base md:text-lg font-bold text-white flex items-center gap-2">taleon_music <i class="fas fa-check-circle text-beatport-neon text-xs"></i></p>
-                                            <p class="text-xs md:text-sm text-gray-500">June 1</p>
-                                        </div>
-                                    </div>
-                                    <div class="relative">
-                                        <button class="text-gray-400 hover:text-white px-2 focus:outline-none text-xl" onclick="toggleMenu('acc_top2')">
-                                            <i class="fas fa-ellipsis-h"></i>
-                                        </button>
-                                        <div id="menu-acc_top2" class="hidden absolute right-0 top-full mt-2 w-56 bg-black/95 backdrop-blur-md border border-gray-700 rounded-xl overflow-hidden shadow-2xl z-30 transition-all">
-                                            <a href="https://www.beatport.com/track/solemnia/27203539" target="_blank" class="block px-4 py-4 border-b border-gray-800 text-sm text-white hover:bg-beatport-neon hover:text-black transition-colors"><i class="fas fa-headphones mr-3 w-4"></i> Buy on Beatport</a>
-                                            <a href="https://www.beatstats.com/artist/taleon/1077287" target="_blank" class="block px-4 py-4 border-b border-gray-800 text-sm text-white hover:bg-beatport-neon hover:text-black transition-colors"><i class="fas fa-chart-line mr-3 w-4"></i> Verify on Beatstats</a>
-                                            <a href="#" class="block px-4 py-4 text-sm text-gray-400 hover:bg-gray-800 transition-colors text-center" onclick="toggleMenu('acc_top2'); return false;">Cancel</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="relative w-full overflow-hidden border-y border-gray-800 bg-black/50 group">
-                                    <button onclick="scrollCarousel('acc_top2', -1, event)" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
-                                        <i class="fas fa-chevron-left text-sm md:text-base"></i>
-                                    </button>
-                                    <button onclick="scrollCarousel('acc_top2', 1, event)" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
-                                        <i class="fas fa-chevron-right text-sm md:text-base"></i>
-                                    </button>
-
-                                    <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar relative" id="carousel-acc_top2" onscroll="updateDots('acc_top2', 2)">
-                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-4 md:p-8" onclick="openGallery('acc_top2', 0)">
-                                            <img src="https://i.imgur.com/6Mhftqc.png" class="w-full h-auto object-contain max-h-[500px] md:max-h-[700px] rounded-3xl border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
-                                        </div>
-                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-4 md:p-8" onclick="openGallery('acc_top2', 1)">
-                                            <img src="https://i.imgur.com/T0AUmE6.png" class="w-full h-auto object-contain max-h-[500px] md:max-h-[700px] rounded-3xl border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
-                                        </div>
-                                    </div>
-                                    <div class="absolute top-4 right-4 md:right-16 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full text-xs text-white font-bold tracking-widest pointer-events-none z-10">
-                                        <span id="counter-acc_top2">1</span>/2
-                                    </div>
-                                </div>
-                                <div class="flex items-center px-6 md:px-8 py-4 md:py-5 relative w-full">
-                                    <div class="absolute left-1/2 -translate-x-1/2 flex gap-2 z-0">
-                                        <div class="w-2 h-2 rounded-full bg-beatport-neon dot-acc_top2-0"></div>
-                                        <div class="w-2 h-2 rounded-full bg-gray-600 dot-acc_top2-1"></div>
-                                    </div>
-                                </div>
-                                <div class="px-6 md:px-8 text-sm md:text-base w-full">
-                                    <div class="flex flex-col">
-                                        <div class="line-clamp-3 leading-relaxed break-words" id="text-container-acc_top2">
-                                            <span class="font-bold text-white mr-2 text-base md:text-lg">taleon_music</span>
-                                            <span class="text-gray-300">Absolute peak! 🏔️ My track 'SOLEMNIA' has reached the incredible position of #2 on the global Organic House main chart! 📈 After its official release on April 10, the track has consistently remained inside the Top 10, showing amazing longevity. On June 1, it achieved this brand new peak. I am incredibly grateful to everyone playing it, sharing it, and making this dream possible. Thank you so much! 🙏🌿✨</span>
-                                        </div>
-                                        <button onclick="toggleText('acc_top2')" id="btn-acc_top2" class="text-gray-500 font-medium text-left mt-2 w-fit hover:text-gray-300 text-xs md:text-sm uppercase tracking-wider">more</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Accordion 3: Top 1 Beatport -->
-                    <div class="accordion-item glass-panel rounded-2xl overflow-hidden active border border-gray-800 transition-all duration-300 hover:border-gray-600">
-                        <button class="accordion-btn w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between focus:outline-none hover:bg-white/5 transition-colors">
-                            <div class="flex items-center gap-4">
-                                <span class="font-mono text-gray-500 font-bold text-base md:text-lg">03</span>
-                                <h4 class="font-display text-lg md:text-2xl font-bold text-white transition-colors text-left">TOP1 Hype Organic House Beatport</h4>
-                            </div>
-                            <i class="fas fa-chevron-down accordion-icon text-gray-400 text-lg transition-transform duration-400"></i>
-                        </button>
-                        <div class="accordion-content px-0 border-t border-gray-800/50">
-                            <div class="bg-transparent pb-6 md:pb-8">
-                                <div class="flex justify-between items-center px-6 md:px-8 py-4">
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-10 md:w-12 h-10 md:h-12 rounded-full overflow-hidden border-2 border-beatport-neon p-[2px]">
-                                            <img src="https://i.imgur.com/gWmzcM1.jpg" class="w-full h-full rounded-full object-cover">
-                                        </div>
-                                        <div class="leading-tight">
-                                            <p class="text-base md:text-lg font-bold text-white flex items-center gap-2">taleon_music <i class="fas fa-check-circle text-beatport-neon text-xs"></i></p>
-                                            <p class="text-xs md:text-sm text-gray-500">April 30</p>
-                                        </div>
-                                    </div>
-                                    <div class="relative">
-                                        <button class="text-gray-400 hover:text-white px-2 focus:outline-none text-xl" onclick="toggleMenu('acc_top1')">
-                                            <i class="fas fa-ellipsis-h"></i>
-                                        </button>
-                                        <div id="menu-acc_top1" class="hidden absolute right-0 top-full mt-2 w-56 bg-black/95 backdrop-blur-md border border-gray-700 rounded-xl overflow-hidden shadow-2xl z-30 transition-all">
-                                            <a href="https://www.beatport.com/track/solemnia/27203539" target="_blank" class="block px-4 py-4 border-b border-gray-800 text-sm text-white hover:bg-beatport-neon hover:text-black transition-colors"><i class="fas fa-headphones mr-3 w-4"></i> Buy on Beatport</a>
-                                            <a href="https://www.beatstats.com/artist/taleon/1077287" target="_blank" class="block px-4 py-4 border-b border-gray-800 text-sm text-white hover:bg-beatport-neon hover:text-black transition-colors"><i class="fas fa-chart-line mr-3 w-4"></i> Verify on Beatstats</a>
-                                            <a href="#" class="block px-4 py-4 text-sm text-gray-400 hover:bg-gray-800 transition-colors text-center" onclick="toggleMenu('acc_top1'); return false;">Cancel</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="relative w-full overflow-hidden border-y border-gray-800 bg-black/50 group">
-                                    <button onclick="scrollCarousel('acc_top1', -1, event)" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
-                                        <i class="fas fa-chevron-left text-sm md:text-base"></i>
-                                    </button>
-                                    <button onclick="scrollCarousel('acc_top1', 1, event)" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
-                                        <i class="fas fa-chevron-right text-sm md:text-base"></i>
-                                    </button>
-
-                                    <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar relative" id="carousel-acc_top1" onscroll="updateDots('acc_top1', 2)">
-                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-4 md:p-8" onclick="openGallery('acc_top1', 0)">
-                                            <img src="https://i.imgur.com/NVZv1eb.png" class="w-full h-auto object-contain max-h-[500px] md:max-h-[700px] rounded-3xl border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
-                                        </div>
-                                        <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center p-4 md:p-8" onclick="openGallery('acc_top1', 1)">
-                                            <img src="https://i.imgur.com/H7MtTwi.png" class="w-full h-auto object-contain max-h-[500px] md:max-h-[700px] rounded-3xl border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
-                                        </div>
-                                    </div>
-                                    <div class="absolute top-4 right-4 md:right-16 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full text-xs text-white font-bold tracking-widest pointer-events-none z-10">
-                                        <span id="counter-acc_top1">1</span>/2
-                                    </div>
-                                </div>
-                                <div class="flex items-center px-6 md:px-8 py-4 md:py-5 relative w-full">
-                                    <div class="absolute left-1/2 -translate-x-1/2 flex gap-2 z-0">
-                                        <div class="w-2 h-2 rounded-full bg-beatport-neon dot-acc_top1-0"></div>
-                                        <div class="w-2 h-2 rounded-full bg-gray-600 dot-acc_top1-1"></div>
-                                    </div>
-                                </div>
-                                <div class="px-6 md:px-8 text-sm md:text-base w-full">
-                                    <div class="flex flex-col">
-                                        <div class="line-clamp-3 leading-relaxed break-words" id="text-container-acc_top1">
-                                            <span class="font-bold text-white mr-2 text-base md:text-lg">taleon_music</span>
-                                            <span class="text-gray-300">Number ONE! 🏆 My track 'SOLEMNIA' has reached #1 on the Hype Organic House chart! 📈 A massive thank you to the Beatport curation team for selecting it as the #1 Hype Pick of the week. Also, a huge shoutout to all the amazing DJs who purchased the track and are playing it out loud. Swipe left to see the journey! Thank you all for the incredible support! 🙏🌿✨</span>
-                                        </div>
-                                        <button onclick="toggleText('acc_top1')" id="btn-acc_top1" class="text-gray-500 font-medium text-left mt-2 w-fit hover:text-gray-300 text-xs md:text-sm uppercase tracking-wider">more</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    <!-- FIN del único acordeón -->
                 </div>
             </div>
         </section>
 
-        <!-- Image 2 (Highlights -> Beatstats) -->
-        <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
-            <div class="w-full max-w-7xl mx-auto px-4">
-                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/48BYq8p.jpeg')">
-                    <img src="https://i.imgur.com/48BYq8p.jpeg" alt="Taleon Studio" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
-                </div>
-            </div>
-        </section>
-
-        <!-- Beatstats Independent Section -->
+        <!-- Beatstats Independent Section (sin imágenes) -->
         <section id="beatstats" class="py-16 md:py-24 px-4 relative z-10 shrink-0 bg-transparent border-y border-white/5">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-10 md:mb-16">
@@ -502,47 +349,35 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Beatstats Carousel -->
-                        <div class="mt-8 border-t border-gray-800 pt-8">
-                            <div class="relative w-full overflow-hidden group rounded-xl border border-gray-800 shadow-[0_0_30px_rgba(0,0,0,0.5)] bg-black">
-                                <button onclick="scrollCarousel('beatstats_gallery', -1, event)" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
-                                    <i class="fas fa-chevron-left text-sm md:text-base"></i>
-                                </button>
-                                <button onclick="scrollCarousel('beatstats_gallery', 1, event)" class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-beatport-neon text-white hover:text-black w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full backdrop-blur-md transition-all opacity-80 md:opacity-0 md:group-hover:opacity-100 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
-                                    <i class="fas fa-chevron-right text-sm md:text-base"></i>
-                                </button>
-
-                                <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar relative" id="carousel-beatstats_gallery" onscroll="updateDots('beatstats_gallery', 2)">
-                                    <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center bg-black/50" onclick="openGallery('beatstats_gallery', 0)">
-                                        <img src="https://i.imgur.com/5dpCYbP.png" class="w-full h-auto object-contain">
-                                    </div>
-                                    <div class="min-w-full w-full flex-shrink-0 scroll-snap-align-start snap-center relative cursor-zoom-in flex justify-center items-center bg-black/50" onclick="openGallery('beatstats_gallery', 1)">
-                                        <img src="https://i.imgur.com/OdzYOmd.png" class="w-full h-auto object-contain">
-                                    </div>
-                                </div>
-                                <div class="absolute top-3 right-3 md:right-4 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-xs text-white font-bold tracking-widest pointer-events-none z-10">
-                                    <span id="counter-beatstats_gallery">1</span>/2
-                                </div>
-                            </div>
-                            <div class="flex justify-center items-center mt-5">
-                                <div class="flex gap-2 z-0">
-                                    <div class="w-2 h-2 rounded-full bg-beatport-neon dot-beatstats_gallery-0"></div>
-                                    <div class="w-2 h-2 rounded-full bg-gray-600 dot-beatstats_gallery-1"></div>
-                                </div>
-                            </div>
-                        </div>
-                        
+                        <!-- FIN del contenido (sin imágenes) -->
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Image 3 (Beatstats -> News) -->
+        <!-- Imagen 1 de Beatstats (full width) -->
         <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
             <div class="w-full max-w-7xl mx-auto px-4">
-                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/r7HpAcu.jpeg')">
-                    <img src="https://i.imgur.com/r7HpAcu.jpeg" alt="Taleon Breakout Image" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/5dpCYbP.png')">
+                    <img src="https://i.imgur.com/5dpCYbP.png" alt="Beatstats Chart 1" class="w-full h-full object-contain bg-black">
+                </div>
+            </div>
+        </section>
+
+        <!-- Imagen 2 de Beatstats (full width) -->
+        <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
+            <div class="w-full max-w-7xl mx-auto px-4">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/OdzYOmd.png')">
+                    <img src="https://i.imgur.com/OdzYOmd.png" alt="Beatstats Chart 2" class="w-full h-full object-contain bg-black">
+                </div>
+            </div>
+        </section>
+
+        <!-- Imagen movida (48BYq8p) - justo encima de Latest News -->
+        <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
+            <div class="w-full max-w-7xl mx-auto px-4">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/48BYq8p.jpeg')">
+                    <img src="https://i.imgur.com/48BYq8p.jpeg" alt="Taleon Studio" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
                 </div>
             </div>
         </section>
@@ -561,6 +396,15 @@
 
                 <div class="w-full flex flex-col gap-4" id="news-container">
                     <!-- News Headlines injected by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Image 3 (entre News y Charts) -->
+        <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
+            <div class="w-full max-w-7xl mx-auto px-4">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/r7HpAcu.jpeg')">
+                    <img src="https://i.imgur.com/r7HpAcu.jpeg" alt="Taleon Breakout Image" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
                 </div>
             </div>
         </section>
@@ -740,51 +584,18 @@
     </div>
 
     <script>
-        // --- 1. NEWS DATA ---
+        // --- 1. NEWS DATA (solo DORANNIA con nuevas imágenes) ---
         const posts = [
             {
                 id: 'post_dorannia',
                 title: '"DORANNIA" TOP4 HYPE ORGANIC HOUSE BEATPORT',
                 subtitle: '2026-07-03',
                 images: [
-                    "https://i.imgur.com/V9mw2Ra.png",
-                    "https://i.imgur.com/AZ5F35Z.png"
+                    "https://i.imgur.com/r6QfoSc.png",
+                    "https://i.imgur.com/SLooA8D.png"
                 ],
                 text: "The momentum is real! 🚀 'DORANNIA' continues its unstoppable rise and has just reached the incredible #4 spot on the Beatport Hype Organic House chart. A massive thank you to all the DJs and listeners supporting this release and pushing it higher. Let's keep the vibe alive! 🙏✨",
                 link: "https://www.beatport.com/track/dorannia/28879019",
-                buttonText: "BEATPORT"
-            },
-            {
-                id: 'post1',
-                title: '"BALINEMA" TOP4 HYPE ORGANIC HOUSE BEATPORT',
-                subtitle: '2026-06-01',
-                images: [
-                    "https://i.imgur.com/Dt2YkJf.png",
-                    "https://i.imgur.com/cdXuIIq.png",
-                    "https://i.imgur.com/7M9VAn5.png"
-                ],
-                text: "Breaking through! 🏔️ 'BALINEMA' is now sitting at a massive #2 on the Beatport Hype Organic House chart AND has successfully crashed into the Main Top 10, securing the #9 spot overall! Huge gratitude to every single one of you making this journey possible. The support is unreal! 🙏🌿✨",
-                link: null
-            },
-            {
-                id: 'post2',
-                title: '"SAVAHRA" TOP1 TRAXSOURCE',
-                subtitle: '2026-05-27',
-                images: [
-                    "https://i.imgur.com/Zio72Q6.png"
-                ],
-                text: "Number ONE! 🏆 'SAVAHRA' has officially conquered the #1 position on the Traxsource Melodic Progressive House chart! It's a huge milestone for this project and I couldn't be more grateful for the massive support from the global community. Let's keep the vibe alive! 🚀✨",
-                link: null
-            },
-            {
-                id: 'post3',
-                title: '"AVENUVIA" TOP8 HYPE ORGANIC HOUSE BEATPORT',
-                subtitle: '2026-04-15',
-                images: [
-                    "https://i.imgur.com/njjlR7A.png"
-                ],
-                text: "Incredible news! 🎶 'AVENUVIA' has climbed to the Top 8 in the Beatport Hype Organic House chart. Even better, it’s been handpicked for two official Beatport curated playlists: 'Best New Hype Organic House' and 'Afterhours Essentials 2026'. Huge thanks to the curation team and everyone playing it out loud! 🎧🔥",
-                link: "https://www.beatport.com/track/avenuvia/26919671",
                 buttonText: "BEATPORT"
             }
         ];
@@ -824,21 +635,6 @@
                 link: "https://www.beatport.com/chart/imalaia-chart/891141",
                 buttonText: "VIEW CHART"
             }
-        ];
-
-        const galleryAcc2 = [
-            "https://i.imgur.com/6Mhftqc.png",
-            "https://i.imgur.com/T0AUmE6.png"
-        ];
-        
-        const galleryAcc3 = [
-            "https://i.imgur.com/NVZv1eb.png",
-            "https://i.imgur.com/H7MtTwi.png"
-        ];
-
-        const galleryBeatstats = [
-            "https://i.imgur.com/5dpCYbP.png",
-            "https://i.imgur.com/OdzYOmd.png"
         ];
 
         // --- RENDERING FUNCTION FOR NEWS ---
@@ -991,6 +787,17 @@
         renderNewsItems(posts, 'news-container');
         renderCharts(charts, 'charts-container');
 
+        // --- Abrir la noticia de DORANNIA por defecto ---
+        setTimeout(() => {
+            const icon = document.getElementById('news-icon-post_dorannia');
+            const content = document.getElementById('news-content-post_dorannia');
+            if (content && icon) {
+                content.style.maxHeight = '2500px';
+                icon.classList.add('rotate-45', 'text-beatport-neon');
+                icon.classList.remove('text-gray-500');
+            }
+        }, 100);
+
         // --- UI HELPER FUNCTIONS ---
         function toggleNews(id) {
             const content = document.getElementById(`news-content-${id}`);
@@ -1040,7 +847,6 @@
             if (counter) counter.innerText = index + 1;
         }
 
-        // Función para toggle de menú en acordeones (no se usa para trending)
         document.querySelectorAll('.accordion-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const accordionItem = button.parentElement;
@@ -1111,17 +917,11 @@
         let currentGalleryIndex = 0;
 
         function openGallery(id, index) {
-            if (id === 'acc_top2') {
-                currentGalleryContext = galleryAcc2;
-            } else if (id === 'acc_top1') {
-                currentGalleryContext = galleryAcc3;
-            } else if (id === 'beatstats_gallery') {
-                currentGalleryContext = galleryBeatstats;
-            } else {
-                let post = posts.find(p => p.id === id);
-                if (!post) post = charts.find(c => c.id === id);
-                if (post) currentGalleryContext = post.images;
-            }
+            let post = posts.find(p => p.id === id);
+            if (!post) post = charts.find(c => c.id === id);
+            if (post) currentGalleryContext = post.images;
+            
+            if (!currentGalleryContext) currentGalleryContext = [];
             
             currentGalleryIndex = index;
             updateLightboxImage();
@@ -1205,7 +1005,7 @@
             });
         }
 
-        // Función toggleTrack ya no se usa porque se eliminó la sección Tracks.
+        // Función toggleTrack (no usada, pero se mantiene)
         let currentTrackId = null;
 
         function toggleTrack(trackId, element) {
