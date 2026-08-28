@@ -263,6 +263,13 @@
                     </div>
                     <!-- FIN del único acordeón -->
                 </div>
+
+                <!-- Frase destacada (quote) justo debajo de About Me -->
+                <div class="mt-12 text-center px-4 md:px-8">
+                    <blockquote class="font-display text-xl md:text-2xl lg:text-3xl font-light text-beatport-neon italic leading-relaxed border-l-4 border-beatport-neon pl-6 md:pl-8 text-glow">
+                        “Taleon emerged in 2022, but the definitive momentum is happening now. Time to share it with the world.”
+                    </blockquote>
+                </div>
             </div>
         </section>
 
@@ -811,13 +818,10 @@
         let currentGalleryIndex = 0;
 
         function openGallery(id, index) {
-            // Primero buscar en charts, si no, buscar en las imágenes de DJ (que no tienen carrusel)
             let post = charts.find(c => c.id === id);
             if (post) {
                 currentGalleryContext = post.images;
             } else {
-                // Si no es un chart, asumimos que es una imagen de DJ (solo una imagen)
-                // Pero como las imágenes de DJ se abren con openLightbox directamente, no debería llegar aquí.
                 currentGalleryContext = [];
             }
             
