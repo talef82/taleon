@@ -145,6 +145,10 @@
                                 STATS
                                 <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
                             </a>
+                            <a href="#dj" class="relative font-display font-black text-xs md:text-sm tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
+                                DJ
+                                <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
+                            </a>
                             <a href="#charts" class="relative font-display font-black text-xs md:text-sm tracking-[0.2em] text-gray-400 hover:text-white transition-colors duration-300 group py-2">
                                 CHARTS
                                 <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-beatport-neon transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(148,213,0,0.8)] rounded-full"></span>
@@ -182,6 +186,10 @@
                     <a href="#beatstats" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
                         <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
                         STATS
+                    </a>
+                    <a href="#dj" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
+                        <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
+                        DJ
                     </a>
                     <a href="#charts" class="mobile-link block relative font-display font-black text-xs tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/5 py-4 rounded-xl transition-all duration-300 group overflow-hidden">
                         <span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-beatport-neon transition-all duration-300 group-hover:h-1/2 rounded-r-md shadow-[0_0_10px_rgba(148,213,0,0.8)]"></span>
@@ -356,11 +364,66 @@
             </div>
         </section>
 
-        <!-- Imagen movida - justo encima de Charts -->
+        <!-- Imagen movida - justo encima de DJ -->
         <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
             <div class="w-full max-w-7xl mx-auto px-4">
                 <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/fkL03c8.jpeg')">
                     <img src="https://i.imgur.com/fkL03c8.jpeg" alt="Taleon Studio" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
+                </div>
+            </div>
+        </section>
+
+        <!-- DJ Section (NUEVA) -->
+        <section id="dj" class="py-16 md:py-24 bg-transparent relative z-10 shrink-0 border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex items-center justify-between mb-10 md:mb-16">
+                    <h3 class="font-display text-3xl md:text-5xl font-black text-glow uppercase">DJ</h3>
+                    <div class="flex items-end gap-1.5 h-8 md:h-10">
+                        <div class="w-2 md:w-3 h-5 md:h-6 bg-beatport-neon rounded-t-sm animate-equalizer" style="animation-delay: 0.2s;"></div>
+                        <div class="w-2 md:w-3 h-7 md:h-8 bg-beatport-neon rounded-t-sm animate-equalizer" style="animation-delay: 0.1s;"></div>
+                        <div class="w-2 md:w-3 h-4 md:h-5 bg-beatport-neon rounded-t-sm animate-equalizer" style="animation-delay: 0.4s;"></div>
+                    </div>
+                </div>
+
+                <!-- Grid de 3 imágenes con aspect ratio 9:16 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-12">
+                    <div class="aspect-[9/16] rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/Yb8jTe1.jpeg')">
+                        <img src="https://i.imgur.com/Yb8jTe1.jpeg" alt="DJ Set 1" class="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105">
+                    </div>
+                    <div class="aspect-[9/16] rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/r3a1eOr.jpeg')">
+                        <img src="https://i.imgur.com/r3a1eOr.jpeg" alt="DJ Set 2" class="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105">
+                    </div>
+                    <div class="aspect-[9/16] rounded-3xl overflow-hidden border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/PIAR72W.jpeg')">
+                        <img src="https://i.imgur.com/PIAR72W.jpeg" alt="DJ Set 3" class="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105">
+                    </div>
+                </div>
+
+                <!-- Texto explicativo -->
+                <div class="glass-panel rounded-3xl p-6 md:p-10 border border-gray-800 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
+                    <div class="prose prose-invert max-w-none text-gray-300 text-sm md:text-base leading-relaxed space-y-6">
+                        <h4 class="text-xl md:text-2xl font-display font-black text-white text-glow">25+ YEARS BEHIND THE DECKS: THE CRAFT, THE EVOLUTION & THE SOUND</h4>
+                        
+                        <p>At 14 years old, I bought my first records and stepped behind a pair of turntables. I never left the booth.</p>
+                        
+                        <p>Over the past 25+ years as professional, I have lived every chapter of modern DJ culture—navigating the shift from pure vinyl to WAVs, MP3s, and CDJs without losing the raw tactile instinct of crowd control. Playing weekend after weekend across every conceivable venue and musical style has made reading a room second nature.</p>
+                        
+                        <h5 class="text-lg md:text-xl font-display font-bold text-beatport-neon">CROWD PSYCHOLOGY & EXTENDED JOURNEYS</h5>
+                        
+                        <p>Energy is everything. The dynamics change, but the mission remains identical:</p>
+                        
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong class="text-white">Intimate Venues (200 capacity):</strong> Locking into close-quarters tension, nuance, and deep groove.</li>
+                            <li><strong class="text-white">Large-Scale Clubs (500–1,000+ capacity):</strong> Driving heavy, room-filling momentum that commands the main room.</li>
+                        </ul>
+                        
+                        <p>I specialize in extended sets of 5+ hours. Club music isn't meant to be rushed into a one-hour festival sprint; it is an evolving narrative designed to build tension, create hypnotic peaks, and take the dancefloor on a complete psychological journey.</p>
+                        
+                        <h5 class="text-lg md:text-xl font-display font-bold text-beatport-neon">100% ORIGINAL: THE ENGINE BEHIND THE RELEASES</h5>
+                        
+                        <p>My booth is an extension of my studio. Every DJ set I perform is 100% composed of my own productions, unreleased edits, and exclusive club tools.</p>
+                        
+                        <p>The relentless pace of my catalog output isn't a marketing tactic—it is a functional necessity for performance. Building multi-hour journeys entirely from proprietary material demands a constant flow of fresh grooves and basslines, melodic hooks, and rhythmic tension built specifically to test and break on the dancefloor in real time.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -748,8 +811,15 @@
         let currentGalleryIndex = 0;
 
         function openGallery(id, index) {
+            // Primero buscar en charts, si no, buscar en las imágenes de DJ (que no tienen carrusel)
             let post = charts.find(c => c.id === id);
-            if (post) currentGalleryContext = post.images;
+            if (post) {
+                currentGalleryContext = post.images;
+            } else {
+                // Si no es un chart, asumimos que es una imagen de DJ (solo una imagen)
+                // Pero como las imágenes de DJ se abren con openLightbox directamente, no debería llegar aquí.
+                currentGalleryContext = [];
+            }
             
             if (!currentGalleryContext) currentGalleryContext = [];
             
