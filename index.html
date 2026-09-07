@@ -391,9 +391,14 @@
                     </p>
                 </div>
 
-                <div class="relative w-full aspect-video rounded-3xl overflow-hidden bg-black p-3 md:p-6 border-2 border-black shadow-[0_15px_50px_rgba(0,0,0,0.95)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/8pfzv1O.png')">
-                    <div class="w-full h-full bg-black rounded-2xl overflow-hidden flex items-center justify-center border border-gray-900">
-                        <img src="https://i.imgur.com/8pfzv1O.png" alt="Beatstats #1 Chart" class="w-full h-full object-contain bg-black">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden bg-black p-3 md:p-6 border-2 border-black shadow-[0_15px_50px_rgba(0,0,0,0.95)] group cursor-pointer" onclick="openLightbox('https://i.imgur.com/Kgw3S9T.png', ['https://i.imgur.com/Kgw3S9T.png', 'https://i.imgur.com/8pfzv1O.png'], 0)">
+                    <div class="w-full h-full bg-black rounded-2xl overflow-hidden flex items-center justify-center border border-gray-900 relative">
+                        <img src="https://i.imgur.com/8pfzv1O.png" alt="Beatstats #1 Chart" class="w-full h-full object-contain bg-black transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
+                            <span class="px-5 py-2.5 rounded-full bg-black/85 border border-island-turquoise text-white font-mono text-xs md:text-sm tracking-wider flex items-center gap-2.5 shadow-[0_0_25px_rgba(0,229,255,0.45)]">
+                                <i class="fas fa-award text-island-sun"></i> VIEW CERTIFICATE / LOGRO #1
+                            </span>
+                        </div>
                     </div>
                 </div>
 
@@ -898,13 +903,25 @@
         let currentGalleryContext = [];
         let currentGalleryIndex = 0;
 
-        function openLightbox(src) {
-            currentGalleryContext = [src];
-            currentGalleryIndex = 0;
+        function openLightbox(src, gallery = null, index = 0) {
+            if (gallery && Array.isArray(gallery) && gallery.length > 0) {
+                currentGalleryContext = gallery;
+                currentGalleryIndex = index >= 0 && index < gallery.length ? index : 0;
+            } else {
+                currentGalleryContext = [src];
+                currentGalleryIndex = 0;
+            }
             updateLightboxImage();
             
-            if (lightboxPrev) lightboxPrev.classList.add('hidden');
-            if (lightboxNext) lightboxNext.classList.add('hidden');
+            const hasMultiple = currentGalleryContext && currentGalleryContext.length > 1;
+            if (lightboxPrev) {
+                if (hasMultiple) lightboxPrev.classList.remove('hidden');
+                else lightboxPrev.classList.add('hidden');
+            }
+            if (lightboxNext) {
+                if (hasMultiple) lightboxNext.classList.remove('hidden');
+                else lightboxNext.classList.add('hidden');
+            }
             
             if (lightbox) {
                 lightbox.classList.remove('hidden');
