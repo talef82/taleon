@@ -242,8 +242,8 @@
 
         <div class="w-full max-w-7xl mx-auto px-4 pt-24 md:pt-32 pb-8 md:pb-12 shrink-0 relative z-10">
             <div class="flex flex-col items-center">
-                <div class="w-full aspect-video rounded-3xl overflow-hidden border border-island-cyan/35 shadow-[0_20px_60px_rgba(0,0,0,0.85)] relative group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/OJ8v0yg.jpeg')">
-                    <img src="https://i.imgur.com/OJ8v0yg.jpeg" 
+                <div class="w-full aspect-video rounded-3xl overflow-hidden border border-island-cyan/35 shadow-[0_20px_60px_rgba(0,0,0,0.85)] relative group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/ndCIUdY.jpeg')">
+                    <img src="https://i.imgur.com/ndCIUdY.jpeg" 
                          alt="Taleon Live" 
                          class="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105 opacity-100 block">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#041017] via-transparent to-transparent opacity-60"></div>
@@ -342,7 +342,7 @@
                                         <div class="absolute inset-0 bg-gradient-to-t from-island-turquoise/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                         <span class="text-[10px] md:text-xs text-island-sandDark text-center mb-2 h-8 flex items-center font-mono leading-tight">ORGANIC HOUSE</span>
                                         <div class="flex items-end gap-2">
-                                            <span class="font-display font-black text-4xl md:text-5xl text-white">14</span>
+                                            <span class="font-display font-black text-4xl md:text-5xl text-white">17</span>
                                             <i class="fas fa-caret-up text-island-turquoise text-lg md:text-xl mb-1 md:mb-2 animate-bounce"></i>
                                         </div>
                                     </div>
@@ -428,8 +428,8 @@
         <!-- Banner photo performance -->
         <section class="w-full relative z-10 shrink-0 mt-8 md:mt-16 mb-16 md:mb-24">
             <div class="w-full max-w-7xl mx-auto px-4">
-                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-island-turquoise/35 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/tfiRXau.jpeg')">
-                    <img src="https://i.imgur.com/tfiRXau.jpeg" alt="Taleon Performance" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden border border-island-turquoise/35 shadow-[0_0_40px_rgba(0,0,0,0.6)] group cursor-zoom-in" onclick="openLightbox('https://i.imgur.com/OggWwPD.jpeg')">
+                    <img src="https://i.imgur.com/OggWwPD.jpeg" alt="Taleon Performance" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 opacity-100 block">
                 </div>
             </div>
         </section>
@@ -720,7 +720,7 @@
         </div>
         <div class="w-full bg-black/95 backdrop-blur-xl border-t border-island-turquoise/30">
             <div class="max-w-7xl mx-auto">
-                <iframe src="https://embed.beatport.com/?id=29833666&type=track" width="100%" height="162" frameborder="0" scrolling="no" class="w-full" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Taleon Player"></iframe>
+                <iframe src="https://embed.beatport.com/?id=30790514&type=track" width="100%" height="162" frameborder="0" scrolling="no" class="w-full" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Taleon Player"></iframe>
             </div>
         </div>
     </div>
@@ -781,222 +781,4 @@
                             <h5 class="font-bold text-white text-sm md:text-base uppercase tracking-wider mt-1">${post.title}</h5>
                             <p class="text-xs text-island-sandDark font-light mt-2 line-clamp-2">${post.text}</p>
                         </div>
-                        <div class="mt-4 w-full">
-                            <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-4 py-2 bg-white/10 hover:bg-island-turquoise text-white hover:text-black rounded-lg text-xs md:text-sm font-bold transition-colors border border-white/20 hover:border-island-turquoise tracking-widest uppercase">
-                                ${post.buttonText || 'VIEW CHART'}
-                            </a>
-                        </div>
-                    </div>
-                `;
-                container.innerHTML += html;
-            });
-        }
-
-        renderCharts(charts, 'charts-container');
-
-        document.querySelectorAll('.accordion-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const accordionItem = button.parentElement;
-                const accordionContent = button.nextElementSibling;
-                const icon = button.querySelector('.accordion-icon');
-                const currentTitle = button.querySelector('h4');
-                
-                accordionItem.classList.toggle('active');
-                
-                if (accordionItem.classList.contains('active')) {
-                    accordionContent.style.maxHeight = "2500px";
-                    setTimeout(() => { accordionContent.style.overflow = "visible"; }, 400);
-                    
-                    icon.style.transform = 'rotate(180deg)';
-                    if (currentTitle) currentTitle.classList.add('text-island-turquoise');
-                } else {
-                    accordionContent.style.overflow = "hidden";
-                    accordionContent.style.maxHeight = '0px';
-                    icon.style.transform = 'rotate(0deg)';
-                    if (currentTitle) currentTitle.classList.remove('text-island-turquoise');
-                }
-            });
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.accordion-item').forEach(acc => {
-                acc.classList.add('active');
-                const content = acc.querySelector('.accordion-content');
-                if (content) {
-                    content.style.maxHeight = "2500px";
-                    setTimeout(() => { content.style.overflow = "visible"; }, 400);
-                }
-                const icon = acc.querySelector('.accordion-icon');
-                if (icon) icon.style.transform = 'rotate(180deg)';
-                
-                const title = acc.querySelector('h4');
-                if (title) title.classList.add('text-island-turquoise');
-            });
-        });
-
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const links = document.querySelectorAll('.mobile-link');
-
-        if (btn && menu) {
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-        }
-
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                if (menu) menu.classList.add('hidden');
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (!nav) return;
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-[#041219]/95', 'shadow-[0_10px_40px_rgba(0,0,0,0.9)]', 'border-b', 'border-island-cyan/35');
-                nav.classList.remove('glass-panel');
-            } else {
-                nav.classList.add('glass-panel');
-                nav.classList.remove('bg-[#041219]/95', 'shadow-[0_10px_40px_rgba(0,0,0,0.9)]');
-            }
-        });
-
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxPrev = document.getElementById('lightbox-prev');
-        const lightboxNext = document.getElementById('lightbox-next');
-        
-        let currentGalleryContext = [];
-        let currentGalleryIndex = 0;
-
-        function openLightbox(src, gallery = null, index = 0) {
-            if (gallery && Array.isArray(gallery) && gallery.length > 0) {
-                currentGalleryContext = gallery;
-                currentGalleryIndex = index >= 0 && index < gallery.length ? index : 0;
-            } else {
-                currentGalleryContext = [src];
-                currentGalleryIndex = 0;
-            }
-            updateLightboxImage();
-            
-            const hasMultiple = currentGalleryContext && currentGalleryContext.length > 1;
-            if (lightboxPrev) {
-                if (hasMultiple) lightboxPrev.classList.remove('hidden');
-                else lightboxPrev.classList.add('hidden');
-            }
-            if (lightboxNext) {
-                if (hasMultiple) lightboxNext.classList.remove('hidden');
-                else lightboxNext.classList.add('hidden');
-            }
-            
-            if (lightbox) {
-                lightbox.classList.remove('hidden');
-                setTimeout(() => {
-                    lightbox.classList.remove('opacity-0');
-                    lightbox.classList.add('opacity-100');
-                }, 10);
-            }
-        }
-
-        function updateLightboxImage() {
-            if (lightboxImg && currentGalleryContext && currentGalleryContext[currentGalleryIndex]) {
-                lightboxImg.src = currentGalleryContext[currentGalleryIndex];
-            }
-        }
-
-        function navigateLightbox(direction, event) {
-            if (event) event.stopPropagation();
-            if (!currentGalleryContext || currentGalleryContext.length <= 1) return;
-            
-            currentGalleryIndex += direction;
-            
-            if (currentGalleryIndex < 0) {
-                currentGalleryIndex = currentGalleryContext.length - 1;
-            } else if (currentGalleryIndex >= currentGalleryContext.length) {
-                currentGalleryIndex = 0;
-            }
-            
-            updateLightboxImage();
-        }
-
-        function closeLightbox() {
-            if (!lightbox) return;
-            lightbox.classList.remove('opacity-100');
-            lightbox.classList.add('opacity-0');
-            setTimeout(() => {
-                lightbox.classList.add('hidden');
-            }, 300);
-        }
-
-        // Close on Escape key
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
-                closeLightbox();
-            }
-        });
-
-        function copyEmail() {
-            const email = "taleonmusic@gmail.com";
-            
-            const triggerFeedback = () => {
-                const copyBtn = document.getElementById('copy-btn');
-                const icon = document.getElementById('copy-icon');
-                if (!copyBtn || !icon) return;
-                
-                copyBtn.classList.add('bg-island-turquoise', 'text-black');
-                copyBtn.classList.remove('bg-transparent', 'text-island-turquoise');
-                icon.classList.remove('fa-copy', 'opacity-50');
-                icon.classList.add('fa-check');
-                
-                setTimeout(() => {
-                    copyBtn.classList.remove('bg-island-turquoise', 'text-black');
-                    copyBtn.classList.add('bg-transparent', 'text-island-turquoise');
-                    icon.classList.add('fa-copy', 'opacity-50');
-                    icon.classList.remove('fa-check');
-                }, 2000);
-            };
-
-            try {
-                const tempTextArea = document.createElement("textarea");
-                tempTextArea.value = email;
-                tempTextArea.style.position = "fixed";
-                tempTextArea.style.left = "-9999px";
-                tempTextArea.style.top = "0";
-                document.body.appendChild(tempTextArea);
-                tempTextArea.focus();
-                tempTextArea.select();
-                const successful = document.execCommand('copy');
-                document.body.removeChild(tempTextArea);
-                
-                if (successful) {
-                    triggerFeedback();
-                    return;
-                }
-            } catch (err) {}
-
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(email).then(triggerFeedback).catch(() => {});
-            }
-        }
-
-        function togglePlayer() {
-            const container = document.getElementById('player-container');
-            const arrow = document.getElementById('player-arrow');
-            if (!container || !arrow) return;
-            
-            if (container.classList.contains('translate-y-0')) {
-                container.classList.remove('translate-y-0');
-                container.classList.add('translate-y-[162px]');
-                arrow.classList.remove('fa-chevron-down');
-                arrow.classList.add('fa-chevron-up');
-            } else {
-                container.classList.add('translate-y-0');
-                container.classList.remove('translate-y-[162px]');
-                arrow.classList.remove('fa-chevron-up');
-                arrow.classList.add('fa-chevron-down');
-            }
-        }
-    </script>
-</body>
-</html>
+                        <div class="
